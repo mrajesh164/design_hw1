@@ -63,7 +63,7 @@ const ENTRIES = [
   { n: 18, status: "shot", date: "2026-10-05", path: "designs/18-choose-your-screening/index.html", phase: 2, title: "Choose Your Screening", tag: "Narrative", hue: 260,
     question: "Does branching make a landing page memorable or annoying?",
     idea: "Dark or light? Each answer routes to a different version." },
-  { n: 19, phase: 2, title: "Lobby Display Case", tag: "Physical", hue: 45,
+  { n: 19, status: "shot", date: "2026-10-05", path: "designs/19-display-case/index.html", phase: 2, title: "Lobby Display Case", tag: "Physical", hue: 45,
     question: "Can parallax depth sell a glass case?",
     idea: "Lit cabinets outside a cinema; menu items sit inside." },
   { n: 20, phase: 2, title: "Overhead Menu Board", tag: "Physical", hue: 90,
