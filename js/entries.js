@@ -60,7 +60,7 @@ const ENTRIES = [
   { n: 17, phase: 2, title: "Director's Commentary", tag: "Interaction", hue: 25,
     question: "Can hover annotations make a page feel like a DVD extra?",
     idea: "Hover any element for a commentary-track note." },
-  { n: 18, phase: 2, title: "Choose Your Screening", tag: "Narrative", hue: 260,
+  { n: 18, status: "shot", date: "2026-10-05", path: "designs/18-choose-your-screening/index.html", phase: 2, title: "Choose Your Screening", tag: "Narrative", hue: 260,
     question: "Does branching make a landing page memorable or annoying?",
     idea: "Dark or light? Each answer routes to a different version." },
   { n: 19, phase: 2, title: "Lobby Display Case", tag: "Physical", hue: 45,
