@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOME BREW — Choose Your Seats</title>
+  <meta name="description" content="Home Brew, a café whose menu is organized by film genre, shown as a movie theater seat map where every seat is a drink.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>HOME BREW</h1>
+    <p>Pick your seats. Every seat is a drink.</p>
+  </header>
+
+  <main class="app">
+    <section class="theater" aria-label="Seat map">
+      <div class="screen" id="screen" aria-live="polite">
+        <p class="s-kicker" id="s-kicker">Now boarding</p>
+        <h2 id="s-title">Choose your seats</h2>
+        <p class="s-desc" id="s-desc">Point at a seat to see what is playing. Click a seat to add it to your tickets.</p>
+        <p class="s-price" id="s-price"></p>
+      </div>
+
+      <ul class="legend" aria-hidden="true">
+        <li><i class="key free"></i> Available</li>
+        <li><i class="key picked"></i> Your pick</li>
+      </ul>
+
+      <div class="rows" id="rows"></div>
+    </section>
+
+    <aside class="cart" aria-labelledby="cart-title">
+      <h2 id="cart-title">Your tickets</h2>
+      <ul id="cart-list" class="cart-list"><li class="empty">No seats yet.</li></ul>
+      <p class="total"><span>Total</span> <b id="total">$0.00</b></p>
+      <div class="actions">
+        <button id="print" type="button" disabled>Print tickets</button>
+        <button id="clear" type="button" class="ghost" disabled>Clear</button>
+      </div>
+      <p class="fine">Nothing is ordered or saved here. Walk in and read your seat numbers to the barista.</p>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <p>1138 Marquee Lane, Hyde Park, Chicago &nbsp;&middot;&nbsp; Doors open daily, 7 a.m. to 10 p.m.</p>
+  </footer>
+
+  <dialog id="stubs" aria-labelledby="stubs-title">
+    <h2 id="stubs-title">Admit these seats</h2>
+    <div id="stub-list"></div>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
+
+  <a class="back" href="../../index.html">&larr; Home Brew gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

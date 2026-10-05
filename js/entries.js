@@ -22,7 +22,7 @@ const ENTRIES = [
   { n: 5, status: "shot", date: "2026-10-05", path: "designs/05-storyboard/index.html", phase: 1, title: "Storyboard", tag: "Structure", hue: 30,
     question: "Can the page tell the café's story in panels, with sketchy hand-drawn CSS?",
     idea: "Numbered panels with camera notes: what it is, the menu, come in." },
-  { n: 6,  phase: 1, title: "Seating Chart", tag: "Interaction", hue: 350,
+  { n: 6, status: "shot", date: "2026-10-05", path: "designs/06-seating-chart/index.html", phase: 1, title: "Seating Chart", tag: "Interaction", hue: 350,
     question: "Is booking-a-seat UI a better landing page than a hero?",
     idea: "Tables are seats. Pick a seat, see that genre's menu." },
   { n: 7,  phase: 1, title: "VHS Tape", tag: "Era", hue: 280,
