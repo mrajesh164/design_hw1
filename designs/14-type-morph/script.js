@@ -75,6 +75,7 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const restBtn = document.getElementById("rest");
 const wobbleBtn = document.getElementById("wobble");
+const fxs = [...document.querySelectorAll(".bgfx .fx")];
 
 // ---- letters ----
 const spans = [];
@@ -172,9 +173,9 @@ function applyShape(v) {
   lettersEl.style.textShadow = p.glow > 0.3 ? `0 0 ${(p.glow).toFixed(1)}px hsla(${p.gh.toFixed(0)}, 80%, 55%, .55)` : "none";
   spans.forEach(s => { s.style.marginInline = ((p.sx - 1) * 0.28).toFixed(3) + "em"; });
   const bg = `hsl(${p.th.toFixed(1)} ${p.ts.toFixed(1)}% ${p.tl.toFixed(1)}%)`;
-  document.body.style.background = bg;
   document.documentElement.style.background = bg;
   document.documentElement.style.setProperty("--mood", color);
+  fxs.forEach((el, i) => { el.style.opacity = Math.max(0, 1 - Math.abs(v - STOP_VALUES[i]) / 100).toFixed(3); });
   fit();
   paint(paused || reduce ? STATIC_T : clock);
   prevBtn.disabled = v <= MIN;
@@ -184,7 +185,7 @@ function applyShape(v) {
 
 function renderMenu(idx) {
   if (idx === 0) {
-    menuEl.innerHTML = `<p class="rest">The word is resting.<br>Turn the dial, or pick a mood above, to see that genre's drinks here.</p>`;
+    menuEl.innerHTML = `<p class="rest">The word is resting.<br>Turn the dial, or pick a genre above, to see that genre's drinks here.</p>`;
     return;
   }
   const g = MENU[idx - 1];
@@ -224,6 +225,7 @@ restBtn.addEventListener("click", () => animateTo(MIN));
 function syncWobble() {
   wobbleBtn.setAttribute("aria-pressed", String(!paused));
   wobbleBtn.textContent = paused ? "Wobble: off" : "Wobble: on";
+  document.body.classList.toggle("still", paused);
 }
 wobbleBtn.addEventListener("click", () => { paused = !paused; syncWobble(); paint(paused ? STATIC_T : clock); });
 if (reduce) wobbleBtn.disabled = true;
