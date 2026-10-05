@@ -53,7 +53,7 @@ const ENTRIES = [
   { n: 15, status: "shot", date: "2026-10-05", path: "designs/15-genre-switcher/index.html", phase: 2, title: "Genre Switcher", tag: "Interaction", hue: 120,
     question: "Does one content set survive eight radically different skins?",
     idea: "Pick a genre; the entire aesthetic transforms." },
-  { n: 16, phase: 2, title: "Terminal", tag: "Interaction", hue: 130,
+  { n: 16, status: "shot", date: "2026-10-05", path: "designs/16-terminal/index.html", phase: 2, title: "Terminal", tag: "Interaction", hue: 130,
     question: "Is typing an order more fun than clicking one?",
     idea: "Command-line UI, keyboard-driven menu browsing." },
 
