@@ -90,7 +90,7 @@ function render() {
         <button type="button" class="btn primary big" data-act="begin">Begin your screening</button>
         <button type="button" class="btn" data-act="menu">Skip the story and see the whole menu</button>
       </div>
-      <p class="howto">It takes about a minute. Click a choice, or press the number keys 1 to 4.</p>`;
+      <p class="howto">Either take a quick survey or browse the complete menu to find your perfect drink.</p>`;
   } else if (c.id.startsWith("end:")) {
     endGenre = c.id.slice(4);
     const g = GENRES[endGenre];
