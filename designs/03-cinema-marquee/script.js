@@ -47,7 +47,7 @@ const GENRES = [
     ] },
   { id: "comedy", name: "Comedy", tag: "Guaranteed to lighten the mood", footer: "NO REFUNDS ON JOKES",
     items: [
-      ["Slapstick", "SLAPSTICK", "$4.50", "Banana milk latte. Slips right down."],
+      ["Slapstick", "SLAPSTICK", "$4.50", "Banana milk latte. Don't slip!"],
       ["Punchline", "PUNCHLINE", "$5.25", "Peanut butter mocha. Sweet setup, salty finish."],
       ["Laugh Track", "LAUGH TRACK", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."]
     ] }

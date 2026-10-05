@@ -43,7 +43,7 @@ const TAPES = [
   { id: "comedy", name: "Comedy", title: "Comedy", tag: "Guaranteed to lighten the mood", rating: "PG-13",
     syn: "A banana, a peanut butter mocha, and a laugh track you cannot turn off.",
     items: [
-      ["Slapstick", "$4.50", "Banana milk latte. Slips right down."],
+      ["Slapstick", "$4.50", "Banana milk latte. Don't slip!"],
       ["Punchline", "$5.25", "Peanut butter mocha. Sweet setup, salty finish."],
       ["Laugh Track", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."] ] }
 ];

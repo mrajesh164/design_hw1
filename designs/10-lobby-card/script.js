@@ -27,7 +27,7 @@ const GENRES = [
     ["Dragon's Breath", "$5.75", "Spiced hot chocolate with chili and cinnamon. Mind the fire."],
     ["Elixir of Life", "$6.25", "Sparkling elderflower lemonade with edible flowers."] ] },
   { id: "comedy", name: "Comedy", title: "COMEDY!", tag: "Guaranteed to lighten the mood", items: [
-    ["Slapstick", "$4.50", "Banana milk latte. Slips right down."],
+    ["Slapstick", "$4.50", "Banana milk latte. Don't slip!"],
     ["Punchline", "$5.25", "Peanut butter mocha. Sweet setup, salty finish."],
     ["Laugh Track", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."] ] }
 ];
