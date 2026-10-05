@@ -52,7 +52,7 @@ p, h1, h2 { margin: 0; font-weight: 400; font-size: 1em; }
 
 .title-page { display: flex; flex-direction: column; justify-content: space-between; }
 .title-page::after { content: none; }
-.title-block { margin-top: 28ch; text-align: center; }
+.title-block { margin-top: 16ch; text-align: center; }
 .title-block h1 { font-size: 1em; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; letter-spacing: .1em; margin-bottom: 4ch; }
 .title-block .by { margin-bottom: 1.5em; }
 .contact { font-size: .85em; line-height: 1.4; }
@@ -77,15 +77,39 @@ p, h1, h2 { margin: 0; font-weight: 400; font-size: 1em; }
 
 .action { margin: 0 0 1em; max-width: var(--measure); }
 .action em { font-style: normal; font-weight: 700; }
-.cue { margin: 1em 0 0; padding-left: 22ch; text-transform: uppercase; }
-.paren { padding-left: 16ch; max-width: 40ch; }
-.dial { padding-left: 10ch; max-width: 45ch; margin-bottom: .25em; }
+
+/* A menu item: name and price on one line, then contents, then flavor */
+.item { max-width: var(--measure); margin: 1.6em 0; }
+.cue { display: flex; align-items: baseline; gap: 1ch; margin: 0; text-transform: uppercase; font-weight: 700; }
+.cue .nm { padding-left: 10ch; }
+.cue .price { flex: none; margin-left: auto; padding: 0 .5ch; background: #ffe45e; }
+.cue .nm + .price::before { content: none; }
+.paren { padding-left: 10ch; max-width: 50ch; }
+.dial { padding-left: 10ch; max-width: 50ch; color: #6b6558; font-style: italic; }
+
+.genre {
+  display: inline-block;
+  margin: 0 0 1.2em;
+  padding: .1em 1ch;
+  background: var(--ink);
+  color: var(--page);
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.key {
+  margin: 0 auto 4ch;
+  padding: 1.2ch 2ch;
+  max-width: 50ch;
+  border: 2px solid var(--ink);
+  font-size: .85em;
+}
+.key p { margin: .2em 0; }
+.key-head { font-weight: 700; letter-spacing: .15em; margin-bottom: .6em !important; }
 
 .end { text-align: center; margin: 3em 0 0; font-weight: 700; letter-spacing: .2em; }
 .footnote { margin-top: 18ch; text-align: center; font-size: .8em; opacity: .65; }
 
-/* Revision mark in the margin, like a tracked draft */
-.dial::after { content: ""; }
 
 /* Reveal animation (only when JS is present) */
 .js .reveal { opacity: 0; transform: translateY(.4em); transition: opacity .5s, transform .5s; }
