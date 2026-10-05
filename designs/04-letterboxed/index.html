@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOME BREW — Letterboxed</title>
+  <meta name="description" content="Home Brew, a café whose menu is organized by film genre, shown as a widescreen film where the menu appears as subtitles.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="track" id="track">
+    <div class="stage">
+
+      <header class="bar top">
+        <span class="brand">HOME BREW</span>
+        <span class="tc" id="tc" aria-hidden="true">00:00:00</span>
+        <button id="open-transcript" type="button">Transcript</button>
+      </header>
+
+      <div class="frame" id="frame" aria-label="Widescreen scene, scroll to play">
+        <div class="scene intro on" data-scene="intro">
+          <div class="layer">
+            <div class="flare"></div>
+            <div class="title">HOME BREW</div>
+          </div>
+        </div>
+
+        <div class="scene horror" data-scene="horror">
+          <div class="layer">
+            <div class="moon"></div>
+            <div class="fog f1"></div>
+            <div class="trees"></div>
+            <div class="house"><i></i></div>
+            <div class="fog f2"></div>
+          </div>
+        </div>
+
+        <div class="scene scifi" data-scene="scifi">
+          <div class="layer">
+            <div class="stars"></div>
+            <div class="planet"></div>
+            <div class="ship"></div>
+            <div class="glow"></div>
+          </div>
+        </div>
+
+        <div class="scene noir" data-scene="noir">
+          <div class="layer">
+            <div class="blinds"></div>
+            <div class="man"></div>
+            <div class="smoke s1"></div><div class="smoke s2"></div>
+          </div>
+        </div>
+
+        <div class="scene romance" data-scene="romance">
+          <div class="layer">
+            <div class="bokeh b1"></div>
+            <div class="bokeh b2"></div>
+            <div class="rain"></div>
+          </div>
+        </div>
+
+        <div class="scene western" data-scene="western">
+          <div class="layer">
+            <div class="sun"></div>
+            <div class="mesas"></div>
+            <div class="ground"></div>
+            <div class="cactus"></div>
+            <div class="weed"></div>
+          </div>
+        </div>
+
+        <div class="grain" aria-hidden="true"></div>
+        <p class="subtitle" id="subtitle" aria-live="polite"></p>
+        <p class="scroll-hint" id="hint" aria-hidden="true">Scroll to play &#9662;</p>
+      </div>
+
+      <footer class="bar bottom">
+        <nav class="chapters" id="chapters" aria-label="Chapters"></nav>
+        <div class="scrub" aria-hidden="true"><div class="played" id="played"></div></div>
+      </footer>
+
+    </div>
+  </div>
+
+  <dialog id="transcript">
+    <h2>Transcript</h2>
+    <div id="transcript-body"></div>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
+
+  <noscript>
+    <p class="nojs">This page plays as a scrolling film. The menu: Horror: The Final Girl $4.00, Basement Cold Brew $5.00, The Call Is Coming From Inside $5.50. Sci-Fi: Warp Drive $6.00, First Contact $6.50, Replicant $5.25. Noir: Bitter End $5.00, The Long Goodbye $4.50, Femme Fatale $4.75. Romance: Meet Cute $8.00, Rainstorm Kiss $5.75, The Grand Gesture $6.25. Western: High Noon $3.75, The Good, The Bad, and The Oatmeal $7.00.</p>
+  </noscript>
+
+  <a class="back" href="../../index.html">&larr; Home Brew gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>
