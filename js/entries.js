@@ -51,7 +51,7 @@ const ENTRIES = [
     question: "Can one word carry the whole mood by changing shape?",
     idea: "A single word morphing between emotional states, no variable font file needed." },
   { n: 15, phase: 2, title: "Genre Switcher", tag: "Interaction", hue: 120,
-    question: "Does one content set survive five radically different skins?",
+    question: "Does one content set survive eight radically different skins?",
     idea: "Pick a genre; the entire aesthetic transforms." },
   { n: 16, phase: 2, title: "Terminal", tag: "Interaction", hue: 130,
     question: "Is typing an order more fun than clicking one?",
