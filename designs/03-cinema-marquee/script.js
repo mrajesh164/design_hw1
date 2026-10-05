@@ -31,7 +31,7 @@ const GENRES = [
   { id: "western", name: "Western", tag: "Strong, simple, no questions asked", footer: "FASTEST SIP IN TOWN",
     items: [
       ["High Noon", "HIGH NOON", "$3.75", "Cowboy coffee, grounds and all."],
-      ["The Good, The Bad, and The Oatmeal", "GOOD BAD OATMEAL", "$7.00", "Skillet oatmeal with three toppings. Pick one."]
+      ["A Fistful of Espresso", "FISTFUL ESPRESSO", "$4.25", "Triple espresso in a tin cup. Quick on the draw."]
     ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", footer: "TRUST NO ONE",
     items: [

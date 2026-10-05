@@ -105,12 +105,15 @@ const ART = {
     <ellipse cx="110" cy="48" rx="22" ry="5" fill="#2b1a12" stroke="#8c939c" stroke-width="2"/>
     <path d="M132 58 q16 0 14 14 q-2 10 -14 10" fill="none" stroke="#8c939c" stroke-width="6" stroke-linecap="round"/>${steam(110, 2)}`,
 
-  "The Good, The Bad, and The Oatmeal": () => `
-    <rect x="136" y="46" width="70" height="10" rx="5" fill="#2a2a2a"/>
-    <circle cx="100" cy="52" r="42" fill="#2a2a2a"/><circle cx="100" cy="52" r="35" fill="#f1e2c0"/>
-    <g fill="#3b4ea8"><circle cx="82" cy="38" r="4.5"/><circle cx="91" cy="43" r="4.5"/><circle cx="84" cy="49" r="4.5"/><circle cx="76" cy="44" r="4.5"/></g>
-    <g fill="#f6d86a" stroke="#d9b03a" stroke-width="1.5"><circle cx="108" cy="36" r="6"/><circle cx="118" cy="44" r="6"/><circle cx="109" cy="48" r="6"/></g>
-    <g fill="#8a5a2b"><ellipse cx="90" cy="68" rx="5" ry="3.5"/><ellipse cx="100" cy="72" rx="5" ry="3.5"/><ellipse cx="111" cy="68" rx="5" ry="3.5"/><ellipse cx="104" cy="62" rx="5" ry="3.5"/></g>`,
+  "A Fistful of Espresso": () => `${shadow(90, 38)}
+    <ellipse cx="90" cy="90" rx="36" ry="6" fill="#e8e1d2"/>
+    <path d="M68 58 H112 V72 Q112 90 90 90 Q68 90 68 72 Z" fill="#f4f1ea"/>
+    <ellipse cx="90" cy="58" rx="22" ry="5" fill="#2b1a12"/><ellipse cx="90" cy="58" rx="17" ry="3.2" fill="#9a6a3a"/>
+    <path d="M112 64 q12 0 10 8 q-2 6 -10 6" fill="none" stroke="#f4f1ea" stroke-width="5" stroke-linecap="round"/>${steam(90, 6)}
+    <polygon points="160,24 166,42 185,42 170,53 176,72 160,61 144,72 150,53 135,42 154,42" fill="#e2b13c" stroke="#a8801f" stroke-width="2"/>
+    <circle cx="160" cy="48" r="4" fill="#a8801f"/>
+    <g fill="#5b3a22"><ellipse cx="130" cy="90" rx="5.5" ry="3.4" transform="rotate(-20 130 90)"/><ellipse cx="142" cy="86" rx="5.5" ry="3.4" transform="rotate(15 142 86)"/><ellipse cx="154" cy="91" rx="5.5" ry="3.4" transform="rotate(-8 154 91)"/><ellipse cx="166" cy="87" rx="5.5" ry="3.4" transform="rotate(25 166 87)"/><ellipse cx="178" cy="91" rx="5.5" ry="3.4" transform="rotate(-15 178 91)"/><ellipse cx="148" cy="80" rx="5.5" ry="3.4" transform="rotate(30 148 80)"/></g>
+    <path d="M125 91 l9 -3 M137 87 l9 3 M149 92 l9 -2 M161 88 l9 3 M173 92 l9 -3 M143 81 l9 -3" stroke="#2b1a12" stroke-width="1.2" fill="none"/>`,
 
   "The Usual Suspect": () => `${shadow(110, 46)}
     <ellipse cx="110" cy="88" rx="44" ry="8" fill="#e8e1d2"/>

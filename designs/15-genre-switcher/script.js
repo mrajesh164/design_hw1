@@ -29,10 +29,10 @@ const GENRES = [
       ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
   { id: "western", name: "Western", tag: "Strong, simple, no questions asked",
     kicker: "Wanted: good coffee",
-    about: "Pull up a stool, partner. The coffee's hot and the oatmeal's honest.",
+    about: "Pull up a stool, partner. The coffee's hot and the talk is short.",
     drinks: [
       ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-      ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] },
+      ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue",
     kicker: "Case file no. 1138",
     about: "Subject: a café with eight secrets. Witnesses report the tea was suspiciously good.",

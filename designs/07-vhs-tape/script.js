@@ -27,7 +27,7 @@ const TAPES = [
     syn: "Two cups on a rail, ten paces apart. Only one of them is coffee.",
     items: [
       ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-      ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] },
+      ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", title: "Mystery", tag: "Every sip is a clue", rating: "PG-13",
     syn: "Everyone had the tea. Nobody admits it. Someone is lying about the lemon.",
     items: [

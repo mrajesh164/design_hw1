@@ -17,7 +17,7 @@ const GENRES = [
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
   { id: "western", name: "Western", color: "#ffc15e", tag: "Strong, simple, no questions asked", items: [
     ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-    ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] },
+    ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", color: "#c3a2f5", tag: "Every sip is a clue", items: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
