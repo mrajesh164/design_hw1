@@ -4,7 +4,7 @@ const pad = n => String(n).padStart(2, "0");
 function entryHTML(e) {
   const href = e.path && e.status !== "planned" ? e.path : null;
   const tag = href ? "a" : "div";
-  const link = href ? ` href="${href}"` : "";
+  const link = href ? ` href="${href}" target="_blank" rel="noopener"` : "";
   return `
   <article class="entry status-${e.status}" data-phase="${e.phase}" style="--hue:${e.hue}">
     <${tag} class="frame"${link} aria-label="Design ${pad(e.n)}: ${e.title}">
