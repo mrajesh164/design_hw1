@@ -1,6 +1,6 @@
-# Home Brew
+# Now Showing
 
-A gallery of 25 landing page designs for a fictional café (Home Brew) whose menu is built around film and TV genres. The root `index.html` is the gallery; each design lives in `designs/NN-slug/`.
+A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose menu is built around film and TV genres. The gallery is called Now Showing; the root `index.html` is the gallery; each design lives in `designs/NN-slug/`.
 
 ## Goals
 - Explore a wide variety of directions with few constraints.
@@ -10,7 +10,7 @@ A gallery of 25 landing page designs for a fictional café (Home Brew) whose men
 ## Constraints
 - Plain HTML, CSS and JS only. No frameworks, no packages, no build step, no external APIs or CDN assets, no data storage.
 - Must work as static files on Vercel and when opened from disk. Relative paths only.
-- Each design is self-contained: its own `index.html`, `style.css`, `script.js`, plus a "← Home Brew gallery" link to `../../index.html`.
+- Each design is self-contained: its own `index.html`, `style.css`, `script.js`, plus a "← Now Showing gallery" link to `../../index.html`.
 - Keep café facts (name, address, hours, menu, prices) consistent across designs.
 - Respect `prefers-reduced-motion`; work on mobile.
 
