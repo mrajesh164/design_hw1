@@ -50,7 +50,7 @@ const ENTRIES = [
   { n: 14, status: "shot", date: "2026-10-05", path: "designs/14-type-morph/index.html", phase: 2, title: "Variable Type Morph", tag: "Typography", hue: 300,
     question: "Can one word carry the whole mood by changing shape?",
     idea: "A single word morphing between emotional states, no variable font file needed." },
-  { n: 15, phase: 2, title: "Genre Switcher", tag: "Interaction", hue: 120,
+  { n: 15, status: "shot", date: "2026-10-05", path: "designs/15-genre-switcher/index.html", phase: 2, title: "Genre Switcher", tag: "Interaction", hue: 120,
     question: "Does one content set survive eight radically different skins?",
     idea: "Pick a genre; the entire aesthetic transforms." },
   { n: 16, phase: 2, title: "Terminal", tag: "Interaction", hue: 130,

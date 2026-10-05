@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene &amp; Sip — One Café, Eight Genres</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre. Pick a genre and the whole page changes its look: eight complete skins for one menu.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-genre="noir">
+  <nav class="switcher" aria-label="Choose a genre">
+    <p class="switch-label">Pick a genre, change the whole café</p>
+    <div class="switch-btns" id="switch-btns" role="group" aria-label="Genres"></div>
+    <p class="switch-hint">Tip: use the &larr; &rarr; arrow keys</p>
+  </nav>
+
+  <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+
+  <main class="stage" id="stage">
+    <noscript>
+      <p>This page changes its whole look with the genre you pick, which needs JavaScript. The menu: Horror: The Final Girl $4.00, Basement Cold Brew $5.00, The Call Is Coming From Inside $5.50. Sci-Fi: Warp Drive $6.00, First Contact $6.50, Replicant $5.25. Noir: Bitter End $5.00, The Long Goodbye $4.50, Femme Fatale $4.75. Romance: Meet Cute $8.00, Rainstorm Kiss $5.75, The Grand Gesture $6.25. Western: High Noon $3.75, The Good, The Bad, and The Oatmeal $7.00. Mystery: The Usual Suspect $4.25, Red Herring $5.50, Plot Twist $6.00. Fantasy: The Chosen One $6.50, Dragon's Breath $5.75, Elixir of Life $6.25. Comedy: Slapstick $4.50, Punchline $5.25, Laugh Track $5.00.</p>
+    </noscript>
+  </main>
+
+  <footer class="foot">
+    <p>1138 Marquee Lane, Hyde Park, Chicago</p>
+    <p>Open daily, 7 a.m. to 10 p.m.</p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>
