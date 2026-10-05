@@ -66,7 +66,7 @@ const ENTRIES = [
   { n: 19, status: "shot", date: "2026-10-05", path: "designs/19-display-case/index.html", phase: 2, title: "Lobby Display Case", tag: "Physical", hue: 45,
     question: "Can parallax depth sell a glass case?",
     idea: "Lit cabinets outside a cinema; menu items sit inside." },
-  { n: 20, phase: 2, title: "Overhead Menu Board", tag: "Physical", hue: 90,
+  { n: 20, status: "shot", date: "2026-10-05", path: "designs/20-menu-board/index.html", phase: 2, title: "Overhead Menu Board", tag: "Physical", hue: 90,
     question: "Is the backlit counter board a better menu than a grid?",
     idea: "White letters on black tracks; click a row to expand." },
   { n: 21, phase: 2, title: "Film Canister Archive", tag: "Physical", hue: 20,

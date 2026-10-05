@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene &amp; Sip — The Menu Board</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, shown as the backlit menu board above the counter.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="ceiling" aria-hidden="true">
+    <div class="lamp l1"><span class="cord"></span><span class="shade"></span><span class="bulb"></span><span class="cone"></span></div>
+    <div class="lamp l2"><span class="cord"></span><span class="shade"></span><span class="bulb"></span><span class="cone"></span></div>
+    <div class="lamp l3"><span class="cord"></span><span class="shade"></span><span class="bulb"></span><span class="cone"></span></div>
+  </header>
+
+  <div class="sign-wrap">
+    <div class="sign">
+      <h1>Scene &amp; Sip</h1>
+      <p>Every drink is a genre. Pull up a stool.</p>
+    </div>
+    <p class="instruction">Click a drink to read about it, or ring the bell for the barista's pick.</p>
+  </div>
+
+  <main class="board" aria-label="Menu board">
+    <div class="panels" id="panels">
+      <noscript>
+        <p class="plain">This board needs JavaScript to open each drink. The menu: Horror: The Final Girl $4.00, Basement Cold Brew $5.00, The Call Is Coming From Inside $5.50. Sci-Fi: Warp Drive $6.00, First Contact $6.50, Replicant $5.25. Noir: Bitter End $5.00, The Long Goodbye $4.50, Femme Fatale $4.75. Romance: Meet Cute $8.00, Rainstorm Kiss $5.75, The Grand Gesture $6.25. Western: True Grit $3.75, A Fistful of Espresso $4.25. Mystery: The Usual Suspect $4.25, Red Herring $5.50, Plot Twist $6.00. Fantasy: The Chosen One $6.50, Dragon's Breath $5.75, Elixir of Life $6.25. Comedy: Slapstick $4.50, Punchline $5.25, Laugh Track $5.00.</p>
+      </noscript>
+    </div>
+  </main>
+
+  <section class="counter" aria-label="The counter">
+    <div class="items">
+      <svg class="machine" viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Espresso machine">
+        <rect x="8" y="104" width="134" height="10" rx="3" fill="#2b2622"/>
+        <rect x="10" y="22" width="130" height="80" rx="8" fill="#4a4a50"/>
+        <rect x="10" y="22" width="130" height="14" rx="6" fill="#62626a"/>
+        <rect x="22" y="40" width="106" height="8" rx="3" fill="#35353b"/>
+        <circle cx="38" cy="64" r="11" fill="#e8dcc0" stroke="#2b2622" stroke-width="3"/>
+        <path d="M38 64 L44 58" stroke="#2b2622" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="62" y="56" width="22" height="16" rx="3" fill="#2b2622"/>
+        <rect x="58" y="72" width="30" height="7" rx="2" fill="#8a8a92"/>
+        <path d="M72 79 v7" stroke="#8a8a92" stroke-width="5" stroke-linecap="round"/>
+        <path d="M118 54 v26 q0 8 -9 8" fill="none" stroke="#8a8a92" stroke-width="4" stroke-linecap="round"/>
+        <rect x="56" y="92" width="34" height="10" rx="2" fill="#2b2622"/>
+        <circle cx="130" cy="30" r="3" fill="#c79a4a"/>
+      </svg>
+
+      <svg class="cups" viewBox="0 0 120 70" width="120" height="70" role="img" aria-label="A few coffee cups">
+        <ellipse cx="26" cy="64" rx="22" ry="5" fill="#e8e1d2"/>
+        <path d="M10 38 H42 V50 Q42 63 26 63 Q10 63 10 50 Z" fill="#f4f1ea"/>
+        <ellipse cx="26" cy="38" rx="16" ry="3.5" fill="#3a2214"/>
+        <path d="M42 43 q9 0 8 6 q-1 5 -8 5" fill="none" stroke="#f4f1ea" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="82" cy="64" rx="20" ry="4.5" fill="#e8e1d2"/>
+        <path d="M68 40 H96 V50 Q96 62 82 62 Q68 62 68 50 Z" fill="#c9a77a"/>
+        <ellipse cx="82" cy="40" rx="14" ry="3.2" fill="#f3e3c6"/>
+        <path d="M96 44 q8 0 7 5 q-1 4 -7 4" fill="none" stroke="#c9a77a" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M60 16 q-4 -6 0 -11 t0 -11" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+      </svg>
+
+      <div class="bell-wrap">
+        <button type="button" class="bell" id="bell">
+          <span class="bell-label">Ring for the barista's pick</span>
+          <svg viewBox="0 0 64 46" width="76" height="55" aria-hidden="true" focusable="false">
+            <ellipse cx="32" cy="40" rx="28" ry="5" fill="#8a6a2c"/>
+            <path d="M8 38 Q8 12 32 12 Q56 12 56 38 Z" fill="#c79a4a"/>
+            <path d="M14 36 Q14 18 28 15" fill="none" stroke="#efd08e" stroke-width="3" stroke-linecap="round"/>
+            <rect x="29" y="5" width="6" height="8" rx="2" fill="#a6803a"/>
+            <circle cx="32" cy="4.5" r="3.4" fill="#e1bd6c"/>
+          </svg>
+        </button>
+      </div>
+
+      <svg class="jar" viewBox="0 0 70 96" width="70" height="96" role="img" aria-label="Tip jar">
+        <rect x="14" y="8" width="42" height="9" rx="3" fill="#8a6a2c"/>
+        <path d="M12 17 H58 V80 Q58 90 48 90 H22 Q12 90 12 80 Z" fill="#cfe3e0" fill-opacity=".28" stroke="#cfe3e0" stroke-opacity=".7" stroke-width="2"/>
+        <g fill="#d9b04a" stroke="#a9832a" stroke-width="1"><circle cx="24" cy="82" r="5"/><circle cx="36" cy="84" r="5"/><circle cx="47" cy="81" r="5"/><circle cx="30" cy="73" r="5"/><circle cx="42" cy="72" r="5"/><circle cx="35" cy="63" r="5"/></g>
+        <rect x="18" y="30" width="34" height="14" rx="2" fill="#f1e6cf"/>
+        <text x="35" y="41" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#4a3320">TIPS</text>
+      </svg>
+    </div>
+    <div class="surface"></div>
+    <div class="front"></div>
+    <p class="pick" id="pick" role="status" aria-live="polite"></p>
+  </section>
+
+  <footer class="foot">
+    <p>1138 Marquee Lane, Hyde Park, Chicago</p>
+    <p>Open daily, 7 a.m. to 10 p.m.</p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>
