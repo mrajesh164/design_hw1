@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SCENE &amp; SIP VIDEO — Be Kind, Rewind</title>
+  <title>SCENE &amp; SIP VIDEO — Now Renting</title>
   <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, shown as a 1980s video rental store where every genre is a VHS tape.">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,17 +13,17 @@
 
   <header class="tv" aria-label="Welcome">
     <div class="screen">
-      <p class="osd tl"><span class="play">PLAY &#9654;</span></p>
+      <p class="osd tl"><button id="play" class="play" type="button" aria-label="Play all tapes, one after another">&#9654; PLAY</button></p>
       <p class="osd tr">SP <span id="counter">0:00:00</span></p>
       <h1 class="glitch" data-text="SCENE &amp; SIP VIDEO">SCENE &amp; SIP VIDEO</h1>
-      <p class="tagline">Every drink is a genre.<br>Be kind, rewind.</p>
-      <p class="select">SELECT A TAPE <span class="arrow">&#9660;</span></p>
-      <p class="osd bl">12:00</p>
-      <p class="osd br">CH 03</p>
+      <p class="tagline">Every drink is a genre.<br>Pick a tape, any tape.</p>
+      <a class="select" href="#shop">SELECT A TAPE <span class="arrow">&#9660;</span></a>
+      <p class="osd bl" id="clock">&nbsp;</p>
+      <p class="osd br" id="open-state">&nbsp;</p>
     </div>
   </header>
 
-  <main class="shop">
+  <main class="shop" id="shop">
     <div class="sign">
       <h2>New Releases</h2>
       <p>Pick a tape and flip it over to read the back of the box.</p>
@@ -36,7 +36,6 @@
       <b>STORE INFO</b>
       <p>1138 Marquee Lane, Hyde Park, Chicago</p>
       <p>Open daily, 7 a.m. to 10 p.m.</p>
-      <p class="small">No late fees on coffee. Please rewind your tapes.</p>
     </div>
   </footer>
 

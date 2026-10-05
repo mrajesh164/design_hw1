@@ -32,6 +32,7 @@ const TAPES = [
 
 const shelf = document.getElementById("shelf");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const flips = [];
 
 TAPES.forEach(t => {
   const box = document.createElement("div");
@@ -54,13 +55,14 @@ TAPES.forEach(t => {
         <h5>Starring</h5>
         <ul class="cast">${t.items.map(i => `<li><b>${i[0]}</b><i>${i[1]}</i><p>${i[2]}</p></li>`).join("")}</ul>
         <div class="meta"><span class="rating">${t.rating}</span><span class="barcode"></span></div>
-        <button class="rewind" type="button">&#9664;&#9664; REWIND</button>
+        <button class="rewind" type="button">&#9664;&#9664; FLIP BACK</button>
       </div>
     </div>`;
   const front = box.querySelector(".front");
   const rear = box.querySelector(".rear");
 
-  function flip(toBack) {
+  function flip(toBack, auto = false) {
+    if (!auto) pauseTour();
     document.body.classList.add("rewinding");
     setTimeout(() => document.body.classList.remove("rewinding"), reduce ? 0 : 600);
     box.classList.toggle("flipped", toBack);
@@ -68,20 +70,71 @@ TAPES.forEach(t => {
     front.setAttribute("aria-hidden", String(toBack));
     rear.toggleAttribute("inert", !toBack);
     rear.setAttribute("aria-hidden", String(!toBack));
-    setTimeout(() => (toBack ? rear.querySelector(".rewind") : front).focus({ preventScroll: true }), reduce ? 0 : 400);
+    if (!auto) setTimeout(() => (toBack ? rear.querySelector(".rewind") : front).focus({ preventScroll: true }), reduce ? 0 : 400);
   }
   front.addEventListener("click", () => flip(true));
   rear.querySelector(".rewind").addEventListener("click", () => flip(false));
   box.addEventListener("keydown", e => { if (e.key === "Escape" && box.classList.contains("flipped")) flip(false); });
+  flips.push({ box, flip });
   shelf.appendChild(box);
 });
 
-// Tape counter on the hero keeps running, like a VCR on play
+// PLAY runs a tour: each tape flips open for a few seconds, then the next one. Any manual flip pauses it.
+const playBtn = document.getElementById("play");
 const counter = document.getElementById("counter");
+const SHOW_MS = 5500;
+let touring = false;
+let tourIdx = 0;
+let stepTimer = null;
+let tickTimer = null;
 let secs = 0;
-if (!reduce) {
-  setInterval(() => {
-    secs++;
-    counter.textContent = `${Math.floor(secs / 3600)}:${String(Math.floor(secs / 60) % 60).padStart(2, "0")}:${String(secs % 60).padStart(2, "0")}`;
-  }, 1000);
+
+function paintCounter() {
+  counter.textContent = `${Math.floor(secs / 3600)}:${String(Math.floor(secs / 60) % 60).padStart(2, "0")}:${String(secs % 60).padStart(2, "0")}`;
 }
+function paintButton() {
+  playBtn.innerHTML = touring ? "&#10074;&#10074; PAUSE" : "&#9654; PLAY";
+  playBtn.setAttribute("aria-label", touring ? "Pause the tape tour" : "Play all tapes, one after another");
+}
+function closeAll() { flips.forEach(f => { if (f.box.classList.contains("flipped")) f.flip(false, true); }); }
+
+function showTape() {
+  closeAll();
+  const f = flips[tourIdx];
+  f.box.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+  setTimeout(() => { if (touring) f.flip(true, true); }, reduce ? 0 : 500);
+  stepTimer = setTimeout(() => {
+    f.flip(false, true);
+    tourIdx++;
+    if (tourIdx >= flips.length) { tourIdx = 0; touring = false; clearInterval(tickTimer); paintButton(); return; }
+    stepTimer = setTimeout(showTape, 700);
+  }, SHOW_MS);
+}
+function startTour() {
+  touring = true;
+  paintButton();
+  tickTimer = setInterval(() => { secs++; paintCounter(); }, 1000);
+  showTape();
+}
+function pauseTour() {
+  if (!touring) return;
+  touring = false;
+  clearTimeout(stepTimer);
+  clearInterval(tickTimer);
+  paintButton();
+}
+playBtn.addEventListener("click", () => (touring ? pauseTour() : startTour()));
+paintButton();
+
+// Real time in Chicago, plus whether the shop is open (7 a.m. to 10 p.m.)
+const clockEl = document.getElementById("clock");
+const stateEl = document.getElementById("open-state");
+function updateClock() {
+  const now = new Date();
+  const opts = { timeZone: "America/Chicago" };
+  clockEl.textContent = now.toLocaleTimeString("en-US", { ...opts, hour: "numeric", minute: "2-digit" });
+  const hour = Number(now.toLocaleString("en-US", { ...opts, hour: "numeric", hour12: false })) % 24;
+  stateEl.textContent = hour >= 7 && hour < 22 ? "OPEN NOW \u00b7 UNTIL 10 PM" : "CLOSED \u00b7 OPENS 7 AM";
+}
+updateClock();
+setInterval(updateClock, 30000);
