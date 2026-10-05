@@ -41,22 +41,64 @@ button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible, .choice:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 h1:focus, h2:focus { outline: none; }
 
-/* ---------- backdrop: curtains at the start, sun or rain after ---------- */
-.deco { position: fixed; inset: 0; z-index: 0; pointer-events: none; transition: opacity .3s; }
+/* ---------- backdrop: curtains, a sunny street or a rainy alley, then the genre you land in ---------- */
+body[data-path="start"] { --screen-bg: rgba(34, 5, 9, .78); }
+body[data-path="light"] { --screen-bg: rgba(252, 246, 234, .84); }
+body[data-path="dark"]  { --screen-bg: rgba(14, 13, 16, .8); }
+.deco, .deco2 { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.deco::after, .deco2::before, .deco2::after { content: ""; position: absolute; }
+
+/* start: red velvet curtains, a gold-edged valance and a warm spotlight */
+body[data-path="start"] { background-image: radial-gradient(ellipse 60% 70% at 50% 35%, rgba(130, 32, 44, .5), transparent 70%); }
 body[data-path="start"] .deco {
-  background:
-    repeating-linear-gradient(90deg, rgba(0,0,0,.2) 0 18px, rgba(255,255,255,.05) 18px 36px, rgba(0,0,0,.2) 36px 54px);
-  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 11%, transparent 20%, transparent 80%, #000 89%, #000 100%);
-  mask-image: linear-gradient(90deg, #000 0, #000 11%, transparent 20%, transparent 80%, #000 89%, #000 100%);
+  background: repeating-linear-gradient(90deg, #4a0b12 0 14px, #7a1a26 14px 28px, #5a1019 28px 42px, #8a2230 42px 52px);
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 11%, transparent 21%, transparent 79%, #000 89%, #000 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 11%, transparent 21%, transparent 79%, #000 89%, #000 100%);
 }
-body[data-path="light"] .deco { background: radial-gradient(ellipse 70% 55% at 85% -5%, rgba(255, 205, 130, .55), transparent 65%), radial-gradient(ellipse 50% 40% at 5% 100%, rgba(168, 98, 42, .12), transparent 70%); }
-body[data-path="dark"] .deco  { background: repeating-linear-gradient(100deg, rgba(255,255,255,.045) 0 1px, transparent 1px 17px), radial-gradient(ellipse at 50% 0%, rgba(201, 161, 90, .1), transparent 55%); }
+body[data-path="start"] .deco2::before { inset: 3.2rem 0 auto 0; height: 70px; background: radial-gradient(circle at 50% 0, #7a1824 0 31px, #d9ad5a 31px 34px, transparent 35px) 0 0 / 68px 70px repeat-x; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .45)); }
+body[data-path="start"] .deco2::after { inset: 0; background: linear-gradient(180deg, rgba(255, 225, 160, .22), transparent 80%); clip-path: polygon(44% 0, 56% 0, 88% 100%, 12% 100%); mix-blend-mode: screen; }
+
+/* light door: morning sun, a striped awning and a soft skyline */
+body[data-path="light"] { background-image: linear-gradient(180deg, #fbe9cf 0%, #f4ecdc 45%, #f1dfc4 100%); }
+body[data-path="light"] .deco {
+  background:
+    repeating-conic-gradient(from 200deg at 88% -8%, rgba(255, 196, 110, .24) 0 7deg, transparent 7deg 16deg),
+    radial-gradient(ellipse 70% 55% at 88% -5%, rgba(255, 205, 130, .6), transparent 65%),
+    radial-gradient(ellipse 22% 7% at 18% 24%, rgba(255, 255, 255, .8), transparent),
+    radial-gradient(ellipse 18% 6% at 40% 16%, rgba(255, 255, 255, .7), transparent),
+    radial-gradient(ellipse 50% 40% at 5% 100%, rgba(168, 98, 42, .14), transparent 70%);
+}
+body[data-path="light"][data-end=""] .deco2::before { inset: 3.2rem 0 auto 0; height: 34px; background: repeating-linear-gradient(90deg, #c8642e 0 48px, #f6e6cd 48px 96px); border-bottom: 4px solid #8f4219; filter: drop-shadow(0 6px 6px rgba(80, 40, 10, .25)); }
+body[data-path="light"][data-end=""] .deco2::after { inset: auto 0 0 0; height: 24vh; background: #ecd5b0; opacity: .7; clip-path: polygon(0 55%, 5% 55%, 5% 30%, 11% 30%, 11% 60%, 18% 60%, 18% 20%, 25% 20%, 25% 50%, 33% 50%, 33% 36%, 40% 36%, 40% 65%, 49% 65%, 49% 28%, 56% 28%, 56% 55%, 64% 55%, 64% 15%, 71% 15%, 71% 48%, 79% 48%, 79% 34%, 87% 34%, 87% 62%, 94% 62%, 94% 40%, 100% 40%, 100% 100%, 0 100%); }
+
+/* dark door: a rainy alley with a street lamp and lit windows */
+body[data-path="dark"] { background-image: linear-gradient(180deg, #17161d 0%, #0e0d10 55%, #08080a 100%); }
+body[data-path="dark"] .deco { background: radial-gradient(ellipse 34% 40% at 14% 0%, rgba(235, 180, 95, .26), transparent 70%), radial-gradient(ellipse at 50% 100%, rgba(90, 120, 150, .16), transparent 55%); }
+body[data-path="dark"] .deco::after { inset: -10% 0; background: repeating-linear-gradient(100deg, rgba(190, 210, 235, .17) 0 1px, transparent 1px 21px); animation: rainfall 1s linear infinite; }
+@keyframes rainfall { to { transform: translate(-24px, 62px); } }
+body[data-path="dark"][data-end=""] .deco2::before, body[data-path="dark"][data-end=""] .deco2::after { top: 0; bottom: 0; width: 13vw; background:
+  repeating-linear-gradient(180deg, transparent 0 40px, rgba(235, 185, 95, .5) 40px 58px) 28% 0 / 22% 100% no-repeat,
+  repeating-linear-gradient(180deg, transparent 20px 60px, rgba(235, 185, 95, .28) 60px 78px) 72% 0 / 22% 100% no-repeat,
+  linear-gradient(90deg, #14121a, #1c1a22); }
+body[data-path="dark"][data-end=""] .deco2::before { left: 0; }
+body[data-path="dark"][data-end=""] .deco2::after { right: 0; transform: scaleX(-1); }
+
+/* endings: a layer of the genre you landed in */
+body[data-end="romance"] .deco2::before { inset: 0; background: radial-gradient(circle at 12% 24%, rgba(255, 255, 255, .7) 0 5vw, transparent 5.2vw), radial-gradient(circle at 82% 16%, rgba(255, 190, 210, .6) 0 7.5vw, transparent 7.7vw), radial-gradient(circle at 26% 82%, rgba(255, 255, 255, .5) 0 4vw, transparent 4.2vw), radial-gradient(circle at 90% 74%, rgba(255, 200, 220, .55) 0 6vw, transparent 6.2vw); }
+body[data-end="comedy"] .deco2::before { inset: 0; background: radial-gradient(circle, rgba(184, 64, 47, .24) 0 6px, transparent 7px) 0 0 / 46px 46px, radial-gradient(circle, rgba(220, 160, 40, .3) 0 6px, transparent 7px) 23px 23px / 46px 46px; }
+body[data-end="fantasy"] .deco2::before { inset: 0; background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(60, 160, 110, .28), transparent 70%), radial-gradient(ellipse 60% 30% at 15% 100%, rgba(230, 195, 93, .3), transparent 70%), radial-gradient(2px 2px at 14% 20%, rgba(190, 150, 40, .9), transparent), radial-gradient(2px 2px at 52% 14%, rgba(190, 150, 40, .9), transparent), radial-gradient(2.5px 2.5px at 86% 22%, rgba(190, 150, 40, .9), transparent), radial-gradient(2px 2px at 76% 64%, rgba(190, 150, 40, .8), transparent); }
+body[data-end="horror"] .deco2::before { inset: 0; background: radial-gradient(ellipse at 50% 125%, rgba(150, 25, 25, .45), transparent 60%), radial-gradient(ellipse at 50% -15%, rgba(0, 0, 0, .5), transparent 55%), repeating-linear-gradient(90deg, transparent 0 46px, rgba(160, 30, 30, .2) 46px 48px, transparent 48px 97px); }
+body[data-end="scifi"] .deco2::before { inset: 0; background: linear-gradient(rgba(108, 196, 186, .2) 1px, transparent 1px) 0 0 / 52px 52px, linear-gradient(90deg, rgba(108, 196, 186, .2) 1px, transparent 1px) 0 0 / 52px 52px, radial-gradient(ellipse at 50% 110%, rgba(108, 196, 186, .3), transparent 60%); }
+body[data-end="noir"] .deco2::before { inset: 0; background: repeating-linear-gradient(115deg, rgba(255, 255, 255, .09) 0 40px, transparent 40px 96px); }
+body[data-end="mystery"] .deco2::before { inset: 0; background: radial-gradient(ellipse 50% 28% at 20% 72%, rgba(255, 255, 255, .12), transparent), radial-gradient(circle at 76% 24%, transparent 0 8.4vw, rgba(185, 149, 214, .35) 8.4vw 9vw, transparent 9.1vw), radial-gradient(circle at 76% 24%, rgba(185, 149, 214, .08) 0 8.4vw, transparent 8.5vw); }
+body[data-end="western"] .deco2::before { inset: 0; background: repeating-conic-gradient(from -90deg at 50% 108%, rgba(255, 190, 90, .2) 0 5deg, transparent 5deg 13deg), linear-gradient(to top, rgba(160, 100, 40, .3), transparent 32%); }
 
 /* ---------- top bar ---------- */
 .bar {
   position: relative; z-index: 2;
   display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.2rem;
   padding: .7rem 1.2rem;
+  background: var(--screen-bg);
   border-bottom: 1px solid var(--line);
   font-family: var(--sans); font-size: .85rem;
 }
@@ -70,7 +112,7 @@ body[data-path="dark"] .deco  { background: repeating-linear-gradient(100deg, rg
 
 /* ---------- the screen ---------- */
 .stage { position: relative; z-index: 1; flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: clamp(1.6rem, 6vw, 3.5rem) 1rem 2.5rem; }
-.screen { width: min(40rem, 100%); animation: arrive .25s ease both; }
+.screen { width: min(40rem, 100%); padding: clamp(1.2rem, 4vw, 2.1rem); background: var(--screen-bg); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 14px 40px rgba(0, 0, 0, .28); animation: arrive .25s ease both; }
 @keyframes arrive { from { opacity: 0; transform: translateY(6px); } }
 
 .eyebrow { font: 700 .75rem var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--accent); }
@@ -136,6 +178,7 @@ dialog[open] { animation: arrive .22s ease both; }
 }
 @media (prefers-reduced-motion: reduce) {
   html, body, .deco { transition: none; }
+  .deco::after { animation: none; }
   .screen, dialog[open] { animation: none; }
   .choice { transition: none; }
   .choice:hover { transform: none; }
