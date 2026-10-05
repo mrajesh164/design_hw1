@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCENE &amp; SIP — THE MENU, IN TYPE</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, set entirely in type: no images, just a giant ruled menu you can sort.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="top-strip"><span>Menu / 8 genres / 23 drinks</span><span>Hyde Park, Chicago</span></p>
+
+  <header class="hero">
+    <h1><span class="fit" data-fit>SCENE &amp; SIP</span></h1>
+  </header>
+  <p class="statement">Eight genres. Twenty-three drinks. One room.</p>
+
+  <nav class="bar" id="bar" aria-label="Menu controls">
+    <div class="sort" role="group" aria-label="Sort the menu">
+      <span class="sort-label">Sort</span>
+      <button type="button" data-sort="genre" aria-pressed="true">By genre</button>
+      <button type="button" data-sort="price" aria-pressed="false">By price</button>
+      <button type="button" data-sort="az" aria-pressed="false">A-Z</button>
+    </div>
+    <div class="index" id="index" aria-label="Jump to a genre"></div>
+  </nav>
+
+  <main id="menu"></main>
+
+  <footer class="foot">
+    <p class="foot-label">Visit</p>
+    <p class="foot-line"><span class="fit" data-fit data-max="30">1138 Marquee Lane</span></p>
+    <p class="foot-line"><span class="fit" data-fit data-max="30">Hyde Park, Chicago</span></p>
+    <p class="foot-line"><span class="fit" data-fit data-max="30">Open daily 7 a.m. to 10 p.m.</span></p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>
