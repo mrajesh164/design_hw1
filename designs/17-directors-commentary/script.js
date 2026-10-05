@@ -69,18 +69,20 @@ function homeHTML() {
   <section class="view home" aria-labelledby="vh">
     <div class="titleblock">
       <h1 id="vh" tabindex="-1">Scene &amp; Sip</h1>
-      <p class="edition">Special Edition</p>
+      <p class="edition">The director's cut of the menu</p>
     </div>
-    <nav class="menu" aria-label="Main menu">
-      <button type="button" class="menu-btn" data-act="scenes">Scene Selection <small>jump to a genre</small></button>
-      <button type="button" class="menu-btn" data-act="toggle" role="switch" aria-checked="${commentary}">
-        Commentary: <b>${commentary ? "ON" : "OFF"}</b><span class="sw" aria-hidden="true"></span>
-      </button>
-    </nav>
-    <p class="help">${commentary
-      ? "Commentary is on. When you read a genre's menu, hover over or tap a drink to read the director's note."
-      : "Commentary is off. Switch it on to read the director's notes on each drink."}
-      <span class="keys">Click an option, or use the up and down arrow keys and Enter.</span></p>
+    <div class="homepanel">
+      <nav class="menu" aria-label="Main menu">
+        <button type="button" class="menu-btn" data-act="scenes"><span>Scene Selection</span> <small>jump to a genre</small></button>
+        <button type="button" class="menu-btn" data-act="toggle" role="switch" aria-checked="${commentary}">
+          <span>Commentary: <b>${commentary ? "ON" : "OFF"}</b></span><span class="sw" aria-hidden="true"></span>
+        </button>
+      </nav>
+      <p class="help">${commentary
+        ? "Commentary is on. When you read a genre's menu, hover over or tap a drink to read the director's note."
+        : "Commentary is off. Switch it on to read the director's notes on each drink."}
+        <span class="keys">Click an option, or use the up and down arrow keys and Enter.</span></p>
+    </div>
   </section>`;
 }
 
@@ -93,12 +95,12 @@ function scenesHTML() {
     <div class="grid">
       ${GENRES.map((g, i) => `
       <button type="button" class="scene" data-act="pick" data-ch="${i}">
-        <span class="sn">Chapter ${pad(i + 1)}</span>
+        <span class="still ${g.id}" aria-hidden="true"><span class="sn">${pad(i + 1)}</span></span>
         <span class="sname">${g.name}</span>
         <span class="stag">${g.tag}</span>
       </button>`).join("")}
     </div>
-    <div class="navrow"><button type="button" class="nav" data-act="menu">&larr; Main menu</button></div>
+    <div class="navrow"><button type="button" class="nav alt" data-act="menu">&larr; Main menu</button></div>
   </section>`;
 }
 
@@ -130,18 +132,23 @@ function chapterHTML() {
         Commentary <b>${commentary ? "ON" : "OFF"}</b><span class="sw" aria-hidden="true"></span>
       </button>
     </div>
-    <h2 id="vh" tabindex="-1">${g.name}</h2>
-    <p class="tag">${g.tag}</p>
-    <ol class="drinks" aria-label="${g.name} drinks">${rows}</ol>
-    <p class="help">${commentary
-      ? "Commentary is on. Hover over, tap or press a drink to read the director's note."
-      : "Commentary is off. Use the switch above to turn it on."}
-      <span class="keys">Left and right arrow keys change the chapter.</span></p>
-    <div class="navrow">
-      <button type="button" class="nav" data-act="prev" ${ch === 0 ? "disabled" : ""}>&larr; Previous chapter</button>
+    <div class="chap-grid">
+      <div class="still-lg ${g.id}" aria-hidden="true"><span class="slabel">Chapter ${pad(ch + 1)}</span></div>
+      <div class="chap-main">
+        <h2 id="vh" tabindex="-1">${g.name}</h2>
+        <p class="tag">${g.tag}</p>
+        <ol class="drinks" aria-label="${g.name} drinks">${rows}</ol>
+        <p class="help">${commentary
+          ? "Commentary is on. Hover over, tap or press a drink to read the director's note."
+          : "Commentary is off. Use the switch above to turn it on."}
+          <span class="keys">Left and right arrow keys change the chapter.</span></p>
+      </div>
+    </div>
+    <div class="transport" role="group" aria-label="Chapter controls">
+      <button type="button" class="nav" data-act="prev" ${ch === 0 ? "disabled" : ""}>&#9664;&#9664; Previous</button>
+      <div class="pips">${GENRES.map((x, i) => `<button type="button" class="pip${i === ch ? " on" : ""}" data-act="pick" data-ch="${i}" aria-label="Chapter ${i + 1}: ${x.name}"${i === ch ? ' aria-current="true"' : ""}>${i + 1}</button>`).join("")}</div>
+      <button type="button" class="nav" data-act="next" ${ch === GENRES.length - 1 ? "disabled" : ""}>Next &#9654;&#9654;</button>
       <button type="button" class="nav alt" data-act="menu">Main menu</button>
-      <button type="button" class="nav alt" data-act="scenes">All chapters</button>
-      <button type="button" class="nav" data-act="next" ${ch === GENRES.length - 1 ? "disabled" : ""}>Next chapter &rarr;</button>
     </div>
   </section>`;
 }
