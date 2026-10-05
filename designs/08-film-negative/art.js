@@ -110,5 +110,92 @@ const ART = {
     <circle cx="100" cy="52" r="42" fill="#2a2a2a"/><circle cx="100" cy="52" r="35" fill="#f1e2c0"/>
     <g fill="#3b4ea8"><circle cx="82" cy="38" r="4.5"/><circle cx="91" cy="43" r="4.5"/><circle cx="84" cy="49" r="4.5"/><circle cx="76" cy="44" r="4.5"/></g>
     <g fill="#f6d86a" stroke="#d9b03a" stroke-width="1.5"><circle cx="108" cy="36" r="6"/><circle cx="118" cy="44" r="6"/><circle cx="109" cy="48" r="6"/></g>
-    <g fill="#8a5a2b"><ellipse cx="90" cy="68" rx="5" ry="3.5"/><ellipse cx="100" cy="72" rx="5" ry="3.5"/><ellipse cx="111" cy="68" rx="5" ry="3.5"/><ellipse cx="104" cy="62" rx="5" ry="3.5"/></g>`
+    <g fill="#8a5a2b"><ellipse cx="90" cy="68" rx="5" ry="3.5"/><ellipse cx="100" cy="72" rx="5" ry="3.5"/><ellipse cx="111" cy="68" rx="5" ry="3.5"/><ellipse cx="104" cy="62" rx="5" ry="3.5"/></g>`,
+
+  "The Usual Suspect": () => `${shadow(110, 46)}
+    <ellipse cx="110" cy="88" rx="44" ry="8" fill="#e8e1d2"/>
+    <path d="M84 52 H136 V70 Q136 88 110 88 Q84 88 84 70 Z" fill="#f4f1ea"/>
+    <path d="M84 62 H136" stroke="#4a6fa5" stroke-width="3"/>
+    <ellipse cx="110" cy="52" rx="26" ry="7" fill="#b9843a"/><ellipse cx="110" cy="52" rx="21" ry="5" fill="#d9a85a"/>
+    ${handle(136, 58)}
+    <path d="M142 40 q10 -10 4 -20 q-8 6 -4 20" fill="#f5d84a" stroke="#d9b323" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M142 40 q-12 -2 -14 6" fill="none" stroke="#f5d84a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="150" y="76" width="28" height="14" rx="2" fill="#d9d1bd" stroke="#a89f88"/><path d="M156 83 H172" stroke="#a89f88" stroke-width="2"/>
+    ${steam(110, 6)}`,
+
+  "Red Herring": () => `${shadow(100, 40)}
+    <path d="M70 48 H126 V80 Q126 92 114 92 H82 Q70 92 70 80 Z" fill="#f4f1ea"/>
+    <ellipse cx="98" cy="48" rx="28" ry="6" fill="#a8764a"/><ellipse cx="98" cy="48" rx="22" ry="4" fill="#e6d2b0"/>
+    <path d="M88 48 q10 -3 20 0" stroke="#8a3f1c" stroke-width="2" fill="none" stroke-linecap="round"/>
+    ${handle(126, 54)}
+    <g fill="none" stroke="#8b8f94" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M86 38 q-8 -8 0 -14 t0 -14"/><path d="M98 40 q-8 -8 0 -14 t0 -14"/><path d="M110 38 q-8 -8 0 -14 t0 -14"/></g>
+    <path d="M150 52 L168 52" stroke="#555" stroke-width="2"/>
+    <g transform="translate(150 50)"><path d="M0 18 Q12 0 28 14 L40 4 L38 22 L28 20 Q12 36 0 18 Z" fill="#d6342a" stroke="#8c1b14" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="14" r="2" fill="#fff"/><circle cx="9" cy="14" r="1" fill="#222"/></g>`,
+
+  "Plot Twist": (n) => `${shadow(110, 26)}
+    <clipPath id="c${n}"><path d="M90 24 H130 L127.6 90 H92.4 Z"/></clipPath>
+    ${glass("M88 20 H132 L128 92 H92 Z")}
+    <g clip-path="url(#c${n})"><rect x="80" y="24" width="60" height="16" fill="#e9c98c"/><rect x="80" y="40" width="60" height="54" fill="#b87a3e"/><path d="M80 40 q10 -8 20 0 t20 0 t20 0 V50 H80 Z" fill="#3a2214"/></g>
+    ${ice(97, 52)}${ice(112, 64, 8)}
+    <path d="M120 6 L112 72" stroke="#6b8f4a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M148 40 q-12 -18 6 -22 q16 -2 10 14 q-4 10 -14 6" fill="none" stroke="#b3341f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M62 30 q10 -12 22 -2 q-6 2 -8 8 z" fill="#d9b36a"/>`,
+
+  "The Chosen One": () => `${shadow(110, 36)}
+    <path d="M82 54 H138 V80 Q138 92 126 92 H94 Q82 92 82 80 Z" fill="#f4f1ea"/>
+    <ellipse cx="110" cy="54" rx="28" ry="6" fill="#d99a1c"/><ellipse cx="110" cy="54" rx="22" ry="4" fill="#f2c24a"/>
+    ${handle(138, 60)}
+    <path d="M110 76 l-3 -7 -7 -1 5 -5 -1 -7 6 4 6 -4 -1 7 5 5 -7 1z" fill="#d99a1c" transform="translate(0 4)"/>
+    <path d="M90 36 L96 20 L103 32 L110 14 L117 32 L124 20 L130 36 Z" fill="#ffd45e" stroke="#d99a1c" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="110" cy="14" r="3" fill="#d6342a"/><circle cx="96" cy="20" r="2.5" fill="#3b6bff"/><circle cx="124" cy="20" r="2.5" fill="#3b6bff"/>
+    <rect x="90" y="34" width="40" height="5" fill="#d99a1c"/>
+    ${star(62, 40)}${star(160, 50)}${star(54, 70, "#fff")}`,
+
+  "Dragon's Breath": () => `${shadow(100, 40)}
+    <path d="M70 52 H126 V80 Q126 92 114 92 H82 Q70 92 70 80 Z" fill="#f4f1ea"/>
+    <ellipse cx="98" cy="52" rx="28" ry="6" fill="#4a2a1c"/><ellipse cx="98" cy="52" rx="22" ry="4" fill="#6b3d28"/>
+    ${handle(126, 58)}
+    <path d="M98 50 C84 40 92 28 96 16 C100 26 112 28 108 40 C106 46 102 48 98 50 Z" fill="#ff7a1c"/>
+    <path d="M98 50 C92 44 96 36 98 30 C102 36 106 40 98 50 Z" fill="#ffd45e"/>
+    <g transform="rotate(-20 156 70)"><path d="M140 72 Q156 56 176 62 Q166 78 144 80 Z" fill="#d6342a" stroke="#8c1b14" stroke-width="1.5" stroke-linejoin="round"/><path d="M176 62 q6 -4 10 -10" stroke="#3a7a2a" stroke-width="3" fill="none" stroke-linecap="round"/></g>`,
+
+  "Elixir of Life": (n) => `${shadow(110, 26)}
+    <clipPath id="c${n}"><path d="M90 26 H130 L127.6 90 H92.4 Z"/></clipPath>
+    ${glass("M88 22 H132 L128 92 H92 Z")}
+    <g clip-path="url(#c${n})"><rect x="80" y="30" width="60" height="62" fill="#f7ec9a"/><rect x="80" y="30" width="60" height="14" fill="#fbf4c0"/></g>
+    <g fill="#fff" opacity=".85"><circle cx="102" cy="60" r="2.5"/><circle cx="118" cy="52" r="2"/><circle cx="112" cy="74" r="2.5"/><circle cx="104" cy="82" r="2"/><circle cx="122" cy="70" r="2"/></g>
+    ${ice(98, 40, -8)}
+    <g transform="translate(120 36)"><g fill="#f6a8d0"><circle cx="0" cy="-7" r="5"/><circle cx="7" cy="-2" r="5"/><circle cx="4" cy="6" r="5"/><circle cx="-4" cy="6" r="5"/><circle cx="-7" cy="-2" r="5"/></g><circle cx="0" cy="0" r="3.5" fill="#ffd45e"/></g>
+    <g transform="translate(104 50) scale(.8)"><g fill="#b7a0f0"><circle cx="0" cy="-7" r="5"/><circle cx="7" cy="-2" r="5"/><circle cx="4" cy="6" r="5"/><circle cx="-4" cy="6" r="5"/><circle cx="-7" cy="-2" r="5"/></g><circle cx="0" cy="0" r="3.5" fill="#fff"/></g>
+    ${star(66, 34)}${star(156, 44, "#fff")}${star(154, 76)}`,
+
+  "Slapstick": () => `${shadow(100, 40)}
+    <path d="M72 52 H128 V80 Q128 92 116 92 H84 Q72 92 72 80 Z" fill="rgba(255,255,255,.55)" stroke="#d6c88a" stroke-width="2"/>
+    <path d="M74 58 H126 V80 Q126 90 116 90 H84 Q74 90 74 80 Z" fill="#f6e7a6"/>
+    <ellipse cx="100" cy="56" rx="26" ry="5" fill="#fff6cc"/>
+    <path d="M128 60 q16 0 14 12 q-2 10 -14 10" fill="none" stroke="#d6c88a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M96 40 q4 -6 10 -2" stroke="#8a5a2b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g transform="rotate(-8 158 86)"><path d="M140 88 Q158 70 178 86 Q160 84 140 88 Z" fill="#f2d33c" stroke="#c9a41a" stroke-width="2" stroke-linejoin="round"/><path d="M150 82 q8 -6 18 0" stroke="#c9a41a" stroke-width="1.5" fill="none"/><path d="M176 84 q4 -2 6 2" stroke="#8a5a2b" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+    <g fill="none" stroke="#d6342a" stroke-width="2.5" stroke-linecap="round"><path d="M150 58 l6 -6 M158 62 l8 -2 M148 68 l-8 -2"/></g>
+    <path d="M52 86 H70" stroke="#c9a41a" stroke-width="2" stroke-linecap="round"/>`,
+
+  "Punchline": () => `${shadow(100, 40)}
+    <path d="M72 50 H128 V80 Q128 92 116 92 H84 Q72 92 72 80 Z" fill="#f4f1ea"/>
+    <ellipse cx="100" cy="50" rx="28" ry="6" fill="#5a3320"/><ellipse cx="100" cy="50" rx="22" ry="4" fill="#8a5a3a"/>
+    ${handle(128, 56)}
+    <path d="M86 38 q14 -12 28 0 q-6 6 -14 6 q-8 0 -14 -6z" fill="#fff" stroke="#e5ddca" stroke-width="1.5"/>
+    <g transform="rotate(25 100 66)"><path d="M92 62 q4 -8 8 0 q4 -8 8 0 q4 8 -8 14 q-12 -6 -8 -14z" fill="#d9a85a" stroke="#a87a30" stroke-width="1.5" stroke-linejoin="round"/><path d="M96 66 l8 0" stroke="#a87a30" stroke-width="1.5" opacity=".6"/></g>
+    <g transform="translate(142 14)"><path d="M4 0 H46 a6 6 0 0 1 6 6 V22 a6 6 0 0 1 -6 6 H22 L12 38 V28 H4 a6 6 0 0 1 -6 -6 V6 a6 6 0 0 1 6 -6 Z" fill="#fff" stroke="#c9bfa8" stroke-width="2" stroke-linejoin="round"/><text x="25" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d6342a">HA!</text></g>`,
+
+  "Laugh Track": (n) => `${shadow(110, 28)}
+    <clipPath id="c${n}"><path d="M88 42 H132 L128 90 H92 Z"/></clipPath>
+    ${glass("M86 34 H134 L129.5 92 H90.5 Z")}
+    <g clip-path="url(#c${n})"><rect x="80" y="40" width="60" height="56" fill="#3a2214"/><rect x="80" y="40" width="60" height="12" fill="#c28a52"/></g>
+    <path d="M90 42 q8 -8 20 -4 q12 -6 20 4 q-8 6 -20 4 q-12 4 -20 -4z" fill="#fff3d2"/>
+    <circle cx="110" cy="26" r="15" fill="#fff9e8" stroke="#eadcb8" stroke-width="2"/>
+    <circle cx="104" cy="22" r="3" fill="#fff" opacity=".8"/>
+    <circle cx="116" cy="12" r="4.5" fill="#d6342a"/><path d="M116 8 q4 -6 8 -6" stroke="#4a7a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M124 6 L116 66" stroke="#4aa0d9" stroke-width="4" stroke-linecap="round"/>
+    ${ice(96, 62, -8)}${ice(112, 72, 6)}
+    <g fill="#d6342a"><circle cx="64" cy="40" r="2"/><circle cx="74" cy="30" r="2"/><circle cx="156" cy="36" r="2" fill="#3b6bff"/><circle cx="164" cy="50" r="2" fill="#f2c24a"/><circle cx="58" cy="56" r="2" fill="#3b6bff"/></g>`
 };
