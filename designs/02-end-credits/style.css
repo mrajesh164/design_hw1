@@ -32,7 +32,7 @@ body {
 .opening { margin-bottom: 26vh; }
 .opening h1, .logo {
   margin: 1.5rem 0;
-  font-size: clamp(2.5rem, 11vw, 7.5rem);
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
   font-weight: 400;
   letter-spacing: .28em;
   padding-left: .28em;

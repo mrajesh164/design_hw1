@@ -23,7 +23,7 @@ const GENRES = [
 // Each cue is one subtitle card. Scroll position picks the active cue.
 const cues = [
   { scene: "intro", html: "<i>[espresso machine hissing]</i>" },
-  { scene: "intro", html: "Welcome to Home Brew.<br>Every drink here is a genre." },
+  { scene: "intro", html: "Welcome to Scene &amp; Sip.<br>Every drink here is a genre." },
   { scene: "intro", html: "Open daily, 7 a.m. to 10 p.m.<br>1138 Marquee Lane, Hyde Park" }
 ];
 GENRES.forEach(g => {

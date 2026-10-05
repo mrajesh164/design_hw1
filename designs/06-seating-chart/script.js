@@ -101,7 +101,7 @@ printBtn.addEventListener("click", () => {
   const chosen = seats.filter(s => picked.has(s.id));
   document.getElementById("stub-list").innerHTML = chosen.map(s => `
     <div class="stub">
-      <div class="main"><small>HOME BREW &middot; ADMIT ONE &middot; ${s.genre.name.toUpperCase()}</small><b>${s.name}</b><small>${s.desc}</small></div>
+      <div class="main"><small>SCENE &amp; SIP &middot; ADMIT ONE &middot; ${s.genre.name.toUpperCase()}</small><b>${s.name}</b><small>${s.desc}</small></div>
       <div class="side"><small>SEAT</small><b>${s.id}</b><span>${money(s.price)}</span><div class="bars"></div></div>
     </div>`).join("");
   dlg.showModal();

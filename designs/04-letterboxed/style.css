@@ -101,7 +101,7 @@ button:focus-visible, .back:focus-visible { outline: 2px solid #ffe45e; outline-
 .intro { background: radial-gradient(ellipse at 50% 130%, #7a4a1e, transparent 65%), linear-gradient(#0b0806, #1b110a); }
 .intro .flare { left: 10%; right: 10%; top: 48%; height: 2px; background: linear-gradient(90deg, transparent, #ffe9c2, transparent); box-shadow: 0 0 40px 10px rgba(255,200,120,.35); animation: breathe 5s ease-in-out infinite alternate; }
 @keyframes breathe { from { opacity: .5; transform: scaleX(.7); } to { opacity: 1; transform: scaleX(1); } }
-.intro .title { left: 0; right: 0; top: 30%; text-align: center; font-size: 9cqw; font-weight: 300; letter-spacing: .35em; padding-left: .35em; color: #f3e6cc; text-shadow: 0 0 30px rgba(255,190,110,.5); }
+.intro .title { left: 0; right: 0; top: 30%; text-align: center; font-size: 7cqw; font-weight: 300; letter-spacing: .35em; padding-left: .35em; color: #f3e6cc; text-shadow: 0 0 30px rgba(255,190,110,.5); }
 
 /* horror */
 .horror { background: linear-gradient(#070d0f, #1b3036 70%, #2a464d); }

@@ -58,7 +58,7 @@ body.rewinding .track { animation-duration: .9s; opacity: .9; height: 120px; }
 .play { color: #7dff7d; }
 @keyframes blink { 50% { opacity: 0; } }
 
-h1.glitch { position: relative; margin: 0; font-size: clamp(2rem, 8.5vw, 5.5rem); font-weight: 700; letter-spacing: .08em; line-height: 1; }
+h1.glitch { position: relative; margin: 0; font-size: clamp(1.7rem, 6.2vw, 4.4rem); font-weight: 700; letter-spacing: .08em; line-height: 1; }
 .tagline { margin: 1.2rem 0 0; font-size: clamp(1rem, 2.4vw, 1.5rem); letter-spacing: .12em; line-height: 1.5; }
 .select { margin: 2rem 0 0; padding: .4rem 1rem; background: var(--osd); color: var(--blue); font-weight: 700; letter-spacing: .2em; text-shadow: none; }
 .arrow { display: inline-block; animation: bounce 1s steps(2) infinite; }

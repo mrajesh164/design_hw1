@@ -39,16 +39,16 @@ TAPES.forEach(t => {
   box.innerHTML = `
     <div class="box-inner">
       <button class="face front" type="button" aria-label="Flip the ${t.name} tape over to read the menu on the back">
-        <span class="spine-text"><span>HOME BREW VIDEO &middot; ${t.name.toUpperCase()}</span></span>
+        <span class="spine-text"><span>SCENE &amp; SIP VIDEO &middot; ${t.name.toUpperCase()}</span></span>
         <span class="cover">
-          <span class="studio">HOME BREW VIDEO PRESENTS</span>
+          <span class="studio">SCENE &amp; SIP VIDEO PRESENTS</span>
           <span class="sticker">NEW<br>RELEASE</span>
           <h3>${t.title}<small>${t.tag}</small></h3>
           <span class="flip-hint">Flip for the menu &#8635;</span>
         </span>
       </button>
       <div class="face rear" aria-hidden="true" inert>
-        <div class="band"><span>HOME BREW VIDEO</span><span>VHS &middot; HI-FI</span></div>
+        <div class="band"><span>SCENE &amp; SIP VIDEO</span><span>VHS &middot; HI-FI</span></div>
         <h4>${t.title}</h4>
         <p class="syn">${t.syn}</p>
         <h5>Starring</h5>
