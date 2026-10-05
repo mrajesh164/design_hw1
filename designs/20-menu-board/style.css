@@ -77,6 +77,11 @@ ul { list-style: none; }
 .row .mk { flex: none; width: 1.2rem; text-align: center; color: var(--amber); font-weight: 700; }
 .row .mk::before { content: "+"; }
 .row[aria-expanded="true"] .mk::before { content: "\2212"; }
+/* a pressed-in, lit look for the drink that is open */
+.row:active { transform: scale(.985); }
+.row[aria-expanded="true"] { background: rgba(var(--rgb), .34); box-shadow: inset 4px 0 0 rgb(var(--rgb)), 0 0 14px rgba(var(--rgb), .45); }
+.row[aria-expanded="true"] .nm { color: #fff; text-shadow: 0 0 10px rgba(255, 230, 180, .75); }
+.row[aria-expanded="true"] .mk { color: #fff; }
 
 .desc { display: none; margin: .1rem .45rem .6rem; padding: .6rem .75rem; background: rgba(0, 0, 0, .38); border-left: 3px solid rgb(var(--rgb)); border-radius: 0 6px 6px 0; font-size: .96rem; line-height: 1.45; color: #f0e2cc; }
 .row[aria-expanded="true"] + .desc { display: block; }
