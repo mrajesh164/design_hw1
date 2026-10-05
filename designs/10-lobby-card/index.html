@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCENE &amp; SIP — Lobby Cards</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, shown as eight 1940s theater lobby cards you can pull off the wall.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hall">
+    <p class="kick">&#9733; Now playing in the lobby &#9733;</p>
+    <h1>SCENE &amp; SIP</h1>
+    <p class="how">Click a card to see what is playing</p>
+  </header>
+
+  <main>
+    <ul class="wall" id="wall"></ul>
+    <noscript><p class="nojs">Turn on JavaScript to pull the lobby cards off the wall and read the menu.</p></noscript>
+  </main>
+
+  <footer class="plaque">
+    <p>1138 Marquee Lane, Hyde Park, Chicago &nbsp;&middot;&nbsp; Open daily, 7 a.m. to 10 p.m.</p>
+  </footer>
+
+  <dialog id="viewer" class="viewer" aria-labelledby="v-title">
+    <div class="v-inner">
+      <button class="v-close" id="v-close" type="button">&#10005; Close</button>
+      <div class="banner" aria-hidden="true"><span class="scene"></span><span class="dots"></span></div>
+      <div class="v-body">
+        <p class="v-kicker">Now showing</p>
+        <h2 id="v-title"></h2>
+        <p class="v-tag" id="v-tag"></p>
+        <p class="v-feat">Featuring&hellip;</p>
+        <ul class="v-list" id="v-list"></ul>
+        <div class="v-nav">
+          <button type="button" id="v-prev"></button>
+          <span class="v-count" id="v-count"></span>
+          <button type="button" id="v-next"></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -35,7 +35,7 @@ const ENTRIES = [
   { n: 9, status: "shot", date: "2026-10-05", path: "designs/09-silent-film/index.html", phase: 2, title: "Silent Film", tag: "Era", hue: 35,
     question: "Can intertitle cards replace sections entirely?",
     idea: "Tinted cards, iris transitions, no hero image." },
-  { n: 10, phase: 2, title: "Lobby Card", tag: "Illustration", hue: 15,
+  { n: 10, status: "shot", date: "2026-10-05", path: "designs/10-lobby-card/index.html", phase: 2, title: "Lobby Card", tag: "Illustration", hue: 15,
     question: "Can CSS alone fake 1940s hand-lettered poster art?",
     idea: "Illustrated, saturated, borders and starbursts." },
   { n: 11, status: "shot", date: "2026-10-05", path: "designs/11-cable-access/index.html", phase: 2, title: "Cable Access, 1987", tag: "Era", hue: 160,
