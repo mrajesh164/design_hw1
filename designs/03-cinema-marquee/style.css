@@ -148,7 +148,7 @@ main { width: min(70rem, 100% - 2rem); margin: 0 auto; padding: 2.5rem 0 1rem; }
 }
 .booth h2 span { display: block; margin-top: .4rem; font-size: .75rem; letter-spacing: .2em; opacity: .65; }
 
-.tickets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.tickets { display: grid; grid-template-columns: repeat(4, 9.5rem); gap: 1.4rem 1rem; justify-content: center; }
 .ticket {
   position: relative;
   width: 9.5rem;
@@ -165,7 +165,7 @@ main { width: min(70rem, 100% - 2rem); margin: 0 auto; padding: 2.5rem 0 1rem; }
   transition: transform .2s, box-shadow .2s;
 }
 .ticket:nth-child(1) { --r: -2.5deg; } .ticket:nth-child(2) { --r: 1.5deg; } .ticket:nth-child(3) { --r: -1deg; }
-.ticket:nth-child(4) { --r: 2.5deg; } .ticket:nth-child(5) { --r: -1.5deg; }
+.ticket:nth-child(4) { --r: 2.5deg; } .ticket:nth-child(5) { --r: -1.5deg; } .ticket:nth-child(6) { --r: 2deg; } .ticket:nth-child(7) { --r: -2deg; } .ticket:nth-child(8) { --r: 1deg; }
 .ticket::before, .ticket::after {
   content: "";
   position: absolute;
@@ -205,5 +205,6 @@ footer p { margin: 0; }
   border-radius: 3px; box-shadow: 2px 3px 6px rgba(0,0,0,.4);
 }
 
-@media (max-width: 600px) { .board { border-width: 4px; } .ticket { width: calc(50% - .5rem); } }
+@media (max-width: 52rem) { .tickets { grid-template-columns: repeat(2, minmax(0, 9.5rem)); } }
+@media (max-width: 600px) { .board { border-width: 4px; } .ticket { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .edge::before, .edge::after, .sky::before { animation: none; } .ticket { transition: none; } }

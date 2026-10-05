@@ -32,6 +32,24 @@ const GENRES = [
     items: [
       ["High Noon", "HIGH NOON", "$3.75", "Cowboy coffee, grounds and all."],
       ["The Good, The Bad, and The Oatmeal", "GOOD BAD OATMEAL", "$7.00", "Skillet oatmeal with three toppings. Pick one."]
+    ] },
+  { id: "mystery", name: "Mystery", tag: "Every sip is a clue", footer: "TRUST NO ONE",
+    items: [
+      ["The Usual Suspect", "USUAL SUSPECT", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
+      ["Red Herring", "RED HERRING", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
+      ["Plot Twist", "PLOT TWIST", "$6.00", "Iced chai with a shot of espresso. Sweet, then suddenly not."]
+    ] },
+  { id: "fantasy", name: "Fantasy", tag: "Brewed with a little magic", footer: "THE QUEST AWAITS",
+    items: [
+      ["The Chosen One", "THE CHOSEN ONE", "$6.50", "Golden turmeric latte with honey. Destined for greatness."],
+      ["Dragon's Breath", "DRAGONS BREATH", "$5.75", "Spiced hot chocolate with chili and cinnamon. Mind the fire."],
+      ["Elixir of Life", "ELIXIR OF LIFE", "$6.25", "Sparkling elderflower lemonade with edible flowers."]
+    ] },
+  { id: "comedy", name: "Comedy", tag: "Guaranteed to lighten the mood", footer: "NO REFUNDS ON JOKES",
+    items: [
+      ["Slapstick", "SLAPSTICK", "$4.50", "Banana milk latte. Slips right down."],
+      ["Punchline", "PUNCHLINE", "$5.25", "Peanut butter mocha. Sweet setup, salty finish."],
+      ["Laugh Track", "LAUGH TRACK", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."]
     ] }
 ];
 
@@ -67,7 +85,10 @@ const TEASERS = {
   scifi: "NO ONE HEARS YOU SIP",
   noir: "SERVED AFTER DARK",
   romance: "BEST WITH SOMEONE",
-  western: "STRONG AND SIMPLE"
+  western: "STRONG AND SIMPLE",
+  mystery: "EVERY SIP IS A CLUE",
+  fantasy: "BREWED WITH MAGIC",
+  comedy: "GUARANTEED TO LAUGH"
 };
 function rowsFor(g) {
   const low = Math.min(...g.items.map(i => parseFloat(i[2].slice(1))));
