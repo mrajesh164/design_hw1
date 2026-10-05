@@ -25,7 +25,10 @@
         <div><dt>Hours</dt><dd>Daily 7 &ndash; 10</dd></div>
         <div><dt>Draft</dt><dd>v3, pencil</dd></div>
       </dl>
-      <button id="animatic" class="animatic" type="button" aria-pressed="false">&#9654; Play animatic</button>
+      <nav class="jump" aria-label="Jump to a genre">
+        <span>Jump to</span>
+        <a href="#horror">Horror</a><a href="#scifi">Sci-Fi</a><a href="#noir">Noir</a><a href="#romance">Romance</a><a href="#western">Western</a><a href="#hours">Hours</a>
+      </nav>
     </header>
 
     <div class="grid">
@@ -57,11 +60,11 @@
         </svg></div>
         <dl class="notes">
           <div><dt>Action</dt><dd>Barista wipes the bar. Slides over a menu.</dd></div>
-          <div><dt>Dialogue</dt><dd class="quote">"What genre are you today? I can work with any of them."</dd></div>
+          <div><dt>Barista</dt><dd class="quote">"What genre are you today? I can work with any of them."</dd></div>
         </dl>
       </article>
 
-      <article class="shot genre">
+      <article class="shot genre" id="horror">
         <header><span class="num">3</span><span class="type">CLOSE UP &middot; HORROR</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a coffee cup with a ghost-shaped wisp of steam">
           <path d="M62 44 H98 L93 76 H67 Z"/><path d="M98 50 Q112 52 108 62 Q104 68 95 66"/>
@@ -76,7 +79,7 @@
         </ul>
       </article>
 
-      <article class="shot genre">
+      <article class="shot genre" id="scifi">
         <header><span class="num">4</span><span class="type">LOW ANGLE &middot; SCI-FI</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a flying saucer beaming up a coffee cup">
           <ellipse cx="80" cy="20" rx="22" ry="6"/><path d="M68 18 Q80 4 92 18"/><path d="M70 26 L58 46 M90 26 L102 46"/>
@@ -91,7 +94,7 @@
         </ul>
       </article>
 
-      <article class="shot genre">
+      <article class="shot genre" id="noir">
         <header><span class="num">5</span><span class="type">DUTCH ANGLE &middot; NOIR</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a cup and saucer beside a fedora, with blinds casting diagonal light">
           <path d="M0 10 L60 0 M0 22 L80 8 M0 34 L100 16 M0 46 L120 24 M0 58 L140 32"/>
@@ -107,7 +110,7 @@
         </ul>
       </article>
 
-      <article class="shot genre">
+      <article class="shot genre" id="romance">
         <header><span class="num">6</span><span class="type">TWO SHOT &middot; ROMANCE</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of two cups clinking with a heart between them">
           <path d="M40 40 H66 L62 68 H44 Z" transform="rotate(-8 53 54)"/><path d="M94 40 H120 L116 68 H98 Z" transform="rotate(8 107 54)"/>
@@ -124,7 +127,7 @@
         </ul>
       </article>
 
-      <article class="shot genre">
+      <article class="shot genre" id="western">
         <header><span class="num">7</span><span class="type">EXTREME WIDE &middot; WESTERN</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a desert sunset with a cactus and a cup on a fence post">
           <path d="M0 70 H160"/><path d="M50 70 A30 30 0 0 1 110 70"/><path d="M80 28 V20 M52 40 l-6 -5 M108 40 l6 -5"/>
@@ -138,7 +141,7 @@
         </ul>
       </article>
 
-      <article class="shot">
+      <article class="shot" id="hours">
         <header><span class="num">8</span><span class="type">INSERT &middot; THE CLOCK</span></header>
         <div class="art"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a wall clock with an arrow sweeping from seven to ten">
           <circle cx="80" cy="46" r="30"/><path d="M80 20 v4 M80 72 v-4 M54 46 h4 M106 46 h-4"/><path d="M80 46 L80 30 M80 46 L68 56"/>
@@ -160,7 +163,7 @@
         </svg></div>
         <dl class="notes">
           <div><dt>Action</dt><dd>A bell rings. The scene begins again.</dd></div>
-          <div><dt>Dialogue</dt><dd class="quote">"Come in."</dd></div>
+          <div><dt>Barista</dt><dd class="quote">"Come in."</dd></div>
           <div><dt>Where</dt><dd class="big">1138 Marquee Lane, Hyde Park, Chicago</dd></div>
         </dl>
       </article>

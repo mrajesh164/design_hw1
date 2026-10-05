@@ -43,14 +43,11 @@ h1 { margin: 0; font-size: clamp(3rem, 10vw, 6.5rem); line-height: .95; letter-s
 .fields div { display: flex; gap: .6rem; align-items: baseline; border-bottom: 1px solid var(--faint); }
 .fields dt { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); flex: 0 0 5.2rem; }
 .fields dd { margin: 0; }
-.animatic {
-  grid-column: 1 / -1; justify-self: start;
-  font: inherit; color: var(--pencil); background: transparent; cursor: pointer;
-  border: 2px solid var(--pencil); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; padding: .3rem 1rem;
-}
-.animatic:hover { background: rgba(200,50,42,.12); }
-.animatic[aria-pressed="true"] { background: var(--marker); border-color: var(--marker); color: #fff; }
-.animatic:focus-visible, .back:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; }
+.jump { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem .8rem; }
+.jump span { color: var(--faint); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; margin-right: .3rem; }
+.jump a { color: var(--pencil); text-decoration: none; padding: .1rem .7rem; border: 2px solid var(--pencil); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+.jump a:hover { background: #ffe45e; }
+.jump a:focus-visible, .back:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; }
 
 /* ---------- panels ---------- */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem 1.8rem; padding-left: 2.2rem; }
@@ -80,8 +77,6 @@ h1 { margin: 0; font-size: clamp(3rem, 10vw, 6.5rem); line-height: .95; letter-s
 .menu small { grid-column: 1 / -1; font-size: .92rem; color: #4a463c; }
 
 .shot:hover { transform: translateY(-4px) rotate(-.4deg); }
-.shot.live .art { outline: 4px solid var(--marker); outline-offset: 5px; }
-.playing .shot:not(.live) { opacity: .35; }
 
 .foot { padding: 2.5rem 0 0 2.2rem; color: var(--faint); font-size: .9rem; }
 .foot p { margin: 0; }
@@ -89,12 +84,14 @@ h1 { margin: 0; font-size: clamp(3rem, 10vw, 6.5rem); line-height: .95; letter-s
 .back { position: fixed; right: 12px; bottom: 12px; padding: .5rem .8rem; background: #ffe45e; color: #222; font: 700 .9rem var(--hand); text-decoration: none; transform: rotate(-2deg); box-shadow: 2px 3px 6px rgba(0,0,0,.3); }
 .back:hover { transform: rotate(0); }
 
-/* shots sketch themselves in (only when JS is available) */
-.js .art svg :is(path, circle, ellipse) { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.js .shot.in .art svg :is(path, circle, ellipse) { animation: draw 1.3s ease forwards; animation-delay: calc(var(--i, 0) * 90ms); }
-.js .art text { opacity: 0; transition: opacity .6s 1s; }
-.js .shot.in .art text { opacity: 1; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
+/* sketches are always fully drawn; on hover-capable screens a shot re-draws itself under the pointer */
+.art svg :is(path, circle, ellipse) { stroke-dasharray: 1; stroke-dashoffset: 0; }
+@media (hover: hover) {
+  .shot:hover .art svg :is(path, circle, ellipse) { animation: draw .9s ease; }
+}
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.shot { scroll-margin-top: 1.5rem; }
+html { scroll-behavior: smooth; }
 
 @media (max-width: 62rem) { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 40rem) {
@@ -104,7 +101,7 @@ h1 { margin: 0; font-size: clamp(3rem, 10vw, 6.5rem); line-height: .95; letter-s
   .sheet::before { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .art svg :is(path, circle, ellipse) { stroke-dashoffset: 0; animation: none !important; }
-  .js .art text { opacity: 1; transition: none; }
+  html { scroll-behavior: auto; }
+  .shot:hover .art svg :is(path, circle, ellipse) { animation: none; }
   .shot { transition: none; }
 }
