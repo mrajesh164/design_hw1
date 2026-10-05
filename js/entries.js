@@ -28,7 +28,7 @@ const ENTRIES = [
   { n: 7, status: "shot", date: "2026-10-05", path: "designs/07-vhs-tape/index.html", phase: 1, title: "VHS Tape", tag: "Era", hue: 280,
     question: "How much glitch is charming before it hurts legibility?",
     idea: "Scanlines, tracking errors, burned-in timestamp, glitch on interaction." },
-  { n: 8,  phase: 1, title: "Film Negative", tag: "Medium", hue: 190,
+  { n: 8, status: "shot", date: "2026-10-05", path: "designs/08-film-negative/index.html", phase: 1, title: "Film Negative", tag: "Medium", hue: 190,
     question: "What changes when the whole palette is inverted?",
     idea: "Inverted tones; menu items are exposures on a strip." },
 
