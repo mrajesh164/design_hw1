@@ -2,7 +2,7 @@ const roll = document.getElementById("roll");
 const playBtn = document.getElementById("play");
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-let speed = 45; // px per second
+let speed = 75; // px per second
 let playing = !reduceMotion;
 let hovering = false;
 let idleUntil = 0;
@@ -53,3 +53,31 @@ document.addEventListener("keydown", e => {
 
 syncButton();
 requestAnimationFrame(frame);
+
+// Atmosphere: tint follows the unit on screen, perforations and timecode follow scroll
+const tinted = [...document.querySelectorAll("[data-h]")];
+const bg = document.querySelector(".bg");
+const tc = document.querySelector(".tc");
+const perfs = document.querySelectorAll(".perfs");
+let current = null;
+
+function atmosphere() {
+  const mid = innerHeight * 0.5;
+  const hit = tinted.find(el => {
+    const r = el.getBoundingClientRect();
+    return r.top < mid && r.bottom > mid;
+  });
+  if (hit && hit !== current) {
+    current = hit;
+    bg.style.setProperty("--h", hit.dataset.h);
+    bg.style.setProperty("--s", hit.dataset.s);
+  }
+  const y = roll.scrollTop;
+  perfs.forEach(p => p.style.setProperty("--y", y));
+  const max = roll.scrollHeight - roll.clientHeight || 1;
+  const t = Math.floor((y / max) * 5400); // a 90-minute feature
+  const f = n => String(n).padStart(2, "0");
+  tc.textContent = `${f(Math.floor(t / 3600))}:${f(Math.floor(t / 60) % 60)}:${f(t % 60)}:${f(Math.floor((y % 24)))}`;
+}
+roll.addEventListener("scroll", () => requestAnimationFrame(atmosphere), { passive: true });
+atmosphere();
