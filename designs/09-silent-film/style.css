@@ -100,8 +100,6 @@ p, h1, h2 { margin: 0; font-weight: 400; }
 .title { padding-top: clamp(3rem, 12vw, 6rem); padding-bottom: clamp(3rem, 12vw, 6rem); }
 .title h1 { margin: 1rem 0 0; font-size: clamp(2rem, 8vw, 3.9rem); letter-spacing: .1em; padding-left: .1em; line-height: 1.1; }
 .title .small { margin-top: 1.2rem; }
-.down { margin-top: 2rem; color: var(--gold); animation: bob 1.6s ease-in-out infinite; }
-@keyframes bob { 50% { transform: translateY(6px); } }
 
 /* the drinks, set like lines of intertitle dialogue */
 .menu { list-style: none; margin: 2rem 0 0; padding: 0; text-align: left; display: grid; gap: 1.6rem; }
@@ -112,22 +110,6 @@ p, h1, h2 { margin: 0; font-weight: 400; }
 .desc { margin-top: .3rem; font-style: italic; font-size: clamp(1rem, 2.6vw, 1.15rem); line-height: 1.45; opacity: .92; }
 
 .end h2 { font-size: clamp(2.6rem, 11vw, 5rem); }
-
-/* connective captions between cards */
-.caption {
-  width: min(30rem, 100%);
-  margin: 3.2rem auto;
-  padding: 1rem 1.2rem;
-  text-align: center;
-  font-style: italic;
-  font-size: .9rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  line-height: 1.7;
-  color: #cdb279;
-  border-top: 1px solid #5a4b2e;
-  border-bottom: 1px solid #5a4b2e;
-}
 
 /* reel counter */
 .reel-count {
@@ -146,16 +128,68 @@ p, h1, h2 { margin: 0; font-weight: 400; }
 .back { position: fixed; left: 12px; top: 12px; z-index: 30; padding: .4rem .8rem; background: rgba(0,0,0,.75); border: 1px solid #6b5b3a; color: #e8dcc0; font: 700 .72rem var(--serif); letter-spacing: .12em; text-decoration: none; }
 .back:hover, .back:focus-visible { background: #e8dcc0; color: #111; outline: none; }
 
-/* iris-in reveal, only when JS is present and motion is welcome */
-.js .card { clip-path: circle(0% at 50% 50%); transition: clip-path 1.1s cubic-bezier(.3,.1,.2,1); }
-.js .card.in { clip-path: circle(150% at 50% 50%); }
-.js .caption { opacity: 0; transition: opacity .8s; }
-.js .caption.in { opacity: 1; }
 
-@media (max-width: 40rem) { .back, .reel-count { font-size: .62rem; letter-spacing: .12em; } .line { flex-wrap: wrap; } }
+.stage-only { display: none; }
+.meanwhile { margin: 0 0 1.6rem; padding: .7rem 0; font-style: italic; font-size: .85rem; letter-spacing: .22em; text-transform: uppercase; line-height: 1.7; color: var(--gold); border-top: 1px solid var(--gold-dim); border-bottom: 1px solid var(--gold-dim); }
+.title .meanwhile { display: none; }
+.start-row { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 2rem; }
+.start-row button { font: 700 .85rem var(--serif); letter-spacing: .2em; text-transform: uppercase; padding: .8rem 1.3rem; color: #14110e; background: var(--gold); border: 2px solid var(--gold); cursor: pointer; }
+.start-row button.alt { color: var(--gold); background: transparent; }
+.start-row button:hover { background: var(--ink); color: #14110e; border-color: var(--ink); }
+.keys { margin-top: 1.4rem; font-size: .78rem; letter-spacing: .15em; font-style: italic; color: var(--gold-dim); }
+
+/* ---------- stage mode: one card at a time, driven by arrows ---------- */
+html.stage body { padding: 0; overflow: hidden; }
+html.stage .stage-only { display: block; }
+html.stage .start-row { display: flex; }
+html.stage .reel-wrap { position: fixed; inset: 0; z-index: 5; overflow-y: auto; display: flex; padding: 4.2rem 1rem 7.2rem; animation: none; }
+html.stage .card { display: none; margin: auto; }
+html.stage .card.current { display: block; animation: irisIn .9s cubic-bezier(.3,.1,.2,1) both; }
+html.stage .card.leaving { display: block; animation: irisOut .45s ease-in both; }
+@keyframes irisIn { from { clip-path: circle(0% at 50% 50%); } to { clip-path: circle(150% at 50% 50%); } }
+@keyframes irisOut { from { clip-path: circle(150% at 50% 50%); } to { clip-path: circle(0% at 50% 50%); } }
+
+.reels { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; align-items: center; gap: .8rem; padding: .7rem 1rem; background: rgba(0,0,0,.88); border-top: 1px solid #6b5b3a; }
+html.stage .reels { display: flex; }
+.reels > button { flex: none; font: 700 .78rem var(--serif); letter-spacing: .15em; text-transform: uppercase; color: #14110e; background: #cdb279; border: 0; padding: .6rem 1rem; cursor: pointer; }
+.reels > button:hover { background: #f1e8d4; }
+.reel-list { flex: 1; display: flex; gap: .3rem; overflow-x: auto; justify-content: center; scrollbar-width: none; }
+.reel-list::-webkit-scrollbar { display: none; }
+.reel-list button { flex: none; font: .74rem var(--serif); letter-spacing: .14em; text-transform: uppercase; color: #bfae86; background: transparent; border: 1px solid transparent; border-bottom: 2px solid #3a3224; padding: .45rem .6rem; cursor: pointer; }
+.reel-list button:hover { color: #fff; }
+.reel-list button[aria-current="true"] { color: #14110e; background: #cdb279; border-color: #cdb279; }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+.walker { position: fixed; z-index: 6; bottom: 4.6rem; left: 0; pointer-events: none; }
+.walker.go { animation: cross 9s linear forwards; }
+@keyframes cross { from { transform: translateX(-80px); } to { transform: translateX(calc(100vw + 80px)); } }
+.walker .body-bob { animation: bob .42s ease-in-out infinite; transform-origin: 22px 74px; }
+@keyframes bob { 50% { transform: translateY(-3px); } }
+.walker .leg { transform-origin: 22px 52px; animation: step .42s ease-in-out infinite alternate; }
+.walker .leg.r { animation-direction: alternate-reverse; }
+@keyframes step { from { transform: rotate(-16deg); } to { transform: rotate(16deg); } }
+
+.pianist { position: fixed; z-index: 6; right: 1rem; bottom: 4.4rem; text-align: center; }
+.pianist svg { display: block; margin: 0 auto; }
+.pianist button { margin-top: .2rem; font: 700 .68rem var(--serif); letter-spacing: .12em; text-transform: uppercase; color: #e8dcc0; background: rgba(0,0,0,.8); border: 1px solid #6b5b3a; padding: .35rem .6rem; cursor: pointer; }
+.pianist button[aria-pressed="true"] { color: #14110e; background: #cdb279; }
+.pianist .notes { opacity: 0; }
+.pianist.playing .notes { animation: float 1.4s ease-in-out infinite; }
+.pianist.playing .arm { animation: tap .3s ease-in-out infinite alternate; transform-origin: 34px 42px; }
+@keyframes float { 0% { opacity: 0; transform: translateY(6px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-8px); } }
+@keyframes tap { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+
+@media (max-width: 40rem) {
+  .reels { padding: .5rem; gap: .4rem; }
+  .reels > button { padding: .55rem .6rem; font-size: .68rem; }
+  .pianist { display: none !important; }
+  .walker { bottom: 4.2rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .flicker, .dust, .scratches, .reel-wrap, .down { animation: none; }
+  .flicker, .dust, .scratches, .reel-wrap { animation: none; }
   .flicker { opacity: 0; }
-  .js .card, .js .caption { clip-path: none; opacity: 1; transition: none; }
+  html.stage .card.current, html.stage .card.leaving { animation: none; }
+  .walker { display: none !important; }
+  .pianist.playing .arm, .pianist.playing .notes { animation: none; }
 }

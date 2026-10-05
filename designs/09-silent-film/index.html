@@ -20,12 +20,15 @@
     <p class="orn" aria-hidden="true"><span>&#9670;</span></p>
     <p class="sub">A café in eight genres</p>
     <p class="small">A silent picture. Please read the cards.</p>
-    <p class="down" aria-hidden="true">&#9660;</p>
+    <div class="start-row stage-only">
+      <button type="button" data-go="next">&#9654; Start the picture</button>
+      <button type="button" data-go="1" class="alt">Skip to the menu</button>
+    </div>
+    <p class="keys stage-only">Turn the cards with the arrow keys or the buttons below</p>
   </section>
 
-  <p class="caption reveal">Our story begins on a dark and stormy morning...</p>
-
   <section class="card horror" data-reel="2" aria-labelledby="h-horror">
+    <p class="meanwhile">Our story begins on a dark and stormy morning...</p>
     <p class="chapter">Chapter the One</p>
     <h2 id="h-horror">Horror</h2>
     <p class="tag">Rated R for Roast</p>
@@ -36,9 +39,8 @@
         <li class="item"><p class="line"><b>The Call Is Coming From Inside</b><span class="dots" aria-hidden="true"></span><i>$5.50</i></p><p class="desc">Blood orange shrub, sparkling. Sweet, red, a little too sharp.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">Meanwhile, a spaceship is dangerously low on oat milk...</p>
-
   <section class="card scifi" data-reel="3" aria-labelledby="h-scifi">
+    <p class="meanwhile">Meanwhile, a spaceship is dangerously low on oat milk...</p>
     <p class="chapter">Chapter the Two</p>
     <h2 id="h-scifi">Sci-Fi</h2>
     <p class="tag">In space, no one can hear you sip</p>
@@ -49,9 +51,8 @@
         <li class="item"><p class="line"><b>Replicant</b><span class="dots" aria-hidden="true"></span><i>$5.25</i></p><p class="desc">Oat flat white. More human than the human kind.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">Across town, the rain has not stopped for three days...</p>
-
   <section class="card noir" data-reel="4" aria-labelledby="h-noir">
+    <p class="meanwhile">Across town, the rain has not stopped for three days...</p>
     <p class="chapter">Chapter the Three</p>
     <h2 id="h-noir">Noir</h2>
     <p class="tag">Always served after dark</p>
@@ -62,9 +63,8 @@
         <li class="item"><p class="line"><b>Femme Fatale</b><span class="dots" aria-hidden="true"></span><i>$4.75</i></p><p class="desc">Hibiscus iced tea. Red, cold, not what you expected.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">Elsewhere, two strangers reach for the last croissant...</p>
-
   <section class="card romance" data-reel="5" aria-labelledby="h-romance">
+    <p class="meanwhile">Elsewhere, two strangers reach for the last croissant...</p>
     <p class="chapter">Chapter the Four</p>
     <h2 id="h-romance">Romance</h2>
     <p class="tag">Best enjoyed with someone</p>
@@ -75,9 +75,8 @@
         <li class="item"><p class="line"><b>The Grand Gesture</b><span class="dots" aria-hidden="true"></span><i>$6.25</i></p><p class="desc">Honey lavender latte, with a handwritten note.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">Ten paces apart, a standoff over the last cup...</p>
-
   <section class="card western" data-reel="6" aria-labelledby="h-western">
+    <p class="meanwhile">Ten paces apart, a standoff over the last cup...</p>
     <p class="chapter">Chapter the Five</p>
     <h2 id="h-western">Western</h2>
     <p class="tag">Strong, simple, no questions asked</p>
@@ -87,9 +86,8 @@
         <li class="item"><p class="line"><b>The Good, The Bad, and The Oatmeal</b><span class="dots" aria-hidden="true"></span><i>$7.00</i></p><p class="desc">Skillet oatmeal with three toppings. Pick one.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">But wait! Somebody has taken the sugar...</p>
-
   <section class="card mystery" data-reel="7" aria-labelledby="h-mystery">
+    <p class="meanwhile">But wait! Somebody has taken the sugar...</p>
     <p class="chapter">Chapter the Six</p>
     <h2 id="h-mystery">Mystery</h2>
     <p class="tag">Every sip is a clue</p>
@@ -100,9 +98,8 @@
         <li class="item"><p class="line"><b>Plot Twist</b><span class="dots" aria-hidden="true"></span><i>$6.00</i></p><p class="desc">Iced chai with a shot of espresso. Sweet, then suddenly not.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">And in a kingdom far, far away, the kettle is enchanted...</p>
-
   <section class="card fantasy" data-reel="8" aria-labelledby="h-fantasy">
+    <p class="meanwhile">And in a kingdom far, far away, the kettle is enchanted...</p>
     <p class="chapter">Chapter the Seven</p>
     <h2 id="h-fantasy">Fantasy</h2>
     <p class="tag">Brewed with a little magic</p>
@@ -113,9 +110,8 @@
         <li class="item"><p class="line"><b>Elixir of Life</b><span class="dots" aria-hidden="true"></span><i>$6.25</i></p><p class="desc">Sparkling elderflower lemonade with edible flowers.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">Back in town, a banana peel has been spotted...</p>
-
   <section class="card comedy" data-reel="9" aria-labelledby="h-comedy">
+    <p class="meanwhile">Back in town, a banana peel has been spotted...</p>
     <p class="chapter">Chapter the Eight</p>
     <h2 id="h-comedy">Comedy</h2>
     <p class="tag">Guaranteed to lighten the mood</p>
@@ -126,15 +122,54 @@
         <li class="item"><p class="line"><b>Laugh Track</b><span class="dots" aria-hidden="true"></span><i>$5.00</i></p><p class="desc">Cold brew float with vanilla ice cream. Canned laughter not included.</p></li>
     </ul>
   </section>
-  <p class="caption reveal">And so, as the lights grow dim...</p>
-
   <section class="card end" data-reel="10" aria-labelledby="end">
+    <p class="meanwhile">And so, as the lights grow dim...</p>
     <h2 id="end">The End</h2>
     <p class="orn" aria-hidden="true"><span>&#9670;</span></p>
     <p class="sub">Showings daily, 7 a.m. to 10 p.m.</p>
     <p class="small">1138 Marquee Lane, Hyde Park, Chicago</p>
   </section>
   </main>
+
+  <div class="walker stage-only" id="walker" aria-hidden="true">
+    <svg viewBox="0 0 44 78" width="44" height="78">
+      <g class="body-bob">
+        <ellipse cx="22" cy="14" rx="14" ry="3.2" fill="#e8dcc0"/>
+        <path d="M11 13 Q11 -1 22 -1 Q33 -1 33 13 Z" fill="#e8dcc0"/>
+        <circle cx="22" cy="21" r="6.5" fill="#e8dcc0"/>
+        <path d="M13 29 Q22 24 31 29 L33 52 H11 Z" fill="#e8dcc0"/>
+        <path d="M31 33 L40 44" stroke="#e8dcc0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M37 40 h6 l-1 6 h-4z" fill="#e8dcc0"/>
+        <path d="M11 33 L6 48 M6 48 L2 70" stroke="#e8dcc0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <g class="leg l"><path d="M17 52 V74 h-6" stroke="#e8dcc0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+        <g class="leg r"><path d="M27 52 V74 h6" stroke="#e8dcc0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="pianist stage-only" id="pianist" aria-hidden="true">
+    <svg viewBox="0 0 130 86" width="130" height="86">
+      <rect x="46" y="14" width="80" height="62" rx="3" fill="#2a2118" stroke="#e8dcc0" stroke-width="1.5"/>
+      <rect x="50" y="44" width="72" height="9" fill="#f1e8d4"/>
+      <path d="M56 44 v5 M64 44 v5 M78 44 v5 M86 44 v5 M94 44 v5 M108 44 v5 M116 44 v5" stroke="#111" stroke-width="3"/>
+      <rect x="52" y="20" width="68" height="18" fill="#3a2e22"/>
+      <path d="M58 24 h56 M58 30 h56" stroke="#8a7650" stroke-width="1"/>
+      <rect x="14" y="60" width="26" height="6" rx="2" fill="#e8dcc0"/>
+      <path d="M20 66 v14 M34 66 v14" stroke="#e8dcc0" stroke-width="3"/>
+      <circle cx="26" cy="28" r="7" fill="#e8dcc0"/>
+      <path d="M17 38 Q27 33 36 38 L38 58 H16 Z" fill="#e8dcc0"/>
+      <path class="arm" d="M34 42 L52 50" stroke="#e8dcc0" stroke-width="4" stroke-linecap="round"/>
+      <path d="M16 46 L10 58" stroke="#e8dcc0" stroke-width="4" stroke-linecap="round"/>
+      <g class="notes" fill="#cdb279"><text x="62" y="10" font-size="11">&#9834;</text><text x="92" y="8" font-size="12">&#9835;</text></g>
+    </svg>
+    <button type="button" id="piano" aria-pressed="false">&#9834; Live piano: off</button>
+  </div>
+
+  <nav class="reels stage-only" aria-label="Reels">
+    <button type="button" id="prev" aria-label="Previous card">&#9664; Back</button>
+    <div class="reel-list" id="reel-list"></div>
+    <button type="button" id="next" aria-label="Next card">Next &#9654;</button>
+  </nav>
 
   <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
   <script src="script.js"></script>
