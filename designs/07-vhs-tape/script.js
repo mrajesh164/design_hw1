@@ -48,14 +48,14 @@ TAPES.forEach(t => {
           <span class="flip-hint">Flip for the menu &#8635;</span>
         </span>
       </button>
-      <div class="face rear" aria-hidden="true" inert>
+      <div class="face rear" aria-hidden="true" inert tabindex="0">
         <div class="band"><span>SCENE &amp; SIP VIDEO</span><span>VHS &middot; HI-FI</span></div>
         <h4>${t.title}</h4>
         <p class="syn">${t.syn}</p>
         <h5>Starring</h5>
         <ul class="cast">${t.items.map(i => `<li><b>${i[0]}</b><i>${i[1]}</i><p>${i[2]}</p></li>`).join("")}</ul>
         <div class="meta"><span class="rating">${t.rating}</span><span class="barcode"></span></div>
-        <button class="rewind" type="button">&#9664;&#9664; FLIP BACK</button>
+        <p class="tap-hint">Tap the box to flip it back</p>
       </div>
     </div>`;
   const front = box.querySelector(".front");
@@ -70,10 +70,11 @@ TAPES.forEach(t => {
     front.setAttribute("aria-hidden", String(toBack));
     rear.toggleAttribute("inert", !toBack);
     rear.setAttribute("aria-hidden", String(!toBack));
-    if (!auto) setTimeout(() => (toBack ? rear.querySelector(".rewind") : front).focus({ preventScroll: true }), reduce ? 0 : 400);
+    if (!auto) setTimeout(() => (toBack ? rear : front).focus({ preventScroll: true }), reduce ? 0 : 400);
   }
   front.addEventListener("click", () => flip(true));
-  rear.querySelector(".rewind").addEventListener("click", () => flip(false));
+  rear.addEventListener("click", () => flip(false));
+  rear.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(false); } });
   box.addEventListener("keydown", e => { if (e.key === "Escape" && box.classList.contains("flipped")) flip(false); });
   flips.push({ box, flip });
   shelf.appendChild(box);

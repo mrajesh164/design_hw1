@@ -94,7 +94,7 @@ h1.glitch { position: relative; margin: 0; font-size: clamp(1.7rem, 6.2vw, 4.4re
 .cover .flip-hint { align-self: flex-start; padding: .35rem .7rem; background: var(--yellow); color: #111; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .cover .sticker { position: absolute; right: .8rem; top: 3rem; width: 4.4rem; height: 4.4rem; display: grid; place-items: center; text-align: center; border-radius: 50%; background: #e0338a; color: #fff; font-size: .6rem; font-weight: 800; letter-spacing: .08em; line-height: 1.2; transform: rotate(12deg); box-shadow: 0 2px 6px rgba(0,0,0,.5); }
 .front:hover .flip-hint, .front:focus-visible .flip-hint { background: #fff; }
-.front:focus-visible, .rewind:focus-visible, .back:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.front:focus-visible, .rear:focus-visible, .back:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
 
 /* back of the box */
 .rear { transform: rotateY(180deg); background: #f2efe6; color: #151515; display: flex; flex-direction: column; padding: 1rem 1rem .8rem 1rem; }
@@ -110,8 +110,8 @@ h1.glitch { position: relative; margin: 0; font-size: clamp(1.7rem, 6.2vw, 4.4re
 .rear .meta { display: flex; justify-content: space-between; align-items: center; gap: .6rem; margin-top: .6rem; }
 .rear .rating { padding: .15rem .4rem; border: 2px solid #151515; font-size: .62rem; font-weight: 800; letter-spacing: .1em; }
 .rear .barcode { flex: 1; height: 1.5rem; background: repeating-linear-gradient(90deg, #151515 0 2px, transparent 2px 4px, #151515 4px 5px, transparent 5px 8px); }
-.rewind { margin-top: .6rem; padding: .5rem; border: 0; background: #151515; color: var(--yellow); font: 800 .72rem var(--mono); letter-spacing: .2em; cursor: pointer; }
-.rewind:hover { background: #333; }
+.tap-hint { margin: .5rem 0 0; text-align: center; font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; color: #777; }
+.rear { cursor: pointer; }
 
 /* per-genre cover art */
 .horror  { --cover: #0b1518; --art: radial-gradient(circle at 72% 22%, #eaf3e6 0 9%, transparent 9.5%), linear-gradient(180deg, #0b1518, #284046 85%); --bg-band: #284046; }
