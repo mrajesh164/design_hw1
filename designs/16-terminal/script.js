@@ -183,13 +183,14 @@ function cmdHelp() {
     ["remove <drink>", "take a drink off the ticket"],
     ["hours", "address and opening hours"],
     ["surprise me", "a random drink"],
-    ["clear", "wipe the screen"]
+    ["clear ticket  (or empty)", "remove everything from your ticket"],
+    ["clear screen", "wipe the screen"]
   ].forEach(([c, d]) => {
     const r = el("p", "line");
     r.append(el("span", "amber", c), el("span", "dim", "  " + d));
     box.appendChild(r);
   });
-  box.appendChild(el("p", "hint", "Tab completes a word. The up and down arrows bring back earlier commands."));
+  box.appendChild(el("p", "hint", "The up and down arrows bring back earlier commands."));
   print(box);
 }
 function cmdMenu() {
@@ -244,7 +245,7 @@ function cmdTicket() {
   });
   const t = el("div", "ticket-total");
   t.append(el("span", "", "Total"), el("span", "pr", money(ticketTotal())));
-  box.append(t, el("p", "hint", "Nothing is really ordered. Read this to the barista at the counter."));
+  box.append(t, button("Clear ticket", "inline-btn", () => runLine("clear ticket")));
   print(box);
 }
 function cmdRemove(arg) {
@@ -269,7 +270,14 @@ function cmdSurprise() {
   box.appendChild(button("Order it", "inline-btn", () => runLine("order " + d.name.toLowerCase())));
   print(box);
 }
-function cmdClear() {
+function clearTicket() {
+  if (!ticket.size) return say("Your ticket is already empty.", "dim");
+  ticket.clear();
+  updateTicketChip();
+  say("Ticket cleared.", "ok");
+}
+function cmdClear(arg) {
+  if (/^(ticket|all)/.test(arg)) return clearTicket();
   log.textContent = "";
   say("Screen cleared. Type help, or click any suggestion below.", "dim");
 }
@@ -317,7 +325,8 @@ function runLine(raw) {
   if (cmd === "remove") return cmdRemove(arg);
   if (cmd === "hours") return cmdHours();
   if (cmd === "surprise") return cmdSurprise();
-  if (cmd === "clear") return cmdClear();
+  if (first === "empty" || first === "reset") return clearTicket();
+  if (cmd === "clear") return cmdClear(arg);
 
   const g = findGenre(text);
   if (g) return showGenre(g);
@@ -335,7 +344,7 @@ form.addEventListener("submit", e => {
 });
 
 // ---------- chips (always on screen) ----------
-[["help"], ["menu"], ["order"], ["ticket"], ["hours"], ["surprise me"], ["clear"]].forEach(([label]) => {
+[["help"], ["menu"], ["order"], ["ticket"], ["clear ticket"], ["hours"], ["surprise me"], ["clear screen"]].forEach(([label]) => {
   const b = el("button", "chip", label);
   b.type = "button";
   if (label === "ticket") { ticketChipCount = el("span", "count"); b.appendChild(ticketChipCount); }
@@ -349,44 +358,9 @@ MENU.forEach(g => {
   chipsGenre.appendChild(b);
 });
 
-// ---------- history and tab completion ----------
-function commonPrefix(list) {
-  let p = list[0];
-  list.forEach(s => { while (!s.toLowerCase().startsWith(p.toLowerCase())) p = p.slice(0, -1); });
-  return p;
-}
-function complete() {
-  const v = input.value;
-  const m = v.match(/^(\S*)(\s+)?([\s\S]*)$/);
-  const head = m[1].toLowerCase();
-  let pool, prefix, rest = "";
-  if (!m[2]) {
-    pool = [...Object.keys(COMMANDS), ...Object.values(GENRE_NAMES).map(a => a[0])];
-    prefix = head;
-  } else {
-    const c = WORD_TO_CMD[head];
-    rest = m[3].toLowerCase();
-    if (c === "order" || c === "remove") pool = ALL.map(d => d.name);
-    else if (c === "cat") pool = MENU.map(g => g.name);
-    else return;
-    prefix = norm(rest);
-  }
-  const hits = pool.filter(p => {
-    const n = norm(p);
-    return n.startsWith(prefix) || noThe(n).startsWith(prefix) || n.split(" ").some(w => w.startsWith(prefix) && prefix.length >= 2);
-  });
-  if (!hits.length) return;
-  const base = m[2] ? m[1] + m[2] : "";
-  if (hits.length === 1) { input.value = base + (m[2] ? hits[0].toLowerCase() : hits[0].toLowerCase() + " "); return; }
-  const common = commonPrefix(hits.map(h => h.toLowerCase()));
-  if (common.length > prefix.length && (!m[2] || common.toLowerCase().startsWith(rest))) input.value = base + common;
-  say("Tab: " + hits.map(h => h.toLowerCase()).join(", "), "dim");
-}
+// ---------- command history ----------
 input.addEventListener("keydown", e => {
-  if (e.key === "Tab" && !e.shiftKey) {
-    e.preventDefault();
-    complete();
-  } else if (e.key === "ArrowUp") {
+  if (e.key === "ArrowUp") {
     e.preventDefault();
     if (histIdx === history.length) draft = input.value;
     histIdx = Math.max(0, histIdx - 1);
@@ -410,7 +384,7 @@ function welcome() {
   const how = el("div", "how");
   how.append(el("p", "line", "Type a command and press Enter, or click any suggestion below."));
   const ul = el("ul");
-  ["Try: menu, horror, or surprise me", "Click a drink's name in any list to add it to your ticket", "Tab completes a word; the up and down arrows bring back earlier commands"].forEach(t => ul.appendChild(el("li", "", t)));
+  ["Try: menu, horror, or surprise me", "Click a drink's name in any list to add it to your ticket", "The up and down arrows bring back earlier commands"].forEach(t => ul.appendChild(el("li", "", t)));
   how.appendChild(ul);
   w.appendChild(how);
   print(w);
