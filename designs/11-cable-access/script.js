@@ -32,11 +32,9 @@ const GENRES = [
     ["Laugh Track", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."] ] }
 ];
 
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const grid = document.getElementById("grid");
-const slate = document.getElementById("slate");
 const view = document.getElementById("prog-view");
-const screenEl = document.getElementById("screen");
+const card = document.getElementById("prog-card");
 const lower = document.getElementById("lower-third");
 
 // Guide: a time header row, then one channel per genre
@@ -66,21 +64,19 @@ GENRES.forEach((g, r) => {
 
 function select(btn, g, it) {
   progs.forEach(p => p.setAttribute("aria-pressed", String(p === btn)));
-  slate.hidden = true;
-  view.hidden = false;
   view.style.setProperty("--accent", g.color);
   document.getElementById("p-title").textContent = it[0];
   document.getElementById("p-desc").textContent = it[2];
   document.getElementById("p-seg").textContent = `Segment: ${g.name}`;
   document.getElementById("p-price").textContent = it[1];
-  // replay the lower-third slide
   lower.style.animation = "none";
   void lower.offsetWidth;
   lower.style.animation = "";
-  // bring the ON NOW panel into view only if it has scrolled off screen
-  const r = screenEl.getBoundingClientRect();
-  if (r.top < 0 || r.bottom > innerHeight) screenEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+  card.showModal();
 }
+document.getElementById("card-close").addEventListener("click", () => card.close());
+card.addEventListener("click", e => { if (e.target === card) card.close(); });
+card.addEventListener("close", () => progs.forEach(p => p.setAttribute("aria-pressed", "false")));
 
 // Community bulletin crawl (text is duplicated once so the loop is seamless)
 const LINES = [

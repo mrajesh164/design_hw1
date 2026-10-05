@@ -25,16 +25,7 @@
           <div class="slate" id="slate">
             <div class="bars" aria-hidden="true"></div>
             <div class="bars low" aria-hidden="true"></div>
-            <p class="slate-text">Please stand by<br><b>Select a program from the guide</b></p>
-          </div>
-          <div class="prog-view" id="prog-view" hidden>
-            <p class="badge">On now</p>
-            <h2 id="p-title"></h2>
-            <p class="desc" id="p-desc"></p>
-            <div class="lower-third" id="lower-third">
-              <span class="lt-a" id="p-seg"></span>
-              <span class="lt-b" id="p-price"></span>
-            </div>
+            <p class="slate-text">Please stand by<br><b>Pick a program from the guide below</b></p>
           </div>
         </div>
         <div class="crawl-bar">
@@ -45,7 +36,7 @@
     </section>
 
     <section class="guide" aria-labelledby="guide-title">
-      <h2 id="guide-title">Program guide <span>Today &middot; click any program to put it on</span></h2>
+      <h2 id="guide-title">Program guide <span>Today &middot; click any program for its description</span></h2>
       <div class="grid-scroll"><div class="grid" id="grid"></div></div>
     </section>
   </main>
@@ -54,6 +45,19 @@
     <p>1138 Marquee Lane, Hyde Park, Chicago &nbsp;&middot;&nbsp; Open daily, 7 a.m. to 10 p.m.</p>
     <p class="small">Scene &amp; Sip Community Access Cable. Not responsible for plot twists.</p>
   </footer>
+
+  <dialog id="prog-card" class="progcard" aria-labelledby="p-title">
+    <div class="prog-view" id="prog-view">
+      <p class="badge">Program info</p>
+      <h2 id="p-title"></h2>
+      <p class="desc" id="p-desc"></p>
+      <div class="lower-third" id="lower-third">
+        <span class="lt-a" id="p-seg"></span>
+        <span class="lt-b" id="p-price"></span>
+      </div>
+    </div>
+    <button type="button" class="card-close" id="card-close">&times; Close</button>
+  </dialog>
 
   <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
   <script src="script.js"></script>
