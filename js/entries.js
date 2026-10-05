@@ -57,7 +57,7 @@ const ENTRIES = [
     question: "Is typing an order more fun than clicking one?",
     idea: "Command-line UI, keyboard-driven menu browsing." },
 
-  { n: 17, phase: 2, title: "Director's Commentary", tag: "Interaction", hue: 25,
+  { n: 17, status: "shot", date: "2026-10-05", path: "designs/17-directors-commentary/index.html", phase: 2, title: "Director's Commentary", tag: "Interaction", hue: 25,
     question: "Can hover annotations make a page feel like a DVD extra?",
     idea: "Hover any element for a commentary-track note." },
   { n: 18, status: "shot", date: "2026-10-05", path: "designs/18-choose-your-screening/index.html", phase: 2, title: "Choose Your Screening", tag: "Narrative", hue: 260,
