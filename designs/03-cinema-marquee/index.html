@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOME BREW — Now Showing</title>
+  <meta name="description" content="Home Brew, a café whose menu is organized by film genre, shown on a cinema marquee.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><div class="moon"></div><div class="skyline"></div></div>
+
+  <main>
+    <section class="marquee" aria-labelledby="sign-title">
+      <div class="edge t"></div><div class="edge b"></div><div class="edge l"></div><div class="edge r"></div>
+      <h1 id="sign-title" class="sign-title">HOME BREW</h1>
+      <div class="board" id="board" aria-hidden="true"></div>
+      <p class="sign-sub">COFFEE &middot; TEA &middot; THE OCCASIONAL SEQUEL</p>
+    </section>
+
+    <section class="booth" aria-labelledby="booth-title">
+      <h2 id="booth-title">Box Office <span>Choose your genre</span></h2>
+      <div class="tickets" id="tickets" role="group" aria-label="Choose a genre"></div>
+    </section>
+
+    <section class="program" id="program" aria-live="polite">
+      <p class="hint">Pick a ticket to change the marquee and read the fine print.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>1138 Marquee Lane, Hyde Park, Chicago &nbsp;&middot;&nbsp; Open daily 7 a.m. to 10 p.m. &nbsp;&middot;&nbsp; Doors never close early</p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Home Brew gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>
