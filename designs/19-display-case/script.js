@@ -34,7 +34,7 @@ const GENRES = [
 
 const baysEl = document.getElementById("bays");
 const cabinet = document.getElementById("cabinet");
-const glass = document.getElementById("glass");
+const glassEl = document.getElementById("glass");
 const card = document.getElementById("card");
 const svg = (name, n) => `<svg viewBox="0 0 220 110" aria-hidden="true" focusable="false">${ART[name](n)}</svg>`;
 
@@ -42,7 +42,7 @@ const svg = (name, n) => `<svg viewBox="0 0 220 110" aria-hidden="true" focusabl
 let n = 0;
 baysEl.innerHTML = GENRES.map((g, gi) => `
   <section class="bay ${g.id}" aria-label="${g.name} shelf" style="--n:${g.drinks.length}">
-    <span class="layer back" aria-hidden="true"></span>
+    <span class="layer wall" aria-hidden="true"></span>
     <div class="plaque"><b>${g.name}</b><small>${g.tag}</small></div>
     <div class="stage">
       ${g.drinks.map((d, di) => {
@@ -86,19 +86,19 @@ if (!still) {
     raf = 0;
     cabinet.style.setProperty("--px", nx.toFixed(3));
     cabinet.style.setProperty("--py", ny.toFixed(3));
-    glass.style.setProperty("--mx", mx.toFixed(1) + "%");
-    glass.style.setProperty("--my", my.toFixed(1) + "%");
+    glassEl.style.setProperty("--mx", mx.toFixed(1) + "%");
+    glassEl.style.setProperty("--my", my.toFixed(1) + "%");
   };
-  glass.addEventListener("pointermove", e => {
+  glassEl.addEventListener("pointermove", e => {
     if (e.pointerType === "touch") return;
-    const r = glass.getBoundingClientRect();
+    const r = glassEl.getBoundingClientRect();
     mx = ((e.clientX - r.left) / r.width) * 100;
     my = ((e.clientY - r.top) / r.height) * 100;
     nx = (mx / 100) * 2 - 1;
     ny = (my / 100) * 2 - 1;
     if (!raf) raf = requestAnimationFrame(apply);
   });
-  glass.addEventListener("pointerleave", () => {
+  glassEl.addEventListener("pointerleave", () => {
     nx = 0; ny = 0; mx = 50; my = 30;
     if (!raf) raf = requestAnimationFrame(apply);
   });

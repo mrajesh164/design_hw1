@@ -72,7 +72,7 @@ button:focus-visible, .back:focus-visible { outline: 3px solid var(--brass-hi); 
 }
 .bay:hover, .bay:focus-within { filter: none; }
 .layer, .bay::before { position: absolute; inset: -12px; pointer-events: none; }
-.back {
+.wall {
   background:
     radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255, 235, 200, .32), transparent 70%),
     repeating-linear-gradient(90deg, rgba(0, 0, 0, .16) 0 7px, transparent 7px 16px),
@@ -124,6 +124,7 @@ button:focus-visible, .back:focus-visible { outline: 3px solid var(--brass-hi); 
   transform: translate(calc(var(--px) * 5px), calc(var(--py) * 3px));
   transition: transform .25s ease-out;
 }
+.label { min-height: 3.9rem; }
 .label b { display: block; font: 700 .78rem/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; }
 .label i { display: block; margin-top: .15rem; font: italic 700 .92rem var(--serif); color: #7a2a1e; }
 .drink:hover .fig, .drink:focus-visible .fig { filter: drop-shadow(0 6px 5px rgba(0, 0, 0, .35)) brightness(1.1); }
