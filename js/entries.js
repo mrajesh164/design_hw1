@@ -25,7 +25,7 @@ const ENTRIES = [
   { n: 6, status: "shot", date: "2026-10-05", path: "designs/06-seating-chart/index.html", phase: 1, title: "Seating Chart", tag: "Interaction", hue: 350,
     question: "Is booking-a-seat UI a better landing page than a hero?",
     idea: "Tables are seats. Pick a seat, see that genre's menu." },
-  { n: 7,  phase: 1, title: "VHS Tape", tag: "Era", hue: 280,
+  { n: 7, status: "shot", date: "2026-10-05", path: "designs/07-vhs-tape/index.html", phase: 1, title: "VHS Tape", tag: "Era", hue: 280,
     question: "How much glitch is charming before it hurts legibility?",
     idea: "Scanlines, tracking errors, burned-in timestamp, glitch on interaction." },
   { n: 8,  phase: 1, title: "Film Negative", tag: "Medium", hue: 190,
