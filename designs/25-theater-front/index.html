@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene &amp; Sip — your friendly neighborhood café</title>
+  <meta name="description" content="Scene &amp; Sip is a café in Chicago&rsquo;s Hyde Park neighborhood. Every drink on the menu belongs to a film genre: eight genres, twenty-three drinks, open daily 7 a.m. to 10 p.m.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><div class="moon"></div><div class="skyline"></div></div>
+
+  <nav class="topbar" aria-label="Page sections">
+    <a class="tb-brand" href="#home">Scene &amp; Sip <small>café</small></a>
+    <div class="tb-links">
+      <a href="#about">About us</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit us</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- 1. HOME: the marquee out front -->
+    <header class="home" id="home">
+      <div class="mq">
+        <div class="mq-edge t"></div><div class="mq-edge b"></div><div class="mq-edge l"></div><div class="mq-edge r"></div>
+        <p class="mq-kicker">Your friendly neighborhood café</p>
+        <h1 class="mq-title">SCENE &amp; SIP</h1>
+        <p class="mq-tagline">Coffee, tea, and a good story in every cup.</p>
+        <div class="lb" id="lb" aria-hidden="true"></div>
+        <p class="mq-sub">COFFEE &middot; TEA &middot; THE OCCASIONAL SEQUEL</p>
+      </div>
+
+      <p class="intro">Pick a movie genre, find your favorite drink. Our coffees, teas and seasonal specials are sorted into eight genres, from horror to romance to comedy, so ordering feels like choosing tonight&rsquo;s movie.</p>
+
+      <section class="booth" aria-labelledby="booth-h">
+        <h2 id="booth-h">Box Office <span>Pick a ticket to go there</span></h2>
+        <div class="tix" id="tix">
+          <button type="button" class="tix-btn" data-go="about"><span>ADMIT ONE</span><b>ABOUT US</b><small>who we are</small></button>
+          <button type="button" class="tix-btn" data-go="menu"><span>ADMIT ONE</span><b>MENU</b><small>23 drinks</small></button>
+          <button type="button" class="tix-btn" data-go="visit"><span>ADMIT ONE</span><b>VISIT US</b><small>come on in</small></button>
+        </div>
+      </section>
+    </header>
+
+    <!-- 2. ABOUT US: a single lit poster case -->
+    <section class="case" id="about" aria-labelledby="about-h">
+      <div class="dc">
+        <header class="dc-board">
+          <span class="bulbs top" aria-hidden="true"></span>
+          <h2 id="about-h">About us</h2>
+          <span class="bulbs bottom" aria-hidden="true"></span>
+        </header>
+        <div class="poster">
+          <div class="poster-text">
+            <p>Scene &amp; Sip is a small neighborhood café in Hyde Park built around a simple idea: a menu you can browse like a movie night. Our baristas pull espresso, steep tea and shake up seasonal specials from early morning until late evening, and every drink lives in one of eight film genres.</p>
+            <p>Pull up a stool, pick a genre and find a drink to match your mood. Come for the coffee, stay for the plot.</p>
+          </div>
+          <figure class="poster-art">
+            <svg viewBox="0 0 200 150" role="img" aria-label="Illustration of a latte with a heart in the foam, on a saucer">
+              <g stroke="#2a1a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="100" cy="124" rx="66" ry="13" fill="#efe3cc"/>
+                <path d="M150 74 q28 0 24 22 q-4 18 -28 17" fill="none" stroke-width="9"/>
+                <path d="M150 74 q28 0 24 22 q-4 18 -28 17" fill="none" stroke="#fff8ec" stroke-width="4.5"/>
+                <path d="M50 66 H150 V88 Q150 124 100 124 Q50 124 50 88 Z" fill="#fff8ec"/>
+                <path d="M51.5 82 H148.5" stroke="#d9694f" stroke-width="9" stroke-linecap="butt"/>
+                <ellipse cx="100" cy="66" rx="50" ry="11" fill="#8a5a3a"/>
+                <path d="M100 73 C86 63 89 54 96 56 C99 57 100 61 100 61 C100 61 101 57 104 56 C111 54 114 63 100 73Z" fill="#fff3dc" stroke-width="1.6"/>
+                <path d="M158 128 l26 -9" stroke-width="3" fill="none"/>
+              </g>
+              <g fill="none" stroke="#8a7a66" stroke-width="2.6" stroke-linecap="round"><path d="M82 46 q-9 -10 0 -19 t0 -19"/><path d="M100 44 q-9 -10 0 -19 t0 -19"/><path d="M118 46 q-9 -10 0 -19 t0 -19"/></g>
+              <path d="M30 44 c-4 -5 -11 0 -6 5 l6 5 l6 -5 c5 -5 -2 -10 -6 -5z" fill="#d9694f" stroke="#2a1a12" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M170 36 c-3 -4 -9 0 -5 4 l5 4 l5 -4 c4 -4 -2 -8 -5 -4z" fill="#dcb871" stroke="#2a1a12" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+            <figcaption>Made with heart, every time.</figcaption>
+          </figure>
+        </div>
+        <div class="plinth" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 3. THE MENU: the lit glass display case -->
+    <section class="case" id="menu" aria-labelledby="menu-h">
+      <div class="dc" id="cabinet">
+        <header class="dc-board">
+          <span class="bulbs top" aria-hidden="true"></span>
+          <h2 id="menu-h">The Menu</h2>
+          <p class="dc-intro">Eight genres, twenty-three drinks. Pick a genre to find your favorite.</p>
+          <span class="bulbs bottom" aria-hidden="true"></span>
+        </header>
+        <p class="dc-how">Move across the glass to light each shelf. Click a drink to read about it.</p>
+        <div class="glass" id="glass">
+          <div class="bays" id="bays">
+            <noscript>
+              <p class="plain">The display case needs JavaScript. The menu: Horror: The Final Girl $4.00, Basement Cold Brew $5.00, The Call Is Coming From Inside $5.50. Sci-Fi: Warp Drive $6.00, First Contact $6.50, Replicant $5.25. Noir: Bitter End $5.00, The Long Goodbye $4.50, Femme Fatale $4.75. Romance: Meet Cute $8.00, Rainstorm Kiss $5.75, The Grand Gesture $6.25. Western: True Grit $3.75, A Fistful of Espresso $4.25. Mystery: The Usual Suspect $4.25, Red Herring $5.50, Plot Twist $6.00. Fantasy: The Chosen One $6.50, Dragon's Breath $5.75, Elixir of Life $6.25. Comedy: Slapstick $4.50, Punchline $5.25, Laugh Track $5.00.</p>
+            </noscript>
+          </div>
+          <span class="glare" aria-hidden="true"></span>
+          <span class="light" aria-hidden="true"></span>
+        </div>
+        <div class="plinth" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 4. VISIT US: lamps, light boxes and the counter -->
+    <section class="visit" id="visit" aria-labelledby="visit-h">
+      <div class="vs-ceiling" aria-hidden="true">
+        <div class="vs-lamp l1"><span class="cord"></span><span class="shade"></span><span class="vbulb"></span><span class="cone"></span></div>
+        <div class="vs-lamp l2"><span class="cord"></span><span class="shade"></span><span class="vbulb"></span><span class="cone"></span></div>
+        <div class="vs-lamp l3"><span class="cord"></span><span class="shade"></span><span class="vbulb"></span><span class="cone"></span></div>
+      </div>
+      <div class="vs-sign"><h2 id="visit-h">Visit us</h2></div>
+      <div class="lights">
+        <div class="lbox" style="--rgb:163, 32, 26"><h3>Address</h3><p>1138 Marquee Lane<br>Chicago, IL 60615</p></div>
+        <div class="lbox" style="--rgb:176, 128, 38"><h3>Hours</h3><p>Open daily<br>7 a.m. to 10 p.m.</p></div>
+        <div class="lbox" style="--rgb:111, 74, 150"><h3>Call ahead</h3><p>(555) 019-0420<br>We will have it ready.</p></div>
+      </div>
+
+      <div class="counter">
+        <div class="items">
+          <svg class="machine" viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Espresso machine">
+            <rect x="8" y="104" width="134" height="10" rx="3" fill="#2b2622"/>
+            <rect x="10" y="22" width="130" height="80" rx="8" fill="#4a4a50"/>
+            <rect x="10" y="22" width="130" height="14" rx="6" fill="#62626a"/>
+            <rect x="22" y="40" width="106" height="8" rx="3" fill="#35353b"/>
+            <circle cx="38" cy="64" r="11" fill="#e8dcc0" stroke="#2b2622" stroke-width="3"/>
+            <path d="M38 64 L44 58" stroke="#2b2622" stroke-width="2.2" stroke-linecap="round"/>
+            <rect x="62" y="56" width="22" height="16" rx="3" fill="#2b2622"/>
+            <rect x="58" y="72" width="30" height="7" rx="2" fill="#8a8a92"/>
+            <path d="M72 79 v7" stroke="#8a8a92" stroke-width="5" stroke-linecap="round"/>
+            <path d="M118 54 v26 q0 8 -9 8" fill="none" stroke="#8a8a92" stroke-width="4" stroke-linecap="round"/>
+            <rect x="56" y="92" width="34" height="10" rx="2" fill="#2b2622"/>
+            <circle cx="130" cy="30" r="3" fill="#c79a4a"/>
+          </svg>
+
+          <svg class="cups" viewBox="0 0 120 70" width="120" height="70" role="img" aria-label="A few coffee cups">
+            <ellipse cx="26" cy="64" rx="22" ry="5" fill="#e8e1d2"/>
+            <path d="M10 38 H42 V50 Q42 63 26 63 Q10 63 10 50 Z" fill="#f4f1ea"/>
+            <ellipse cx="26" cy="38" rx="16" ry="3.5" fill="#3a2214"/>
+            <path d="M42 43 q9 0 8 6 q-1 5 -8 5" fill="none" stroke="#f4f1ea" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="82" cy="64" rx="20" ry="4.5" fill="#e8e1d2"/>
+            <path d="M68 40 H96 V50 Q96 62 82 62 Q68 62 68 50 Z" fill="#c9a77a"/>
+            <ellipse cx="82" cy="40" rx="14" ry="3.2" fill="#f3e3c6"/>
+            <path d="M96 44 q8 0 7 5 q-1 4 -7 4" fill="none" stroke="#c9a77a" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M60 16 q-4 -6 0 -11 t0 -11" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+          </svg>
+
+          <div class="bell-wrap">
+            <button type="button" class="bell" id="bell">
+              <span class="bell-label">Ring for the barista's pick</span>
+              <svg viewBox="0 0 64 46" width="76" height="55" aria-hidden="true" focusable="false">
+                <ellipse cx="32" cy="40" rx="28" ry="5" fill="#8a6a2c"/>
+                <path d="M8 38 Q8 12 32 12 Q56 12 56 38 Z" fill="#c79a4a"/>
+                <path d="M14 36 Q14 18 28 15" fill="none" stroke="#efd08e" stroke-width="3" stroke-linecap="round"/>
+                <rect x="29" y="5" width="6" height="8" rx="2" fill="#a6803a"/>
+                <circle cx="32" cy="4.5" r="3.4" fill="#e1bd6c"/>
+              </svg>
+            </button>
+          </div>
+
+          <svg class="jar" viewBox="0 0 70 96" width="70" height="96" role="img" aria-label="Tip jar">
+            <rect x="14" y="8" width="42" height="9" rx="3" fill="#8a6a2c"/>
+            <path d="M12 17 H58 V80 Q58 90 48 90 H22 Q12 90 12 80 Z" fill="#cfe3e0" fill-opacity=".28" stroke="#cfe3e0" stroke-opacity=".7" stroke-width="2"/>
+            <g fill="#d9b04a" stroke="#a9832a" stroke-width="1"><circle cx="24" cy="82" r="5"/><circle cx="36" cy="84" r="5"/><circle cx="47" cy="81" r="5"/><circle cx="30" cy="73" r="5"/><circle cx="42" cy="72" r="5"/><circle cx="35" cy="63" r="5"/></g>
+            <rect x="18" y="30" width="34" height="14" rx="2" fill="#f1e6cf"/>
+            <text x="35" y="41" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#4a3320">TIPS</text>
+          </svg>
+        </div>
+        <div class="surface"></div>
+        <div class="cfront"></div>
+        <p class="pick" id="pick" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="closing">And so, as the lights grow dim, the doors stay open until ten.</p>
+    <p class="small">Scene &amp; Sip &middot; 1138 Marquee Lane, Chicago, IL 60615</p>
+  </footer>
+
+  <dialog id="card" aria-labelledby="c-name">
+    <div class="c-inner" id="c-inner">
+      <div class="c-art" id="c-art"></div>
+      <div class="c-body">
+        <p class="c-genre" id="c-genre"></p>
+        <h2 id="c-name"></h2>
+        <p class="c-price" id="c-price"></p>
+        <p class="c-desc" id="c-desc"></p>
+      </div>
+      <button type="button" class="c-close" id="c-close">Close</button>
+    </div>
+  </dialog>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="art.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

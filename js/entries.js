@@ -82,7 +82,7 @@ const ENTRIES = [
   { n: 24, phase: 3, title: "Streaming Service", tag: "Concept", hue: 340,
     question: "Is parodying the streaming UI too familiar to be unique?",
     idea: "'Recommended for you: The Bitter Espresso (2024, Noir, 4 stars).'" },
-  { n: 25, phase: 3, title: "The 404", tag: "Concept", hue: 5,
-    question: "Can an error page be the most inviting page?",
-    idea: "'We couldn't find what you were looking for. We found something better.'" }
+  { n: 25, status: "shot", date: "2026-10-05", path: "designs/25-theater-front/index.html", phase: 3, title: "Theater Front", tag: "Hybrid", hue: 8,
+    question: "Can the marquee of 03, the display case of 19 and the backlit counter of 20 become one cinema-café front, with the full café information?",
+    idea: "A lit marquee with a flipping letter board and ticket buttons, an About us poster case, the menu as a glass display case with parallax, and a Visit us counter scene with backlit panels and a bell that picks a random drink." }
 ].map(e => ({ status: "planned", date: null, path: null, result: null, ledTo: null, ...e }));
