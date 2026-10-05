@@ -177,14 +177,15 @@ const ART = {
     ${star(66, 34)}${star(156, 44, "#fff")}${star(154, 76)}`,
 
   "Slapstick": () => `${shadow(100, 40)}
-    <path d="M72 52 H128 V80 Q128 92 116 92 H84 Q72 92 72 80 Z" fill="rgba(255,255,255,.55)" stroke="#d6c88a" stroke-width="2"/>
-    <path d="M74 58 H126 V80 Q126 90 116 90 H84 Q74 90 74 80 Z" fill="#f6e7a6"/>
-    <ellipse cx="100" cy="56" rx="26" ry="5" fill="#fff6cc"/>
-    <path d="M128 60 q16 0 14 12 q-2 10 -14 10" fill="none" stroke="#d6c88a" stroke-width="5" stroke-linecap="round"/>
-    <path d="M96 40 q4 -6 10 -2" stroke="#8a5a2b" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <g transform="rotate(-8 158 86)"><path d="M140 88 Q158 70 178 86 Q160 84 140 88 Z" fill="#f2d33c" stroke="#c9a41a" stroke-width="2" stroke-linejoin="round"/><path d="M150 82 q8 -6 18 0" stroke="#c9a41a" stroke-width="1.5" fill="none"/><path d="M176 84 q4 -2 6 2" stroke="#8a5a2b" stroke-width="3" fill="none" stroke-linecap="round"/></g>
-    <g fill="none" stroke="#d6342a" stroke-width="2.5" stroke-linecap="round"><path d="M150 58 l6 -6 M158 62 l8 -2 M148 68 l-8 -2"/></g>
-    <path d="M52 86 H70" stroke="#c9a41a" stroke-width="2" stroke-linecap="round"/>`,
+    <path d="M68 40 H132 V76 Q132 94 114 94 H86 Q68 94 68 76 Z" fill="#f7d94a"/>
+    <path d="M132 50 q20 0 18 16 q-2 14 -18 14" fill="none" stroke="#f7d94a" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="100" cy="40" rx="32" ry="6" fill="#8a5a3a"/>
+    <ellipse cx="100" cy="40" rx="26" ry="3.6" fill="#c89a62"/>
+    <path d="M84 60 q5 -7 10 0 M106 60 q5 -7 10 0" fill="none" stroke="#3a2412" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M86 68 Q100 90 114 68 Z" fill="#7a2a1e" stroke="#3a2412" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M91 77 Q100 85 109 77 Q100 74 91 77Z" fill="#e8798a"/>
+    <ellipse cx="79" cy="68" rx="4" ry="2.6" fill="#f08a7a" opacity=".75"/><ellipse cx="121" cy="68" rx="4" ry="2.6" fill="#f08a7a" opacity=".75"/>
+    <g fill="none" stroke="#c98a1c" stroke-width="2.5" stroke-linecap="round"><path d="M152 36 l7 -5 M158 46 l10 -1 M150 27 l3 -8 M48 36 l-7 -5 M42 46 l-10 -1"/></g>`,
 
   "Punchline": () => `${shadow(100, 40)}
     <path d="M72 50 H128 V80 Q128 92 116 92 H84 Q72 92 72 80 Z" fill="#f4f1ea"/>
