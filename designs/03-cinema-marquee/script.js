@@ -1,7 +1,7 @@
 const COLS = 22;
 const ROWS = 5;
 
-const INTRO = ["NOW SERVING", "HOME BREW", "EVERY DRINK IS A GENRE", "PICK A TICKET BELOW", "OPEN DAILY 7AM-10PM"];
+const INTRO = ["NOW SERVING", "", "EVERY DRINK IS A GENRE", "PICK A TICKET BELOW", "OPEN DAILY 7AM-10PM"];
 
 const GENRES = [
   { id: "horror", name: "Horror", tag: "Rated R for Roast", footer: "DON'T GO IN THE BASEMENT",
@@ -61,15 +61,23 @@ function center(s) {
   const pad = Math.max(0, COLS - s.length);
   return " ".repeat(Math.floor(pad / 2)) + s;
 }
-function itemRow(name, price) {
-  return name + " ".repeat(Math.max(1, COLS - name.length - price.length)) + price;
-}
+// The sign teases; the full menu lives below, so the two never repeat each other
+const TEASERS = {
+  horror: "RATED R FOR ROAST",
+  scifi: "NO ONE HEARS YOU SIP",
+  noir: "SERVED AFTER DARK",
+  romance: "BEST WITH SOMEONE",
+  western: "STRONG AND SIMPLE"
+};
 function rowsFor(g) {
-  const rows = [("NOW SHOWING: " + g.name).toUpperCase()];
-  g.items.forEach(i => rows.push(itemRow(i[1], i[2])));
-  while (rows.length < ROWS - 1) rows.push("");
-  rows.push(g.footer);
-  return rows;
+  const low = Math.min(...g.items.map(i => parseFloat(i[2].slice(1))));
+  return [
+    ("NOW SHOWING: " + g.name).toUpperCase(),
+    TEASERS[g.id],
+    `${g.items.length} DRINKS FROM $${low.toFixed(2)}`,
+    "FULL MENU BELOW",
+    g.footer
+  ];
 }
 
 let timers = [];
@@ -98,7 +106,7 @@ function show(lines, centered) {
 
 function renderProgram(g) {
   programEl.innerHTML = `
-    <h3>Now showing: ${g.name}</h3>
+    <h3>${g.name} menu</h3>
     <p class="tag">${g.tag}</p>
     <ul class="items">${g.items.map(i => `
       <li><b>${i[0]}</b><span class="price">${i[2]}</span><p>${i[3]}</p></li>`).join("")}
