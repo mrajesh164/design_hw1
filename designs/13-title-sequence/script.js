@@ -17,7 +17,7 @@ const GENRES = [
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
   { id: "western", name: "Western", tag: "Strong, simple, no questions asked", pal: ["#c9852b", "#8f3d1e", "#1c1713"], items: [
     ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-    ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] },
+    ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", pal: ["#5b3f7a", "#d9531e", "#1c1713"], items: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
@@ -122,7 +122,7 @@ function play() {
   later(() => intro.classList.add("s2"), 1700);         // orange bar sweeps across
   later(() => { intro.classList.add("s3"); say("Eight genres"); }, 2700);
   later(() => say("Twenty-three drinks"), 3700);
-  later(() => say("Starring"), 4700);
+  later(() => say("Now serving"), 4700);
   GENRES.forEach((g, i) => later(() => say(g.name, true), 5300 + i * 330));
   later(() => intro.classList.add("s5"), 8100);         // title stamps in
   later(finish, 9900);
