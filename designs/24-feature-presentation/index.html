@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene &amp; Sip — The Feature Presentation</title>
+  <meta name="description" content="Scene &amp; Sip is your friendly neighborhood café in Chicago's Hyde Park neighborhood, shown as a feature film on a collector's edition disc: a main menu, our story, eight genre chapters with director's commentary, and end credits with our address and hours.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-view="home">
+  <div class="atmo bg" aria-hidden="true"></div>
+  <div class="atmo beam" aria-hidden="true"></div>
+  <div class="perfs left" aria-hidden="true"></div>
+  <div class="perfs right" aria-hidden="true"></div>
+
+  <header class="nav">
+    <button type="button" class="brand" data-go="home">Scene &amp; Sip <small>café</small></button>
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" class="tab" data-go="home">Home</button>
+      <button type="button" class="tab" data-go="about">About us</button>
+      <button type="button" class="tab" data-go="menu">Menu</button>
+      <button type="button" class="tab" data-go="visit">Visit us</button>
+    </nav>
+    <button type="button" class="comm" id="comm" role="switch" aria-checked="true">
+      <span>Commentary</span><b>ON</b><i class="sw" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main id="stage" class="stage">
+    <noscript>
+      <section class="plain">
+        <h1>Scene &amp; Sip</h1>
+        <p>Your friendly neighborhood café. Coffee, tea, and a good story in every cup.</p>
+        <p>This page works like a disc menu and needs JavaScript. About us: Scene &amp; Sip is a small neighborhood café in Hyde Park built around a simple idea: a menu you can browse like a movie night. Every drink lives in one of eight film genres.</p>
+        <p>The menu: Horror: The Final Girl $4.00, Basement Cold Brew $5.00, The Call Is Coming From Inside $5.50. Sci-Fi: Warp Drive $6.00, First Contact $6.50, Replicant $5.25. Noir: Bitter End $5.00, The Long Goodbye $4.50, Femme Fatale $4.75. Romance: Meet Cute $8.00, Rainstorm Kiss $5.75, The Grand Gesture $6.25. Western: True Grit $3.75, A Fistful of Espresso $4.25. Mystery: The Usual Suspect $4.25, Red Herring $5.50, Plot Twist $6.00. Fantasy: The Chosen One $6.50, Dragon's Breath $5.75, Elixir of Life $6.25. Comedy: Slapstick $4.50, Punchline $5.25, Laugh Track $5.00.</p>
+        <p>Visit us: 1138 Marquee Lane, Chicago, IL 60615. Open daily, 7 a.m. to 10 p.m. Call ahead: (555) 019-0420.</p>
+      </section>
+    </noscript>
+  </main>
+
+  <div class="atmo grain" aria-hidden="true"></div>
+  <div class="tc" id="tc" aria-hidden="true" hidden>00:00:00:00</div>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

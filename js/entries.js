@@ -79,9 +79,9 @@ const ENTRIES = [
   { n: 23, status: "shot", date: "2026-10-05", path: "designs/23-pop-art-cafe/index.html", phase: 3, title: "Pop Art Café", tag: "Hybrid", hue: 330,
     question: "Keep the full café site of 22 but swap the pencil storyboard for the bright pop art of the lobby cards (10) and the cable guide (11). Does the louder look still read clearly as a café?",
     idea: "The same About, Menu and Visit us structure with halftone dots, thick outlines, hard shadows, starbursts and lobby-card style genre cards that show every drink and price, with descriptions in a pop-up." },
-  { n: 24, phase: 3, title: "Streaming Service", tag: "Concept", hue: 340,
-    question: "Is parodying the streaming UI too familiar to be unique?",
-    idea: "'Recommended for you: The Bitter Espresso (2024, Noir, 4 stars).'" },
+  { n: 24, status: "shot", date: "2026-10-05", path: "designs/24-feature-presentation/index.html", phase: 3, title: "Feature Presentation", tag: "Hybrid", hue: 345,
+    question: "Can the credits roll of 02, the card-by-card silent picture of 09 and the DVD menu of 17 become one cinematic café site with the full café information?",
+    idea: "A DVD main menu leads to About us as an intertitle card, the menu as eight chapter cards stepped with arrow keys and director's notes, and Visit us as the end credits roll." },
   { n: 25, status: "shot", date: "2026-10-05", path: "designs/25-theater-front/index.html", phase: 3, title: "Theater Front", tag: "Hybrid", hue: 8,
     question: "Can the marquee of 03, the display case of 19 and the backlit counter of 20 become one cinema-café front, with the full café information?",
     idea: "A lit marquee with a flipping letter board and ticket buttons, an About us poster case, the menu as a glass display case with parallax, and a Visit us counter scene with backlit panels and a bell that picks a random drink." }
