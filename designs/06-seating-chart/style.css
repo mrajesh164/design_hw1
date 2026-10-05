@@ -51,7 +51,7 @@ body {
 .key.picked { background: var(--gold); }
 
 /* ---------- seat map ---------- */
-.rows { display: grid; gap: 1.6rem; padding: 1.5rem 1rem 2rem; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.05)); border-radius: 10px; }
+.rows { display: grid; gap: 1.2rem; padding: 1.5rem 1rem 2rem; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.05)); border-radius: 10px; }
 .row { display: grid; grid-template-columns: 2.4rem 1fr 2.4rem; align-items: center; gap: .5rem; }
 .row-label { font-size: 1.4rem; color: var(--gold); text-align: center; }
 .row-label small { display: block; font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; opacity: .7; }
@@ -100,7 +100,7 @@ body {
 .seat:focus-visible, .back:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 4px; }
 
 /* ---------- ticket cart ---------- */
-.cart { position: sticky; top: 1rem; padding: 1.4rem 1.3rem; background: var(--cream); color: #2a1a0a; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+.cart { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: auto; padding: 1.4rem 1.3rem; background: var(--cream); color: #2a1a0a; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
 .cart h2 { margin: 0 0 .8rem; font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; }
 .cart-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; }
 .cart-list li { display: grid; grid-template-columns: auto 1fr auto auto; gap: .6rem; align-items: baseline; padding: .5rem 0; border-bottom: 1px dashed rgba(42,26,10,.4); font-size: .9rem; }
