@@ -1,4 +1,4 @@
-:root { --bars: 6.6rem; }
+:root { --bars: 7.6rem; }
 * { box-sizing: border-box; }
 html { background: #000; }
 body { margin: 0; background: #000; color: #eee; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -87,7 +87,7 @@ button:focus-visible, .back:focus-visible { outline: 2px solid #ffe45e; outline-
 #play { min-width: 3rem; color: #000; background: #ffe45e; border-color: #ffe45e; font-size: .9rem; }
 #play:hover { background: #fff; }
 .count { margin-left: .6rem; font-family: "Courier New", monospace; letter-spacing: .15em; color: #ccc; }
-.chapters { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+.chapters { display: flex; gap: .4rem .95rem; flex-wrap: wrap; justify-content: center; font-size: .64rem; letter-spacing: .14em; }
 .chapters button { border: 0; padding: .15rem .1rem; border-bottom: 2px solid transparent; }
 .chapters button.on { color: #ffe45e; border-bottom-color: #ffe45e; }
 .scrub { width: min(60rem, 92%); height: 3px; background: #333; position: relative; cursor: pointer; }
@@ -164,6 +164,67 @@ button:focus-visible, .back:focus-visible { outline: 2px solid #ffe45e; outline-
 .western .weed { bottom: 16%; left: -6%; width: 5cqw; aspect-ratio: 1; border-radius: 50%; border: .5cqw dashed #130806; background: radial-gradient(circle, rgba(19,8,6,.5), transparent 70%); animation: roll 14s linear infinite; }
 @keyframes roll { from { transform: translateX(0) rotate(0); } to { transform: translateX(120cqw) rotate(720deg); } }
 
+/* mystery: fog, a lit streetlamp, a magnifying glass, a figure in the mist */
+.mystery { background: linear-gradient(#140a24, #3a1f52 62%, #1b0e2a); }
+.mystery .fog { left: -20%; width: 140%; height: 32%; background: radial-gradient(ellipse at center, rgba(190,160,230,.3), transparent 70%); filter: blur(10px); }
+.mystery .m1 { bottom: 18%; animation: drift 24s linear infinite alternate; }
+.mystery .m2 { bottom: -4%; animation: drift 32s linear infinite alternate-reverse; }
+.mystery .cobble { left: 0; right: 0; bottom: 0; height: 14%; background: repeating-linear-gradient(90deg, #0b0614 0 5cqw, #17102a 5cqw 5.4cqw), #0b0614; }
+.mystery .lamp { left: 24%; bottom: 10%; width: 0; height: 62%; }
+.mystery .lamp .pole { position: absolute; left: -.5cqw; bottom: 0; width: 1cqw; height: 100%; background: #07040d; }
+.mystery .lamp .bulb { position: absolute; left: -2.2cqw; top: -1cqw; width: 4.4cqw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fff6cf, #ffd36b 60%, #d99a2b); box-shadow: 0 0 6cqw 2cqw rgba(255,210,110,.5); animation: lampflick 6s steps(1) infinite; }
+.mystery .lamp .cone { position: absolute; left: -12cqw; top: 3cqw; width: 24cqw; height: 100%; background: linear-gradient(rgba(255,226,150,.28), transparent 85%); clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); animation: lampflick 6s steps(1) infinite; }
+@keyframes lampflick { 0%{opacity:1} 30%{opacity:.85} 33%{opacity:.4} 36%{opacity:1} 80%{opacity:.9} 100%{opacity:1} }
+.mystery .figure { left: 38%; bottom: 8%; width: 17%; height: 72%; background: #05020a;
+  clip-path: polygon(30% 100%, 30% 62%, 12% 70%, 20% 46%, 40% 38%, 40% 30%, 28% 28%, 22% 24%, 40% 22%, 42% 8%, 52% 2%, 62% 8%, 64% 22%, 82% 24%, 74% 28%, 62% 30%, 62% 38%, 82% 46%, 90% 70%, 72% 62%, 72% 100%); }
+.mystery .glass { right: 10%; top: 12%; width: 22cqw; aspect-ratio: 1; border-radius: 50%; border: 1.3cqw solid #c9a54a; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), rgba(255,255,255,.04) 60%); box-shadow: 0 0 4cqw rgba(201,165,74,.3); animation: bob 9s ease-in-out infinite alternate; }
+.mystery .glass::before { content: "?"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 12cqw; font-weight: 700; color: rgba(255,255,255,.3); }
+.mystery .glass::after { content: ""; position: absolute; left: 86%; top: 86%; width: 12cqw; height: 2.2cqw; border-radius: 1.1cqw; background: #6b4a20; transform-origin: left center; transform: rotate(45deg); }
+@keyframes bob { from { transform: translateY(-1.5cqw) rotate(-3deg); } to { transform: translateY(1.5cqw) rotate(3deg); } }
+
+/* fantasy: castle on a hill under a huge moon, a dragon passing */
+.fantasy { background: linear-gradient(#06182a, #0f3b3a 56%, #1d5a45 82%); }
+.fantasy .stars { inset: 0; background:
+  radial-gradient(1.5px 1.5px at 8% 18%, #fff, transparent), radial-gradient(1px 1px at 20% 40%, #fff, transparent),
+  radial-gradient(2px 2px at 33% 12%, #ffe9a8, transparent), radial-gradient(1px 1px at 46% 30%, #fff, transparent),
+  radial-gradient(1.5px 1.5px at 58% 16%, #fff, transparent), radial-gradient(1px 1px at 70% 44%, #fff, transparent),
+  radial-gradient(2px 2px at 82% 12%, #ffe9a8, transparent), radial-gradient(1px 1px at 92% 36%, #fff, transparent),
+  radial-gradient(1px 1px at 14% 60%, #fff, transparent), radial-gradient(1.5px 1.5px at 62% 56%, #fff, transparent); animation: tw 4s ease-in-out infinite alternate; }
+.fantasy .moon { right: 9%; top: 6%; width: 26cqw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 38% 38%, #fffbe3, #f1dc9a 68%, #d9b95c); box-shadow: 0 0 8cqw 2cqw rgba(255,235,160,.35); }
+.fantasy .dragon { left: -10%; top: 24%; width: 9cqw; height: 4cqw; background: #020806; clip-path: polygon(0 40%, 22% 8%, 42% 44%, 50% 28%, 58% 44%, 78% 8%, 100% 40%, 78% 56%, 58% 62%, 50% 84%, 42% 62%, 22% 56%); animation: glide 18s linear infinite; }
+@keyframes glide { from { transform: translate(0, 0); } 50% { transform: translate(70cqw, 4cqw); } to { transform: translate(125cqw, -2cqw); } }
+.fantasy .hill { left: -10%; right: -10%; bottom: 0; height: 34%; background: #04120f; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.fantasy .castle { left: 33%; bottom: 22%; width: 28%; height: 46%;
+  background:
+    radial-gradient(circle at 20% 62%, #ffd36b 0 1.4%, transparent 1.8%), radial-gradient(circle at 36% 54%, #ffd36b 0 1.4%, transparent 1.8%),
+    radial-gradient(circle at 50% 70%, #ffd36b 0 1.4%, transparent 1.8%), radial-gradient(circle at 63% 54%, #ffd36b 0 1.4%, transparent 1.8%),
+    radial-gradient(circle at 78% 62%, #ffd36b 0 1.4%, transparent 1.8%), #030c0a;
+  clip-path: polygon(0 100%, 0 40%, 4% 40%, 4% 28%, 8% 28%, 8% 40%, 12% 40%, 12% 10%, 14% 0, 16% 10%, 16% 38%, 30% 38%, 30% 22%, 34% 22%, 34% 14%, 38% 14%, 38% 22%, 42% 22%, 42% 38%, 58% 38%, 58% 18%, 60% 8%, 62% 0, 64% 8%, 66% 18%, 66% 38%, 80% 38%, 80% 22%, 84% 22%, 84% 12%, 88% 12%, 88% 22%, 92% 22%, 92% 40%, 100% 40%, 100% 100%); }
+.fantasy .sparkles { inset: 0; background:
+  radial-gradient(2px 2px at 18% 78%, #ffe9a8, transparent), radial-gradient(2px 2px at 30% 66%, #9bffcf, transparent),
+  radial-gradient(2px 2px at 70% 74%, #ffe9a8, transparent), radial-gradient(2px 2px at 82% 62%, #9bffcf, transparent),
+  radial-gradient(1.5px 1.5px at 50% 84%, #ffe9a8, transparent); animation: tw 2.4s ease-in-out infinite alternate; }
+
+/* comedy: a stage with red curtains and a warm spotlight */
+.comedy { background: linear-gradient(#ffe066, #ffb52e 62%, #e8921a); }
+.comedy .spot { left: 0; right: 0; top: 0; height: 100%; background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,0) 90%); clip-path: polygon(44% 0, 56% 0, 84% 100%, 16% 100%); mix-blend-mode: soft-light; animation: sway 10s ease-in-out infinite alternate; transform-origin: 50% 0; }
+@keyframes sway { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+.comedy .curtain { top: 0; bottom: 0; width: 24%; background: repeating-linear-gradient(90deg, #a3121f 0 2.4cqw, #7d0c17 2.4cqw 4.8cqw); box-shadow: inset 0 -6cqw 8cqw rgba(0,0,0,.25); }
+.comedy .cl { left: 0; border-bottom-right-radius: 60% 18%; } .comedy .cr { right: 0; border-bottom-left-radius: 60% 18%; }
+.comedy .valance { left: 0; right: 0; top: 0; height: 9%; background: #7d0c17; border-bottom: .7cqw solid #e5b94a; box-shadow: 0 1cqw 2cqw rgba(0,0,0,.35); }
+.comedy .floor { left: 0; right: 0; bottom: 0; height: 22%; background: repeating-linear-gradient(90deg, #7a4620 0 6cqw, #623818 6cqw 6.3cqw), #7a4620; box-shadow: inset 0 2cqw 4cqw rgba(0,0,0,.3); }
+.comedy .mic { left: 49.4%; bottom: 14%; width: .7cqw; height: 40%; background: #1c1c1c; }
+.comedy .mic::before { content: ""; position: absolute; left: -1.4cqw; top: -2.6cqw; width: 3.5cqw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f2f2f2, #8a8a8a 70%); }
+.comedy .mic::after { content: ""; position: absolute; left: -3cqw; bottom: -.4cqw; width: 6.7cqw; height: 1cqw; border-radius: .5cqw; background: #1c1c1c; }
+.comedy .confetti { inset: 0; background:
+  radial-gradient(.5cqw .5cqw at 12% 10%, #e8421f, transparent), radial-gradient(.5cqw .5cqw at 26% 30%, #2f6bff, transparent),
+  radial-gradient(.5cqw .5cqw at 38% 14%, #25b36a, transparent), radial-gradient(.5cqw .5cqw at 52% 36%, #e8421f, transparent),
+  radial-gradient(.5cqw .5cqw at 64% 12%, #8b5fc7, transparent), radial-gradient(.5cqw .5cqw at 76% 32%, #2f6bff, transparent),
+  radial-gradient(.5cqw .5cqw at 88% 16%, #25b36a, transparent), radial-gradient(.5cqw .5cqw at 20% 52%, #8b5fc7, transparent),
+  radial-gradient(.5cqw .5cqw at 70% 56%, #e8421f, transparent);
+  background-size: 100% 60%; background-repeat: repeat-y; animation: fall 7s linear infinite; }
+@keyframes fall { to { background-position: 0 60%; } }
+
 /* ---------- transcript ---------- */
 dialog { max-width: min(38rem, 92vw); max-height: 85vh; overflow: auto; background: #111; color: #eee; border: 1px solid #444; padding: 1.5rem 2rem; }
 dialog::backdrop { background: rgba(0,0,0,.8); }
@@ -175,7 +236,7 @@ dialog .p { color: #ffe45e; float: right; }
 .nojs { position: relative; z-index: 9; padding: 1rem; background: #111; }
 .back { position: fixed; right: 12px; bottom: 12px; z-index: 9; padding: .5rem .75rem; background: #ffe45e; color: #111; font: 700 .72rem "Helvetica Neue", Arial, sans-serif; text-decoration: none; box-shadow: 0 3px 8px rgba(0,0,0,.6); }
 
-@media (max-width: 700px) { :root { --bars: 8rem; } .controls { gap: .6rem; } .tc { display: none; } .chapters { gap: .7rem; font-size: .6rem; } }
+@media (max-width: 700px) { :root { --bars: 9.6rem; } .controls { gap: .5rem; } .tc { display: none; } .chapters { gap: .3rem .6rem; font-size: .56rem; letter-spacing: .08em; } }
 @media (prefers-reduced-motion: reduce) { .layer, .grain, .scene * { animation: none !important; } .scene { transition: none; } }
 
 /* ---------- genre menu pop-up ---------- */
