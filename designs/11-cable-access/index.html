@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>THE SCENE &amp; SIP HOUR — Channel 3 Program Guide</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, shown as a 1987 public-access cable channel program guide.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confetti" aria-hidden="true">
+    <i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i>
+  </div>
+
+  <header class="masthead">
+    <p class="station">Channel 3 &middot; Community Access</p>
+    <h1 class="chrome">THE SCENE &amp; SIP HOUR</h1>
+    <p class="intro">Live from 1138 Marquee Lane. Every drink is a genre.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="onnow" aria-label="On now">
+      <div class="frame">
+        <div class="screen" id="screen" aria-live="polite">
+          <div class="slate" id="slate">
+            <div class="bars" aria-hidden="true"></div>
+            <div class="bars low" aria-hidden="true"></div>
+            <p class="slate-text">Please stand by<br><b>Select a program from the guide</b></p>
+          </div>
+          <div class="prog-view" id="prog-view" hidden>
+            <p class="badge">On now</p>
+            <h2 id="p-title"></h2>
+            <p class="desc" id="p-desc"></p>
+            <div class="lower-third" id="lower-third">
+              <span class="lt-a" id="p-seg"></span>
+              <span class="lt-b" id="p-price"></span>
+            </div>
+          </div>
+        </div>
+        <div class="crawl-bar">
+          <button id="crawl-toggle" type="button" aria-pressed="false">Pause</button>
+          <div class="crawl" aria-label="Community bulletin board"><div class="crawl-track" id="crawl-track"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Program guide <span>Today &middot; click any program to put it on</span></h2>
+      <div class="grid-scroll"><div class="grid" id="grid"></div></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>1138 Marquee Lane, Hyde Park, Chicago &nbsp;&middot;&nbsp; Open daily, 7 a.m. to 10 p.m.</p>
+    <p class="small">Scene &amp; Sip Community Access Cable. Not responsible for plot twists.</p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -38,7 +38,7 @@ const ENTRIES = [
   { n: 10, phase: 2, title: "Lobby Card", tag: "Illustration", hue: 15,
     question: "Can CSS alone fake 1940s hand-lettered poster art?",
     idea: "Illustrated, saturated, borders and starbursts." },
-  { n: 11, phase: 2, title: "Cable Access, 1987", tag: "Era", hue: 160,
+  { n: 11, status: "shot", date: "2026-10-05", path: "designs/11-cable-access/index.html", phase: 2, title: "Cable Access, 1987", tag: "Era", hue: 160,
     question: "Is earnest low-budget TV funnier and warmer than polished?",
     idea: "Test patterns, static, lower-third graphics, a phone number." },
   { n: 12, phase: 2, title: "All-Type Brutalist", tag: "Typography", hue: 60,
