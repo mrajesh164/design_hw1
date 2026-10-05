@@ -36,7 +36,7 @@ const GENRES = [
 const cues = [
   { scene: "intro", html: "<i>[espresso machine hissing]</i>" },
   { scene: "intro", html: "Welcome to Scene &amp; Sip.<br>Every drink here is a genre." },
-  { scene: "intro", html: "Open daily, 7 a.m. to 10 p.m.<br>1138 Marquee Lane, Hyde Park" }
+  { scene: "intro", html: "Open daily, 7 a.m. to 10 p.m.<br>1138 Marquee Lane, Chicago, IL 60615" }
 ];
 GENRES.forEach(g => {
   cues.push({ scene: g.id, chapter: g.id, html: `<i>${g.sound}</i><br><b>${g.name.toUpperCase()}</b> &mdash; ${g.tag}` });

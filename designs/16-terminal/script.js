@@ -260,7 +260,7 @@ function cmdRemove(arg) {
 }
 function cmdHours() {
   const box = el("div", "block");
-  box.append(el("p", "gh", "Visit"), el("p", "line", "Scene & Sip"), el("p", "line", "1138 Marquee Lane, Hyde Park, Chicago"), el("p", "line", "Open daily, 7 a.m. to 10 p.m."));
+  box.append(el("p", "gh", "Visit"), el("p", "line", "Scene & Sip"), el("p", "line", "1138 Marquee Lane, Chicago, IL 60615"), el("p", "line", "Open daily, 7 a.m. to 10 p.m."));
   print(box);
 }
 function cmdSurprise() {
