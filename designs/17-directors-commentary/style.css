@@ -71,6 +71,11 @@ button:focus-visible, .back:focus-visible { outline: 2px solid var(--cream); out
 .menu-btn::before { content: "\25B6"; position: absolute; left: .8rem; top: 50%; transform: translateY(-50%); font-size: .8rem; color: var(--gold); opacity: 0; }
 .menu-btn:hover, .menu-btn:focus-visible { color: var(--gold); outline: none; background: rgba(214, 182, 114, .07); }
 .menu-btn:hover::before, .menu-btn:focus-visible::before { opacity: 1; }
+/* the commentary row is a switch, not a place to go, so no cursor arrow or highlight */
+.menu-btn[role="switch"]:hover, .menu-btn[role="switch"]:focus-visible { color: var(--cream); background: transparent; }
+.menu-btn[role="switch"]:hover::before, .menu-btn[role="switch"]:focus-visible::before { opacity: 0; }
+.menu-btn[role="switch"] b { color: var(--gold); }
+.menu-btn[role="switch"]:focus-visible { outline: 2px solid var(--gold-dim); outline-offset: -2px; }
 
 .sw { margin-left: auto; position: relative; flex: none; width: 2.4rem; height: 1.2rem; border-radius: 999px; background: #2b1219; border: 1px solid var(--gold-dim); align-self: center; }
 .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: calc(1.2rem - 6px); height: calc(1.2rem - 6px); border-radius: 50%; background: var(--gold-dim); transition: transform .15s, background .15s; }
