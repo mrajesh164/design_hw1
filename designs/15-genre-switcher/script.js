@@ -60,17 +60,61 @@ const stage = document.getElementById("stage");
 const btnWrap = document.getElementById("switch-btns");
 const statusEl = document.getElementById("status");
 
-const buttons = GENRES.map((g, i) => {
+// Small previews so the home page can show what each skin looks like
+const PREVIEW = {
+  horror:  { bg: "#0b0708", fg: "#eadbd3", acc: "#e05a52", font: '"Bodoni 72", "Didot", "Playfair Display", Georgia, serif' },
+  scifi:   { bg: "#04090b", fg: "#d3e4e2", acc: "#6cc4ba", font: '"SF Mono", Menlo, Consolas, "Courier New", monospace' },
+  noir:    { bg: "#0d0d0d", fg: "#e0e0e0", acc: "#f2f2f2", font: '"American Typewriter", "Courier New", Courier, monospace' },
+  romance: { bg: "#fbece7", fg: "#4a2a33", acc: "#b3425f", font: '"Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif' },
+  western: { bg: "#e8d3a2", fg: "#33200e", acc: "#9b3a1c", font: '"Rockwell", "Clarendon", "Roboto Slab", "Courier New", Georgia, serif' },
+  mystery: { bg: "#1c1327", fg: "#e9dff3", acc: "#d98aa0", font: '"Courier New", Courier, monospace' },
+  fantasy: { bg: "#12261a", fg: "#efe3c0", acc: "#d9b45a", font: '"Palatino", "Book Antiqua", "Palatino Linotype", Georgia, serif' },
+  comedy:  { bg: "#f7efdc", fg: "#2a1a14", acc: "#c0392b", font: '"Arial Rounded MT Bold", "Trebuchet MS", Verdana, sans-serif' }
+};
+
+// buttons[0] is Home; buttons[k] is genre k - 1
+const labels = ["Home", ...GENRES.map(g => g.name)];
+const buttons = labels.map((name, k) => {
   const b = document.createElement("button");
   b.type = "button";
-  b.textContent = g.name;
+  b.textContent = name;
   b.setAttribute("aria-pressed", "false");
-  b.addEventListener("click", () => choose(i));
+  b.addEventListener("click", () => choose(k - 1));
   btnWrap.appendChild(b);
   return b;
 });
 
-let current = -1;
+let current = null; // null before the first render, -1 for Home, otherwise a genre index
+
+function renderHome() {
+  const money = n => "$" + Number(n).toFixed(2);
+  stage.innerHTML = `
+    <section class="skin home" aria-labelledby="gname">
+      <header class="hero">
+        <p class="kicker">A café whose menu is organized by film genre</p>
+        <h1 id="gname">Scene &amp; Sip</h1>
+        <p class="tagline">One café. Eight genres. Eight completely different looks.</p>
+      </header>
+      <ol class="how" aria-label="How it works">
+        <li><b>1</b> Pick a genre below</li>
+        <li><b>2</b> Watch the whole café change</li>
+        <li><b>3</b> Read that genre's menu</li>
+      </ol>
+      <ul class="tiles" aria-label="Genres">
+        ${GENRES.map((g, i) => {
+          const p = PREVIEW[g.id];
+          const low = Math.min(...g.drinks.map(d => parseFloat(d[1].slice(1))));
+          return `<li><button type="button" class="tile" data-i="${i}" style="--tbg:${p.bg};--tfg:${p.fg};--tacc:${p.acc};--tfont:${p.font}">
+            <span class="tnum">${String(i + 1).padStart(2, "0")}</span>
+            <span class="tname">${g.name}</span>
+            <span class="ttag">${g.tag}</span>
+            <span class="tmeta">${g.drinks.length} drinks, from ${money(low)}</span>
+          </button></li>`;
+        }).join("")}
+      </ul>
+    </section>`;
+  stage.querySelectorAll(".tile").forEach(t => t.addEventListener("click", () => choose(Number(t.dataset.i))));
+}
 
 function render(g) {
   stage.innerHTML = `
@@ -94,24 +138,34 @@ function render(g) {
 }
 
 function choose(i) {
-  i = (i + GENRES.length) % GENRES.length;
+  if (i < -1) i = GENRES.length - 1;
+  if (i >= GENRES.length) i = -1;
   if (i === current) return;
+  const first = current === null;
   current = i;
-  const g = GENRES[i];
-  document.body.dataset.genre = g.id;
-  buttons.forEach((b, k) => b.setAttribute("aria-pressed", String(k === i)));
-  render(g);
-  statusEl.textContent = `Showing the ${g.name} menu`;
-  document.title = `Scene & Sip: ${g.name}`;
+  buttons.forEach((b, k) => b.setAttribute("aria-pressed", String(k === i + 1)));
+  if (i === -1) {
+    document.body.dataset.genre = "home";
+    renderHome();
+    statusEl.textContent = "Home";
+    document.title = "Scene & Sip: One Café, Eight Genres";
+  } else {
+    const g = GENRES[i];
+    document.body.dataset.genre = g.id;
+    render(g);
+    statusEl.textContent = `Showing the ${g.name} menu`;
+    document.title = `Scene & Sip: ${g.name}`;
+  }
+  if (!first) window.scrollTo(0, 0);
 }
 
-// Left and right arrows cycle through the genres
+// Left and right arrows walk Home, then each genre, then back around
 addEventListener("keydown", e => {
   if (e.altKey || e.ctrlKey || e.metaKey) return;
   if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
   e.preventDefault();
   choose(current + (e.key === "ArrowRight" ? 1 : -1));
-  if (btnWrap.contains(document.activeElement)) buttons[current].focus();
+  if (btnWrap.contains(document.activeElement)) buttons[current + 1].focus();
 });
 
-choose(GENRES.findIndex(g => g.id === "noir"));
+choose(-1);
