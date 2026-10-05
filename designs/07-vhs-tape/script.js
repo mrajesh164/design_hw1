@@ -27,7 +27,25 @@ const TAPES = [
     syn: "Two cups on a rail, ten paces apart. Only one of them is coffee.",
     items: [
       ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-      ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] }
+      ["The Good, The Bad, and The Oatmeal", "$7.00", "Skillet oatmeal with three toppings. Pick one."] ] },
+  { id: "mystery", name: "Mystery", title: "Mystery", tag: "Every sip is a clue", rating: "PG-13",
+    syn: "Everyone had the tea. Nobody admits it. Someone is lying about the lemon.",
+    items: [
+      ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
+      ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
+      ["Plot Twist", "$6.00", "Iced chai with a shot of espresso. Sweet, then suddenly not."] ] },
+  { id: "fantasy", name: "Fantasy", title: "Fantasy", tag: "Brewed with a little magic", rating: "PG",
+    syn: "A golden latte, a dragon with a sweet tooth, and a quest that ends at the counter.",
+    items: [
+      ["The Chosen One", "$6.50", "Golden turmeric latte with honey. Destined for greatness."],
+      ["Dragon's Breath", "$5.75", "Spiced hot chocolate with chili and cinnamon. Mind the fire."],
+      ["Elixir of Life", "$6.25", "Sparkling elderflower lemonade with edible flowers."] ] },
+  { id: "comedy", name: "Comedy", title: "Comedy", tag: "Guaranteed to lighten the mood", rating: "PG-13",
+    syn: "A banana, a peanut butter mocha, and a laugh track you cannot turn off.",
+    items: [
+      ["Slapstick", "$4.50", "Banana milk latte. Slips right down."],
+      ["Punchline", "$5.25", "Peanut butter mocha. Sweet setup, salty finish."],
+      ["Laugh Track", "$5.00", "Cold brew float with vanilla ice cream. Canned laughter not included."] ] }
 ];
 
 const shelf = document.getElementById("shelf");
