@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCENE &amp; SIP — Main Title</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, opening with a cut-paper film title sequence and settling into a poster you can click through.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="intro" id="intro" aria-hidden="true">
+    <p class="i-tiny">A Scene &amp; Sip production</p>
+    <div class="i-bar b1"></div>
+    <div class="i-bar b2"></div>
+    <div class="i-shape circ"></div>
+    <div class="i-shape arrow"></div>
+    <div class="i-shape jag"></div>
+    <p class="i-credit" id="i-credit"></p>
+    <p class="i-title">Scene &amp; Sip</p>
+  </div>
+  <button class="skip" id="skip" type="button">Skip intro &#9654;&#9654;</button>
+
+  <div class="app" id="app">
+    <main class="poster">
+      <section class="left" aria-labelledby="title">
+        <p class="kicker">A Scene &amp; Sip production</p>
+        <h1 id="title">SCENE &amp; SIP</h1>
+        <p class="sub">Every drink is a genre.</p>
+
+        <p class="starring">Starring</p>
+        <ul class="genres" id="genres"></ul>
+        <p class="hint">Choose a genre to see its drinks.</p>
+      </section>
+
+      <section class="art" aria-hidden="true">
+        <svg viewBox="0 0 400 440" id="art" role="presentation" focusable="false">
+          <circle class="s circ" cx="250" cy="150" r="110"/>
+          <polygon class="s jag" points="110,20 135,95 210,80 150,135 195,200 115,170 70,230 80,150 10,120 85,105"/>
+          <polygon class="s arrow" points="40,300 200,300 200,250 320,340 200,430 200,380 40,380"/>
+          <rect class="s bar1" x="220" y="330" width="160" height="26"/>
+          <rect class="s bar2" x="240" y="366" width="140" height="10"/>
+          <circle class="s dot" cx="340" cy="406" r="18"/>
+        </svg>
+        <p class="vertical">The menu</p>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p class="addr"><b>1138 Marquee Lane, Hyde Park, Chicago</b><br>Open daily, 7 a.m. to 10 p.m.</p>
+      <button type="button" id="replay" class="replay">&#8635; Replay opening</button>
+    </footer>
+  </div>
+
+  <dialog id="card" aria-labelledby="c-title">
+    <div class="c-top"></div>
+    <button type="button" class="c-close" id="c-close">Close &times;</button>
+    <p class="c-kicker">Starring</p>
+    <h2 id="c-title"></h2>
+    <p class="c-tag" id="c-tag"></p>
+    <ul class="c-list" id="c-list"></ul>
+  </dialog>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

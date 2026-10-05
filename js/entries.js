@@ -44,7 +44,7 @@ const ENTRIES = [
   { n: 12, status: "shot", date: "2026-10-05", path: "designs/12-all-type/index.html", phase: 2, title: "All-Type Brutalist", tag: "Typography", hue: 60,
     question: "How loud can type be with zero images?",
     idea: "Enormous menu type, harsh grid, color blocks." },
-  { n: 13, phase: 2, title: "Title Sequence", tag: "Motion", hue: 0,
+  { n: 13, status: "shot", date: "2026-10-05", path: "designs/13-title-sequence/index.html", phase: 2, title: "Title Sequence", tag: "Motion", hue: 0,
     question: "Can a Saul Bass-style opening be the landing page?",
     idea: "Type animates in on a timer or scroll, then settles." },
   { n: 14, phase: 2, title: "Variable Type Morph", tag: "Typography", hue: 300,
