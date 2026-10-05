@@ -32,7 +32,7 @@ const ENTRIES = [
     question: "What changes when the whole palette is inverted?",
     idea: "Inverted tones; menu items are exposures on a strip." },
 
-  { n: 9,  phase: 2, title: "Silent Film", tag: "Era", hue: 35,
+  { n: 9, status: "shot", date: "2026-10-05", path: "designs/09-silent-film/index.html", phase: 2, title: "Silent Film", tag: "Era", hue: 35,
     question: "Can intertitle cards replace sections entirely?",
     idea: "Tinted cards, iris transitions, no hero image." },
   { n: 10, phase: 2, title: "Lobby Card", tag: "Illustration", hue: 15,
@@ -41,7 +41,7 @@ const ENTRIES = [
   { n: 11, status: "shot", date: "2026-10-05", path: "designs/11-cable-access/index.html", phase: 2, title: "Cable Access, 1987", tag: "Era", hue: 160,
     question: "Is earnest low-budget TV funnier and warmer than polished?",
     idea: "Test patterns, static, lower-third graphics, a phone number." },
-  { n: 12, phase: 2, title: "All-Type Brutalist", tag: "Typography", hue: 60,
+  { n: 12, status: "shot", date: "2026-10-05", path: "designs/12-all-type/index.html", phase: 2, title: "All-Type Brutalist", tag: "Typography", hue: 60,
     question: "How loud can type be with zero images?",
     idea: "Enormous menu type, harsh grid, color blocks." },
   { n: 13, phase: 2, title: "Title Sequence", tag: "Motion", hue: 0,
