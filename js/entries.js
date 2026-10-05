@@ -72,9 +72,9 @@ const ENTRIES = [
   { n: 21, status: "shot", date: "2026-10-05", path: "designs/21-storyboard-in-color/index.html", phase: 3, title: "Storyboard in Color", tag: "Hybrid", hue: 20,
     question: "What happens when the storyboard look of 05 takes the genre colors and patterns of 15 and the story lines of 09?",
     idea: "Eight shots, one per genre: pencil sketches on a patterned color wash, a line of story under each, and panels taped to the sheet." },
-  { n: 22, phase: 2, title: "Contact Sheet", tag: "Photography", hue: 200,
-    question: "Can a grid with grease-pencil marks feel editorial?",
-    idea: "Frames numbered like a roll; circled picks are the specials." },
+  { n: 22, status: "shot", date: "2026-10-05", path: "designs/22-cafe-storyboard/index.html", phase: 3, title: "Café Storyboard", tag: "Hybrid", hue: 200,
+    question: "Does the storyboard from 21 read as a café once it has a home page, an about section and a visit section around the menu?",
+    idea: "21 plus a sticky About, Menu and Visit bar, a hero with a café-front sketch, an about section, the eight genre panels as the menu, and a visit section with address and hours." },
 
   { n: 23, phase: 3, title: "Wikipedia Article", tag: "Concept", hue: 210,
     question: "Does deadpan encyclopedic format beat visual spectacle?",
