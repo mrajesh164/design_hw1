@@ -1,0 +1,116 @@
+:root {
+  --desk: #c9c3b6;
+  --page: #fdfcf7;
+  --ink: #111;
+  --rev: #b3341f;
+  --measure: 61ch;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2rem 12px 5rem;
+  background: var(--desk);
+  color: var(--ink);
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+  counter-reset: page 1;
+}
+
+/* A US Letter page: 85 characters wide at 12pt Courier */
+.sheet {
+  position: relative;
+  width: 85ch;
+  max-width: 100%;
+  min-height: 110ch;
+  margin: 0 auto 2rem;
+  padding: 10ch 10ch 12ch 14ch;
+  background: var(--page);
+  font-size: min(16px, calc((100vw - 24px) / 51));
+  line-height: 1.5;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 8px 24px rgba(0,0,0,.18);
+  counter-increment: page;
+}
+/* three-hole punch */
+.sheet::before {
+  content: "";
+  position: absolute;
+  left: 4ch;
+  top: 0;
+  bottom: 0;
+  width: 2.2ch;
+  background:
+    radial-gradient(circle, var(--desk) 0 1ch, transparent 1.1ch) 0 14ch / 100% 40ch repeat-y;
+  opacity: .9;
+}
+.sheet:not(.title-page)::after {
+  content: counter(page) ".";
+  position: absolute;
+  top: 5ch;
+  right: 10ch;
+}
+
+p, h1, h2 { margin: 0; font-weight: 400; font-size: 1em; }
+
+.title-page { display: flex; flex-direction: column; justify-content: space-between; }
+.title-page::after { content: none; }
+.title-block { margin-top: 28ch; text-align: center; }
+.title-block h1 { font-size: 1em; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; letter-spacing: .1em; margin-bottom: 4ch; }
+.title-block .by { margin-bottom: 1.5em; }
+.contact { font-size: .85em; line-height: 1.4; }
+
+.fade, .trans { text-transform: uppercase; }
+.trans { text-align: right; margin: 1.5em 0 0; }
+.slug {
+  position: relative;
+  margin: 2.5em 0 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.slug:first-of-type { margin-top: 1.5em; }
+.slug::before, .slug::after {
+  content: attr(data-scene) ".";
+  position: absolute;
+  top: 0;
+  font-weight: 400;
+}
+.slug::before { left: -8ch; }
+.slug::after { right: -8ch; }
+
+.action { margin: 0 0 1em; max-width: var(--measure); }
+.action em { font-style: normal; font-weight: 700; }
+.cue { margin: 1em 0 0; padding-left: 22ch; text-transform: uppercase; }
+.paren { padding-left: 16ch; max-width: 40ch; }
+.dial { padding-left: 10ch; max-width: 45ch; margin-bottom: .25em; }
+
+.end { text-align: center; margin: 3em 0 0; font-weight: 700; letter-spacing: .2em; }
+.footnote { margin-top: 18ch; text-align: center; font-size: .8em; opacity: .65; }
+
+/* Revision mark in the margin, like a tracked draft */
+.dial::after { content: ""; }
+
+/* Reveal animation (only when JS is present) */
+.js .reveal { opacity: 0; transform: translateY(.4em); transition: opacity .5s, transform .5s; }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .slug { clip-path: inset(0 100% 0 0); }
+.js .slug.in { animation: typing .9s steps(var(--n, 24)) forwards; }
+@keyframes typing { to { clip-path: inset(0 0 0 0); } }
+.js .slug:not(.in)::before, .js .slug:not(.in)::after { opacity: 0; }
+
+.back {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  padding: .55rem .8rem;
+  background: #f6e27a;
+  color: #111;
+  font: 700 .8rem "Courier New", monospace;
+  text-decoration: none;
+  box-shadow: 2px 3px 6px rgba(0,0,0,.3);
+  transform: rotate(-2deg);
+}
+.back:hover, .back:focus-visible { transform: rotate(0); outline: 2px solid #111; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .slug { opacity: 1; transform: none; clip-path: none; transition: none; animation: none !important; }
+  .js .slug::before, .js .slug::after { opacity: 1 !important; }
+}
+@media print { body { background: none; padding: 0; } .sheet { box-shadow: none; margin: 0; page-break-after: always; } .back { display: none; } }
