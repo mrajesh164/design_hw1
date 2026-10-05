@@ -37,9 +37,6 @@ const viewer = document.getElementById("viewer");
 const vTitle = document.getElementById("v-title");
 const vTag = document.getElementById("v-tag");
 const vList = document.getElementById("v-list");
-const vCount = document.getElementById("v-count");
-const vPrev = document.getElementById("v-prev");
-const vNext = document.getElementById("v-next");
 let current = 0;
 let opener = null;
 
@@ -63,9 +60,6 @@ function fill(i) {
   vTitle.textContent = g.title;
   vTag.textContent = g.tag;
   vList.innerHTML = g.items.map(it => `<li><span class="v-name">${it[0]}</span><span class="v-price">${it[1]}</span><p>${it[2]}</p></li>`).join("");
-  vCount.textContent = `Card ${current + 1} of ${GENRES.length}`;
-  vPrev.textContent = `‹ ${GENRES[(current + GENRES.length - 1) % GENRES.length].name}`;
-  vNext.textContent = `${GENRES[(current + 1) % GENRES.length].name} ›`;
   viewer.querySelector(".v-inner").scrollTop = 0;
 }
 
@@ -76,12 +70,6 @@ wall.addEventListener("click", e => {
   fill(Number(card.dataset.i));
   viewer.showModal();
 });
-vPrev.addEventListener("click", () => fill(current - 1));
-vNext.addEventListener("click", () => fill(current + 1));
 document.getElementById("v-close").addEventListener("click", () => viewer.close());
 viewer.addEventListener("click", e => { if (e.target === viewer) viewer.close(); });
-viewer.addEventListener("keydown", e => {
-  if (e.key === "ArrowLeft") { e.preventDefault(); fill(current - 1); }
-  if (e.key === "ArrowRight") { e.preventDefault(); fill(current + 1); }
-});
 viewer.addEventListener("close", () => { if (opener) opener.focus(); });
