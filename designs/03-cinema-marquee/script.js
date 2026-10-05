@@ -4,7 +4,7 @@ const ROWS = 5;
 const INTRO = ["NOW SERVING", "", "EVERY DRINK IS A GENRE", "PICK A TICKET BELOW", "OPEN DAILY 7AM-10PM"];
 
 const GENRES = [
-  { id: "horror", name: "Horror", tag: "Rated R for Roast", footer: "DON'T GO IN THE BASEMENT",
+  { id: "horror", name: "Horror", tag: "Rated R for Roast", footer: "AVOID THE BASEMENT",
     items: [
       ["The Final Girl", "THE FINAL GIRL", "$4.00", "Dark roast, brewed black. Hot enough to wake the dead."],
       ["Basement Cold Brew", "BASEMENT BREW", "$5.00", "Cold brew steeped 24 hours. Don't ask what else is down there."],
@@ -120,7 +120,7 @@ GENRES.forEach(g => {
   b.dataset.id = g.id;
   b.setAttribute("aria-pressed", "false");
   b.innerHTML = `<span>ADMIT ONE</span><b>${g.name.toUpperCase()}</b><small>${g.items.length} drinks</small>`;
-  b.addEventListener("click", () => { auto = false; select(g); });
+  b.addEventListener("click", () => select(g));
   ticketsEl.appendChild(b);
 });
 
@@ -130,15 +130,5 @@ function select(g) {
   renderProgram(g);
 }
 
-// Start on the intro board, then idle through the genres until the visitor picks one
+// The board stays on the intro until a ticket is picked
 show(INTRO, true);
-let auto = !reduce;
-let idx = 0;
-ticketsEl.addEventListener("pointerenter", () => { auto = false; });
-if (auto) {
-  setTimeout(function loop() {
-    if (!auto) return;
-    select(GENRES[idx++ % GENRES.length]);
-    setTimeout(loop, 6500);
-  }, 3500);
-}
