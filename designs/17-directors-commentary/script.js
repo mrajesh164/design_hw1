@@ -58,7 +58,7 @@ const GENRES = [
 
 const screen = document.getElementById("screen");
 const pad = n => String(n).padStart(2, "0");
-const MIC = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const MIC = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" fill="currentColor"/></svg>';
 
 let view = "home";
 let ch = 0;
@@ -68,21 +68,18 @@ function homeHTML() {
   return `
   <section class="view home" aria-labelledby="vh">
     <div class="titleblock">
-      <p class="presents">A Scene &amp; Sip presentation</p>
       <h1 id="vh" tabindex="-1">Scene &amp; Sip</h1>
       <p class="edition">Special Edition</p>
     </div>
     <nav class="menu" aria-label="Main menu">
-      <button type="button" class="menu-btn" data-act="play">Play <small>see the menu</small></button>
       <button type="button" class="menu-btn" data-act="scenes">Scene Selection <small>jump to a genre</small></button>
       <button type="button" class="menu-btn" data-act="toggle" role="switch" aria-checked="${commentary}">
         Commentary: <b>${commentary ? "ON" : "OFF"}</b><span class="sw" aria-hidden="true"></span>
       </button>
-      <button type="button" class="menu-btn" data-act="bonus">Bonus Features <small>visit us</small></button>
     </nav>
     <p class="help">${commentary
-      ? "Commentary is on. When you read a genre's menu, hover over or tap a drink to hear the director."
-      : "Commentary is off. Switch it on to hear the director talk about each drink."}
+      ? "Commentary is on. When you read a genre's menu, hover over or tap a drink to read the director's note."
+      : "Commentary is off. Switch it on to read the director's notes on each drink."}
       <span class="keys">Click an option, or use the up and down arrow keys and Enter.</span></p>
   </section>`;
 }
@@ -137,7 +134,7 @@ function chapterHTML() {
     <p class="tag">${g.tag}</p>
     <ol class="drinks" aria-label="${g.name} drinks">${rows}</ol>
     <p class="help">${commentary
-      ? "Commentary is on. Hover over, tap or press a drink to hear the director."
+      ? "Commentary is on. Hover over, tap or press a drink to read the director's note."
       : "Commentary is off. Use the switch above to turn it on."}
       <span class="keys">Left and right arrow keys change the chapter.</span></p>
     <div class="navrow">
@@ -149,31 +146,10 @@ function chapterHTML() {
   </section>`;
 }
 
-function bonusHTML() {
-  return `
-  <section class="view bonus" aria-labelledby="vh">
-    <p class="crumb">Main menu &rsaquo; Bonus Features</p>
-    <h2 id="vh" tabindex="-1">Bonus Features</h2>
-    <div class="cols">
-      <div class="card">
-        <h3>Visit the set</h3>
-        <p>1138 Marquee Lane<br>Hyde Park, Chicago</p>
-        <p>Open daily, 7 a.m. to 10 p.m.</p>
-      </div>
-      <div class="card">
-        <h3>The making of</h3>
-        <p>Scene &amp; Sip began as a bet that every drink could have a genre. The first menu was written on the back of a call sheet. No baristas were harmed, though one was upstaged by a banana.</p>
-      </div>
-    </div>
-    <div class="navrow"><button type="button" class="nav" data-act="menu">&larr; Main menu</button></div>
-  </section>`;
-}
-
 function render(firstLoad) {
   screen.innerHTML = view === "home" ? homeHTML()
     : view === "scenes" ? scenesHTML()
-    : view === "chapter" ? chapterHTML()
-    : bonusHTML();
+    : chapterHTML();
   document.title = view === "chapter" ? `Scene & Sip: ${GENRES[ch].name}` : "Scene & Sip: Special Edition";
   if (view === "home") {
     const first = screen.querySelector(".menu-btn");
@@ -210,9 +186,7 @@ screen.addEventListener("click", e => {
   const b = e.target.closest("[data-act]");
   if (!b) return;
   switch (b.dataset.act) {
-    case "play": go("chapter", 0); break;
     case "scenes": go("scenes"); break;
-    case "bonus": go("bonus"); break;
     case "menu": go("home"); break;
     case "toggle": toggleCommentary(); break;
     case "pick": go("chapter", Number(b.dataset.ch)); break;

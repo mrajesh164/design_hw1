@@ -46,7 +46,6 @@ button:focus-visible, .back:focus-visible { outline: 2px solid var(--cream); out
 /* ---------- main menu ---------- */
 .home { display: grid; justify-items: center; text-align: center; }
 .titleblock { margin-bottom: 1.8rem; }
-.presents { font: 700 .72rem var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
 .home h1 {
   margin: .5rem 0 .3rem;
   font-size: clamp(2.1rem, 6vw, 3.4rem);
@@ -81,10 +80,10 @@ button:focus-visible, .back:focus-visible { outline: 2px solid var(--cream); out
 .help { max-width: 34rem; margin-top: 1.8rem; font-size: 1rem; color: var(--muted); }
 .help .keys { display: block; margin-top: .4rem; font-size: .88rem; font-style: italic; color: var(--gold-dim); }
 
-/* ---------- scene selection and bonus ---------- */
+/* ---------- scene selection and chapters ---------- */
 .crumb { font: 700 .72rem var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
-.scenes h2, .bonus h2, .chapter h2 { margin: .5rem 0 .3rem; font-size: clamp(1.7rem, 4.4vw, 2.5rem); font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-.scenes h2:focus, .bonus h2:focus, .chapter h2:focus { outline: none; }
+.scenes h2, .chapter h2 { margin: .5rem 0 .3rem; font-size: clamp(1.7rem, 4.4vw, 2.5rem); font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.scenes h2:focus, .chapter h2:focus { outline: none; }
 .sub, .tag { font-style: italic; font-size: 1.1rem; color: var(--cream); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: .8rem; margin: 1.6rem 0; }
 .scene { display: flex; flex-direction: column; gap: .15rem; padding: .9rem 1rem; text-align: left; background: rgba(0, 0, 0, .25); border: 1px solid var(--gold-dim); }
