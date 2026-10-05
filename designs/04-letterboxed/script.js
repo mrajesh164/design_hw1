@@ -35,7 +35,10 @@ cues.push({ scene: "intro", html: "<i>[door bell rings]</i>" });
 
 const track = document.getElementById("track");
 const sub = document.getElementById("subtitle");
-const hint = document.getElementById("hint");
+const startBtn = document.getElementById("start");
+const playBtn = document.getElementById("play");
+const countEl = document.getElementById("count");
+const scrub = document.getElementById("scrub");
 const played = document.getElementById("played");
 const tc = document.getElementById("tc");
 const chapters = document.getElementById("chapters");
@@ -67,7 +70,9 @@ function update() {
   played.style.width = (p * 100) + "%";
   const secs = Math.round(p * cues.length * 4);
   tc.textContent = `00:${String(Math.floor(secs / 60)).padStart(2, "0")}:${String(secs % 60).padStart(2, "0")}`;
-  hint.classList.toggle("gone", scrollY > 40);
+  if (scrollY > 40) startBtn.classList.add("gone");
+  countEl.textContent = `${Math.min(cues.length, Math.floor(p * cues.length) + 1)} / ${cues.length}`;
+  scrub.setAttribute("aria-valuenow", Math.round(p * 100));
 
   if (i === current) return;
   current = i;
@@ -102,3 +107,39 @@ body.innerHTML = GENRES.map(g => `
   `<h3>Visit</h3><p>1138 Marquee Lane, Hyde Park, Chicago<br>Open daily, 7 a.m. to 10 p.m.</p>`;
 const dlg = document.getElementById("transcript");
 document.getElementById("open-transcript").addEventListener("click", () => dlg.showModal());
+
+// Video-style controls: play steps through the cards on a timer, scrolling still works
+const STEP_MS = 4500;
+let playing = false;
+let timer = null;
+
+function syncPlay() {
+  playBtn.innerHTML = playing ? "&#10074;&#10074;" : "&#9654;";
+  playBtn.setAttribute("aria-label", playing ? "Pause" : "Play");
+}
+function pause() { playing = false; clearInterval(timer); syncPlay(); }
+function play() {
+  startBtn.classList.add("gone");
+  if (current >= cues.length - 1) scrollToCue(0);
+  playing = true;
+  syncPlay();
+  clearInterval(timer);
+  timer = setInterval(() => {
+    if (current >= cues.length - 1) { pause(); return; }
+    scrollToCue(current + 1);
+  }, STEP_MS);
+}
+startBtn.addEventListener("click", play);
+playBtn.addEventListener("click", () => (playing ? pause() : play()));
+document.getElementById("next").addEventListener("click", () => { pause(); startBtn.classList.add("gone"); scrollToCue(Math.min(cues.length - 1, current + 1)); });
+document.getElementById("prev").addEventListener("click", () => { pause(); startBtn.classList.add("gone"); scrollToCue(Math.max(0, current - 1)); });
+scrub.addEventListener("click", e => {
+  const r = scrub.getBoundingClientRect();
+  pause();
+  startBtn.classList.add("gone");
+  scrollTo({ top: ((e.clientX - r.left) / r.width) * range(), behavior: reduce ? "auto" : "smooth" });
+});
+// Taking over by hand pauses playback, like grabbing a video scrubber
+["wheel", "touchstart"].forEach(t => addEventListener(t, pause, { passive: true }));
+addEventListener("keydown", e => { if (["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown", "PageDown", "PageUp"].includes(e.key)) pause(); });
+syncPlay();

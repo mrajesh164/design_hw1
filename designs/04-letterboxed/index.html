@@ -72,12 +72,23 @@
 
         <div class="grain" aria-hidden="true"></div>
         <p class="subtitle" id="subtitle" aria-live="polite"></p>
-        <p class="scroll-hint" id="hint" aria-hidden="true">Scroll to play &#9662;</p>
+        <button class="start" id="start" type="button" aria-label="Play the menu">
+          <span class="tri">&#9654;</span>
+          <span class="start-text">Press play, or just scroll</span>
+        </button>
       </div>
 
       <footer class="bar bottom">
-        <nav class="chapters" id="chapters" aria-label="Chapters"></nav>
-        <div class="scrub" aria-hidden="true"><div class="played" id="played"></div></div>
+        <div class="controls">
+          <div class="transport">
+            <button id="prev" type="button" aria-label="Previous subtitle">&#9664;&#9664;</button>
+            <button id="play" type="button" aria-label="Play">&#9654;</button>
+            <button id="next" type="button" aria-label="Next subtitle">&#9654;&#9654;</button>
+            <span class="count" id="count">1 / 1</span>
+          </div>
+          <nav class="chapters" id="chapters" aria-label="Chapters"></nav>
+        </div>
+        <div class="scrub" id="scrub" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="played" id="played"></div></div>
       </footer>
 
     </div>
