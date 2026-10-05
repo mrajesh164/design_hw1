@@ -58,7 +58,12 @@ const chapterBtns = [{ id: "intro", label: "Opening", cue: 0 }, ...GENRES.map(g 
     b.type = "button";
     b.textContent = c.label;
     b.dataset.id = c.id;
-    b.addEventListener("click", () => scrollToCue(c.cue));
+    b.addEventListener("click", () => {
+      pause();
+      startBtn.classList.add("gone");
+      scrollToCue(c.cue);
+      if (c.id === "intro") closeMenu(); else openMenu(c.id);
+    });
     chapters.appendChild(b);
     return b;
   });
@@ -103,8 +108,7 @@ addEventListener("keydown", e => {
 const body = document.getElementById("transcript-body");
 body.innerHTML = GENRES.map(g => `
   <h3>${g.name}</h3>
-  ${g.items.map(i => `<p><span class="p">${i[1]}</span><b>${i[0]}</b><br>${i[2]}</p>`).join("")}`).join("") +
-  `<h3>Visit</h3><p>1138 Marquee Lane, Hyde Park, Chicago<br>Open daily, 7 a.m. to 10 p.m.</p>`;
+  ${g.items.map(i => `<p><span class="p">${i[1]}</span><b>${i[0]}</b><br>${i[2]}</p>`).join("")}`).join("");
 const dlg = document.getElementById("transcript");
 document.getElementById("open-transcript").addEventListener("click", () => dlg.showModal());
 
@@ -117,7 +121,7 @@ function syncPlay() {
   playBtn.innerHTML = playing ? "&#10074;&#10074;" : "&#9654;";
   playBtn.setAttribute("aria-label", playing ? "Pause" : "Play");
 }
-function pause() { playing = false; clearInterval(timer); syncPlay(); }
+function pause() { playing = false; clearInterval(timer); syncPlay(); closeMenu(); }
 function play() {
   startBtn.classList.add("gone");
   if (current >= cues.length - 1) scrollToCue(0);
@@ -143,3 +147,18 @@ scrub.addEventListener("click", e => {
 ["wheel", "touchstart"].forEach(t => addEventListener(t, pause, { passive: true }));
 addEventListener("keydown", e => { if (["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown", "PageDown", "PageUp"].includes(e.key)) pause(); });
 syncPlay();
+
+// Genre menu pop-up
+const frame = document.getElementById("frame");
+const menu = document.getElementById("menu");
+function openMenu(id) {
+  const g = GENRES.find(x => x.id === id);
+  document.getElementById("menu-title").textContent = g.name;
+  document.getElementById("menu-tag").textContent = g.tag;
+  document.getElementById("menu-items").innerHTML = g.items.map(i => `<li><b>${i[0]}</b><i>${i[1]}</i><p>${i[2]}</p></li>`).join("");
+  menu.hidden = false;
+  frame.classList.add("menu-open");
+}
+function closeMenu() { menu.hidden = true; frame.classList.remove("menu-open"); }
+document.getElementById("menu-close").addEventListener("click", closeMenu);
+addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) closeMenu(); });
