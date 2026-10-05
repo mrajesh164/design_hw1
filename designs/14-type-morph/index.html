@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCENE &amp; SIP — Eight Moods</title>
+  <meta name="description" content="Scene &amp; Sip, a café whose menu is organized by film genre, told through one name that changes shape as you turn a mood dial.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <p class="kicker">A café in eight moods</p>
+    <div class="stage" id="stage">
+      <h1 id="word" aria-label="Scene &amp; Sip"><span class="letters" id="letters" aria-hidden="true"></span></h1>
+    </div>
+    <p class="instruction"><span aria-hidden="true">&#8595;</span> Turn the dial to change the mood <span aria-hidden="true">&#8595;</span></p>
+  </header>
+
+  <main>
+    <section class="dial-card" aria-labelledby="dial-label">
+      <div class="dial-head">
+        <label id="dial-label" for="dial">Mood</label>
+        <output id="readout" for="dial">Rest</output>
+      </div>
+
+      <input type="range" id="dial" min="-100" max="700" step="1" value="-100" aria-label="Mood">
+      <div class="marks" aria-hidden="true" id="marks"></div>
+
+      <div class="pills" id="pills" role="group" aria-label="Choose a mood"></div>
+
+      <div class="steps">
+        <button type="button" id="prev">&larr; Previous mood</button>
+        <button type="button" id="next">Next mood &rarr;</button>
+        <button type="button" id="rest" class="quiet">Back to rest</button>
+        <button type="button" id="wobble" class="quiet" aria-pressed="true">Wobble: on</button>
+      </div>
+    </section>
+
+    <section class="menu" id="menu" aria-live="polite" aria-label="Menu for the chosen mood"></section>
+  </main>
+
+  <footer class="foot">
+    <p>1138 Marquee Lane, Hyde Park, Chicago</p>
+    <p>Open daily, 7 a.m. to 10 p.m.</p>
+  </footer>
+
+  <a class="back" href="../../index.html">&larr; Now Showing gallery</a>
+  <script src="script.js"></script>
+</body>
+</html>

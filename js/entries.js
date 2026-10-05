@@ -47,7 +47,7 @@ const ENTRIES = [
   { n: 13, status: "shot", date: "2026-10-05", path: "designs/13-title-sequence/index.html", phase: 2, title: "Title Sequence", tag: "Motion", hue: 0,
     question: "Can a Saul Bass-style opening be the landing page?",
     idea: "Type animates in on a timer or scroll, then settles." },
-  { n: 14, phase: 2, title: "Variable Type Morph", tag: "Typography", hue: 300,
+  { n: 14, status: "shot", date: "2026-10-05", path: "designs/14-type-morph/index.html", phase: 2, title: "Variable Type Morph", tag: "Typography", hue: 300,
     question: "Can one word carry the whole mood by changing shape?",
     idea: "A single word morphing between emotional states, no variable font file needed." },
   { n: 15, phase: 2, title: "Genre Switcher", tag: "Interaction", hue: 120,

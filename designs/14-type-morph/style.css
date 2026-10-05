@@ -1,0 +1,82 @@
+:root {
+  --ink: #1f1b18;
+  --muted: #6b645d;
+  --card: rgba(255, 255, 255, .72);
+  --line: rgba(31, 27, 24, .18);
+  --mood: #3a3530;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: hsl(40 20% 95%); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2.2rem 1rem 5rem;
+  color: var(--ink);
+  font-family: var(--sans);
+  background: hsl(40 20% 95%);
+}
+p, h1, h2 { margin: 0; }
+
+/* ---------- the word ---------- */
+.top { width: min(60rem, 100%); margin: 0 auto; text-align: center; }
+.kicker { font-size: .78rem; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
+.stage { display: flex; align-items: center; justify-content: center; margin: 1rem 0 .6rem; min-height: 8rem; }
+#word { margin: 0; font-weight: inherit; font-size: inherit; line-height: 1; }
+.letters { display: inline-block; white-space: nowrap; line-height: 1; will-change: contents; }
+.letters span { display: inline-block; transform-origin: 50% 70%; }
+.letters .gap { width: .32em; }
+.instruction { margin-top: .4rem; font-size: 1.1rem; font-weight: 600; letter-spacing: .04em; color: var(--ink); }
+
+/* ---------- dial ---------- */
+main { width: min(42rem, 100%); margin: 1.6rem auto 0; }
+.dial-card { padding: 1.3rem 1.4rem 1.4rem; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.dial-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .7rem; }
+.dial-head label { font-size: .8rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; }
+.dial-head output { font-size: 1.1rem; font-weight: 700; color: var(--mood); }
+
+#dial { width: 100%; margin: .2rem 0 0; height: 2rem; background: transparent; cursor: pointer; -webkit-appearance: none; appearance: none; }
+#dial::-webkit-slider-runnable-track { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #a79f95 0%, #8c2f2f 12.5%, #2f7a85 25%, #3a3a3a 37.5%, #c0587a 50%, #8a6a3a 62.5%, #7b5ea8 75%, #b89a3c 87.5%, #d9772e 100%); }
+#dial::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -10px; border-radius: 50%; background: var(--ink); border: 4px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+#dial::-moz-range-track { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #a79f95 0%, #8c2f2f 12.5%, #2f7a85 25%, #3a3a3a 37.5%, #c0587a 50%, #8a6a3a 62.5%, #7b5ea8 75%, #b89a3c 87.5%, #d9772e 100%); }
+#dial::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--ink); border: 4px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+#dial:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; border-radius: 6px; }
+
+.marks { position: relative; height: .7rem; margin: 0 14px; }
+.marks i { position: absolute; top: 0; width: 2px; height: .6rem; margin-left: -1px; background: var(--line); }
+
+.pills { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+button { font: inherit; cursor: pointer; }
+.pills button { padding: .5rem .85rem; font-size: .88rem; font-weight: 600; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; }
+.pills button:hover { border-color: var(--ink); }
+.pills button[aria-current="true"] { color: #fff; background: var(--mood); border-color: var(--mood); }
+
+.steps { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.steps button { padding: .6rem 1rem; font-size: .9rem; font-weight: 700; color: #fff; background: var(--ink); border: 0; border-radius: 8px; }
+.steps button:hover:not(:disabled) { background: #000; }
+.steps button:disabled { opacity: .35; cursor: not-allowed; }
+.steps .quiet { color: var(--ink); background: transparent; border: 1px solid var(--line); font-weight: 600; }
+.steps .quiet:hover { border-color: var(--ink); background: transparent; }
+button:focus-visible, .back:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- menu panel (the only place the menu appears) ---------- */
+.menu { margin-top: 1.4rem; padding: 1.5rem 1.4rem; background: var(--card); border: 1px solid var(--line); border-radius: 14px; min-height: 12rem; }
+.menu .rest { color: var(--muted); text-align: center; padding: 2rem 0; line-height: 1.5; }
+.menu h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.1; color: var(--mood); }
+.menu .tag { margin: .3rem 0 1rem; font-style: italic; font-size: 1.05rem; color: var(--muted); }
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu li { padding: .9rem 0; border-top: 1px solid var(--line); }
+.menu .line { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.menu .nm { font-size: 1.1rem; font-weight: 700; line-height: 1.25; }
+.menu .pr { font-weight: 700; color: var(--mood); white-space: nowrap; }
+.menu .ds { margin-top: .25rem; line-height: 1.45; }
+
+.foot { margin: 2.6rem auto 0; width: min(42rem, 100%); padding-top: 1.2rem; border-top: 1px solid var(--line); text-align: center; font-size: .92rem; color: var(--muted); line-height: 1.6; }
+
+.back { position: fixed; right: 12px; bottom: 12px; z-index: 5; padding: .5rem .8rem; background: var(--ink); color: #fff; font: 700 .78rem var(--sans); text-decoration: none; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+
+@media (max-width: 34rem) {
+  .dial-card, .menu { padding-inline: 1rem; }
+  .steps button { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
