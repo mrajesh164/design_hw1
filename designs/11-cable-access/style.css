@@ -64,7 +64,8 @@ body {
 .slate { position: absolute; inset: 0; display: flex; flex-direction: column; }
 .slate .bars { flex: 1; background: linear-gradient(90deg, var(--cream) 0 14.28%, var(--yellow) 0 28.56%, var(--teal) 0 42.84%, #5fd68a 0 57.12%, var(--magenta) 0 71.4%, #e8403a 0 85.68%, #7b3fa8 0); }
 .slate .bars.low { flex: 0 0 18%; background: linear-gradient(90deg, #7b3fa8 0 14.28%, #111 0 28.56%, var(--magenta) 0 42.84%, #111 0 57.12%, var(--teal) 0 71.4%, #111 0 85.68%, var(--cream) 0); }
-.slate-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; padding: 1rem 1.6rem; background: var(--ink); color: var(--cream); text-align: center; letter-spacing: .25em; text-transform: uppercase; font-size: .8rem; border: 3px solid var(--cream); }
+.slate-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 1.2rem; width: max-content; max-width: 92%; }
+.slate-text { margin: 0; padding: 1rem 1.6rem; background: var(--ink); color: var(--cream); text-align: center; letter-spacing: .25em; text-transform: uppercase; font-size: .8rem; border: 3px solid var(--cream); }
 .slate-text b { display: block; margin-top: .5rem; font-size: 1.05rem; letter-spacing: .12em; color: var(--yellow); }
 
 .prog-view { position: relative; min-height: 19rem; padding: 2rem 2rem 6rem; background: var(--ink); --accent: var(--magenta); overflow: hidden; }
@@ -145,7 +146,6 @@ body {
 .card-close:hover, .card-close:focus-visible { background: var(--magenta); outline: none; }
 @media (prefers-reduced-motion: reduce) { .progcard[open] { animation: none; } }
 
-.see-wrap { margin: 1.4rem 0 0; text-align: center; }
 .see-program { display: inline-block; padding: .8rem 1.8rem; background: var(--yellow); color: var(--ink); font: 800 1.05rem var(--display); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; border: 3px solid var(--cream); box-shadow: 6px 6px 0 var(--magenta); transition: transform .12s, box-shadow .12s; }
 .see-program:hover, .see-program:focus-visible { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--magenta); outline: none; }
 .see-program:focus-visible { outline: 3px solid var(--cream); outline-offset: 4px; }
