@@ -91,9 +91,8 @@ function renderHome() {
   stage.innerHTML = `
     <section class="skin home" aria-labelledby="gname">
       <header class="hero">
-        <p class="kicker">A café whose menu is organized by film genre</p>
         <h1 id="gname">Scene &amp; Sip</h1>
-        <p class="tagline">One café. Eight genres. Eight completely different looks.</p>
+        <p class="tagline">One café. Eight genres. Find your favorite drink.</p>
       </header>
       <ol class="how" aria-label="How it works">
         <li><b>1</b> Pick a genre below</li>
@@ -108,7 +107,7 @@ function renderHome() {
             <span class="tnum">${String(i + 1).padStart(2, "0")}</span>
             <span class="tname">${g.name}</span>
             <span class="ttag">${g.tag}</span>
-            <span class="tmeta">${g.drinks.length} drinks, from ${money(low)}</span>
+            <span class="tmeta">From ${money(low)}</span>
           </button></li>`;
         }).join("")}
       </ul>
