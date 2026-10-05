@@ -21,15 +21,14 @@ const GENRES = [
 ];
 
 const strips = document.getElementById("strips");
-const btnAll = document.getElementById("develop-all");
 let n = 0;
 
 GENRES.forEach(g => {
   const edgeText = `SAFETY FILM 400 ▸ ${g.name.toUpperCase()} ▸ `.repeat(8);
   const frames = g.items.map((it, i) => {
     n++;
-    return `<button class="frame ${g.id}" type="button" aria-pressed="false" aria-label="${it[0]}, ${it[1]}. Click to develop the frame.">
-      <span class="pic" data-num="${n}A"></span>
+    return `<button class="frame ${g.id}" type="button" aria-pressed="false" aria-label="${it[0]}, ${it[1]}. Hover or press to develop the frame.">
+      <span class="pic" data-num="${n}A"><svg viewBox="0 0 220 110" aria-hidden="true" focusable="false">${ART[it[0]](n)}</svg></span>
       <span class="info"><b>${it[0]}<i>${it[1]}</i></b><span>${it[2]}</span></span>
     </button>`;
   }).join("");
@@ -48,24 +47,10 @@ GENRES.forEach(g => {
   strips.appendChild(wrap);
 });
 
-// Click a frame to develop it (and again to send it back to negative)
+// Hover develops a frame on a computer; pressing it does the same on touch screens and keyboards
 strips.addEventListener("click", e => {
   const f = e.target.closest(".frame");
   if (!f) return;
   const on = f.classList.toggle("developed");
   f.setAttribute("aria-pressed", String(on));
-  syncAll();
-});
-
-function syncAll() {
-  const all = [...document.querySelectorAll(".frame")];
-  const every = all.every(f => f.classList.contains("developed"));
-  btnAll.setAttribute("aria-pressed", String(every));
-  btnAll.textContent = every ? "Back to negatives" : "Develop all frames";
-}
-btnAll.addEventListener("click", () => {
-  const all = [...document.querySelectorAll(".frame")];
-  const turnOn = btnAll.getAttribute("aria-pressed") !== "true";
-  all.forEach(f => { f.classList.toggle("developed", turnOn); f.setAttribute("aria-pressed", String(turnOn)); });
-  syncAll();
 });
