@@ -57,9 +57,9 @@ function renderGenre() {
   menuEl.innerHTML = MENU.map((g, i) => {
     const rows = ALL.filter(d => d.genre === g);
     const from = Math.min(...rows.map(d => d.price));
-    return `<section class="band${i % 2 === 0 ? " accent" : ""}" id="g-${g.id}" aria-label="${g.name} menu">
+    return `<section class="band" id="g-${g.id}" aria-label="${g.name} menu">
       <header class="band-head">
-        <h2><span class="fit" data-fit data-max="20">${g.name}</span></h2>
+        <h2><span class="fit" data-fit data-max="10">${g.name}</span></h2>
         <div class="band-meta"><p>${g.tag}</p><p class="count">${rows.length} drinks, from ${money(from)}</p></div>
       </header>
       <div class="table" role="table" aria-label="${g.name} drinks">${rows.map(d => rowHTML(d, false)).join("")}</div>
@@ -76,7 +76,7 @@ function renderFlat(mode) {
   const note = mode === "price" ? "Lowest price first" : "Alphabetical, ignoring The";
   menuEl.innerHTML = `<section class="band" aria-label="All drinks, sorted">
     <header class="band-head">
-      <h2><span class="fit" data-fit data-max="20">${title}</span></h2>
+      <h2><span class="fit" data-fit data-max="10">${title}</span></h2>
       <div class="band-meta"><p>${note}</p><p class="count">${list.length} drinks, all genres</p></div>
     </header>
     <div class="table" role="table" aria-label="All drinks">${list.map(d => rowHTML(d, true)).join("")}</div>
