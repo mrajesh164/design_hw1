@@ -92,7 +92,7 @@ body {
 @keyframes crawl { to { transform: translateX(-50%); } }
 
 /* ---------- guide ---------- */
-.guide { margin-top: 3rem; }
+.guide { margin-top: 3rem; scroll-margin-top: 1rem; }
 .guide h2 { margin: 0 0 1rem; font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2.2rem); text-transform: uppercase; letter-spacing: .04em; color: var(--yellow); text-shadow: 3px 3px 0 var(--magenta); }
 .guide h2 span { display: block; margin-top: .4rem; font-family: var(--body); font-size: .8rem; letter-spacing: .15em; color: var(--cream); text-shadow: none; }
 .grid-scroll { overflow-x: auto; padding-bottom: .6rem; }
@@ -144,3 +144,10 @@ body {
 .card-close { position: absolute; z-index: 5; top: .6rem; right: .6rem; padding: .5rem .9rem; border: 2px solid var(--cream); background: var(--ink); color: var(--cream); font: 800 .85rem var(--display, sans-serif); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
 .card-close:hover, .card-close:focus-visible { background: var(--magenta); outline: none; }
 @media (prefers-reduced-motion: reduce) { .progcard[open] { animation: none; } }
+
+.see-wrap { margin: 1.4rem 0 0; text-align: center; }
+.see-program { display: inline-block; padding: .8rem 1.8rem; background: var(--yellow); color: var(--ink); font: 800 1.05rem var(--display); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; border: 3px solid var(--cream); box-shadow: 6px 6px 0 var(--magenta); transition: transform .12s, box-shadow .12s; }
+.see-program:hover, .see-program:focus-visible { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--magenta); outline: none; }
+.see-program:focus-visible { outline: 3px solid var(--cream); outline-offset: 4px; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .see-program { transition: none; } }
