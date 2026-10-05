@@ -16,8 +16,8 @@ const GENRES = [
     ["Rainstorm Kiss", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
   { id: "western", name: "Western", tag: "Strong, simple, no questions asked", pal: ["#c9852b", "#8f3d1e", "#1c1713"], items: [
-    ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-    ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
+    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
+    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", pal: ["#5b3f7a", "#d9531e", "#1c1713"], items: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],

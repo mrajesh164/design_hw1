@@ -98,12 +98,16 @@ const ART = {
     <g fill="#8b5fc7"><ellipse cx="131" cy="34" rx="3" ry="6"/><ellipse cx="137" cy="40" rx="3" ry="6"/><ellipse cx="130" cy="46" rx="3" ry="6"/><ellipse cx="137" cy="52" rx="3" ry="6"/><ellipse cx="130" cy="58" rx="3" ry="6"/><ellipse cx="136" cy="64" rx="3" ry="6"/></g>
     <g transform="rotate(8 170 62)"><rect x="150" y="42" width="40" height="38" fill="#fffdf2" stroke="#d9d3c4"/><path d="M156 54 H184 M156 62 H178" stroke="#7a8aa8" stroke-width="2"/><path d="M176 72 c-4 -4 -8 0 -4 4 l4 3 l4 -3 c4 -4 0 -8 -4 -4z" fill="#d63a63"/></g>`,
 
-  "High Noon": () => `${shadow(110, 28)}
-    <circle cx="110" cy="46" r="32" fill="#ffd36b" opacity=".85"/>
-    <path d="M88 48 H132 L128 90 H92 Z" fill="#b8bec6" stroke="#8c939c" stroke-width="2"/>
-    <g fill="#fff" opacity=".7"><circle cx="98" cy="62" r="1.6"/><circle cx="110" cy="70" r="1.6"/><circle cx="120" cy="60" r="1.6"/><circle cx="104" cy="80" r="1.6"/><circle cx="118" cy="78" r="1.6"/></g>
-    <ellipse cx="110" cy="48" rx="22" ry="5" fill="#2b1a12" stroke="#8c939c" stroke-width="2"/>
-    <path d="M132 58 q16 0 14 14 q-2 10 -14 10" fill="none" stroke="#8c939c" stroke-width="6" stroke-linecap="round"/>${steam(110, 2)}`,
+  "True Grit": () => `${shadow(100, 54)}
+    <circle cx="110" cy="44" r="30" fill="#ffd36b" opacity=".85"/>
+    <path d="M62 50 H114 V76 Q114 92 98 92 H78 Q62 92 62 76 Z" fill="#c9a77a"/>
+    <path d="M62 50 H114 V58 H62 Z" fill="#a98558"/>
+    <ellipse cx="88" cy="50" rx="26" ry="5.5" fill="#2b1a12"/>
+    <path d="M114 58 q16 0 14 13 q-2 10 -14 10" fill="none" stroke="#c9a77a" stroke-width="6" stroke-linecap="round"/>${steam(88, 4)}
+    <ellipse cx="164" cy="80" rx="34" ry="8" fill="#6b4423"/>
+    <path d="M146 78 Q146 52 164 52 Q182 52 182 78 Z" fill="#7d5130"/>
+    <path d="M147 74 H181" stroke="#2b1a12" stroke-width="4"/>
+    <path d="M154 56 Q164 51 174 56" fill="none" stroke="#5a3a1e" stroke-width="2"/>`,
 
   "A Fistful of Espresso": () => `${shadow(90, 38)}
     <ellipse cx="90" cy="90" rx="36" ry="6" fill="#e8e1d2"/>

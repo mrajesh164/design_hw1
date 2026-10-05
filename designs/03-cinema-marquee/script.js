@@ -30,8 +30,8 @@ const GENRES = [
     ] },
   { id: "western", name: "Western", tag: "Strong, simple, no questions asked", footer: "FASTEST SIP IN TOWN",
     items: [
-      ["High Noon", "HIGH NOON", "$3.75", "Cowboy coffee, grounds and all."],
-      ["A Fistful of Espresso", "FISTFUL ESPRESSO", "$4.25", "Triple espresso in a tin cup. Quick on the draw."]
+      ["True Grit", "TRUE GRIT", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
+      ["A Fistful of Espresso", "FISTFUL ESPRESSO", "$4.25", "A triple shot of espresso. Quick on the draw."]
     ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", footer: "TRUST NO ONE",
     items: [

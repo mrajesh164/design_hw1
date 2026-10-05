@@ -31,8 +31,8 @@ const GENRES = [
     kicker: "Wanted: good coffee",
     about: "Pull up a stool, partner. The coffee's hot and the talk is short.",
     drinks: [
-      ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-      ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
+      ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
+      ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue",
     kicker: "Case file no. 1138",
     about: "Subject: a café with eight secrets. Witnesses report the tea was suspiciously good.",

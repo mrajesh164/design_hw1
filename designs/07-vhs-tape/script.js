@@ -26,8 +26,8 @@ const TAPES = [
   { id: "western", name: "Western", title: "Western", tag: "Strong, simple, no questions asked", rating: "PG",
     syn: "Two cups on a rail, ten paces apart. Only one of them is coffee.",
     items: [
-      ["High Noon", "$3.75", "Cowboy coffee, grounds and all."],
-      ["A Fistful of Espresso", "$4.25", "Triple espresso in a tin cup. Quick on the draw."] ] },
+      ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
+      ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
   { id: "mystery", name: "Mystery", title: "Mystery", tag: "Every sip is a clue", rating: "PG-13",
     syn: "Everyone had the tea. Nobody admits it. Someone is lying about the lemon.",
     items: [
