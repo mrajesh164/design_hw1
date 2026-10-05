@@ -17,6 +17,7 @@ A gallery of 25 landing page designs for a fictional café (Home Brew) whose men
 ## Gallery
 - Entries live in `js/entries.js`. When a design is built, set its `status`, `date` and `path`.
 - Never write the `result` or `ledTo` fields. Those are my own reflections.
+- Every time a design is built or iterated, update its entry in `js/entries.js` in the same step, and check that the gallery link points to a file that exists. Do this without being asked.
 
 ## Working style
 - Build one design at a time and open it so I can review before moving on.
