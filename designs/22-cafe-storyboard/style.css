@@ -184,7 +184,7 @@ body { padding-top: 1.2rem; }
 .about, .menusec, .visit { padding: 2.2rem 0 0 2.2rem; }
 .about h2, .menusec h2, .visit h2 { margin: 0 0 .8rem; font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1; letter-spacing: .02em; filter: url(#rough); }
 .about { border-top: 3px solid var(--pencil); margin-top: 1rem; }
-.about-grid { display: grid; grid-template-columns: 1fr; }
+.about-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.5rem 2.4rem; align-items: start; }
 .about-text p { margin: 0 0 .8rem; font-size: 1.12rem; line-height: 1.5; max-width: 38rem; }
 .menusec { border-top: 3px solid var(--pencil); margin-top: 2.2rem; }
 .menu-intro { max-width: 40rem; margin: 0 0 1rem; font-size: 1.12rem; }
@@ -208,3 +208,24 @@ body { padding-top: 1.2rem; }
   .brand small { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-art { transform: none; } }
+
+/* ---------- little illustrations: marker and pencil, taped to the sheet ---------- */
+.pic { position: relative; margin: 0; padding: .7rem .7rem .5rem; background: #fffdf7; border: 2px solid var(--pencil); box-shadow: 3px 4px 0 rgba(0, 0, 0, .14); }
+.pic::before { content: ""; position: absolute; top: -.7rem; left: 50%; width: 4.6rem; height: 1.1rem; margin-left: -2.3rem; background: var(--tape, #d9a441); opacity: .72; transform: rotate(-3deg); }
+.pic svg { display: block; width: 100%; height: auto; filter: url(#rough); }
+.pic text { font-family: var(--hand); stroke: none; }
+.pic figcaption { margin-top: .4rem; font-size: .95rem; font-style: italic; text-align: center; color: #5b5547; }
+.pic.p1 { --tape: #e58aa5; transform: rotate(-1.6deg); max-width: 21rem; }
+.pic.p2 { --tape: #6fae7a; transform: rotate(1.8deg); max-width: 15rem; margin: -.6rem 0 0 auto; }
+.pic.p3 { --tape: #d9694f; transform: rotate(1.4deg); width: 16rem; justify-self: center; }
+.about-pics { position: relative; padding-top: .6rem; }
+.visit-wrap { display: flex; flex-wrap: wrap; gap: 1.6rem 2.4rem; align-items: center; }
+.visit-wrap .cards { flex: 1 1 24rem; }
+.sticker { position: absolute; right: -1.1rem; bottom: 1.6rem; width: 4.6rem; transform: rotate(10deg); filter: url(#rough) drop-shadow(2px 3px 0 rgba(0, 0, 0, .18)); }
+.inline-cup { display: inline-block; width: 1.7rem; height: auto; margin-left: .4rem; vertical-align: -.2em; transform: rotate(8deg); }
+@media (max-width: 52rem) {
+  .about-grid { grid-template-columns: 1fr; }
+  .pic.p2 { margin-top: 1rem; }
+  .sticker { right: -.4rem; }
+}
+@media (prefers-reduced-motion: reduce) { .pic, .sticker { transform: none; } }
