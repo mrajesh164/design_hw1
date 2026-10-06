@@ -145,6 +145,7 @@
       '<span class="bay-wall" aria-hidden="true"></span>' +
       '<div class="plaque"><b>' + g.name + "</b><small>" + g.tag + "</small></div>" +
       '<div class="stage">' +
+      (g.drinks.length === 2 ? '<span class="filler l" aria-hidden="true"><span class="ledge"></span></span>' : "") +
       g.drinks.map(function (d, di) {
         count++;
         return '<button type="button" class="drink" data-g="' + gi + '" data-d="' + di + '" data-n="' + count + '" aria-haspopup="dialog" aria-label="' + d[0] + ", " + d[1] + '. Read about it.">' +
@@ -152,6 +153,7 @@
           '<span class="ledge" aria-hidden="true"></span>' +
           '<span class="label"><b>' + d[0] + "</b><i>" + d[1] + "</i></span></button>";
       }).join("") +
+      (g.drinks.length === 2 ? '<span class="filler r" aria-hidden="true"><span class="ledge"></span></span>' : "") +
       "</div></section>";
   }).join("");
 
