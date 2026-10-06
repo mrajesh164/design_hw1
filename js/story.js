@@ -8,7 +8,7 @@ const PHASES = [
       "Partway through I added three more genres (mystery, fantasy and comedy), so every design had to grow from five genres to eight."
     ],
     learned: [
-      "My feedback kept repeating: make it clear how to use the page, show the menu only once and put details in a pop-up, use calmer colors, and keep the type from getting too big.",
+      "My feedback mainly involved making it clear how to use the page, having a menu that is easy to read and understand but also creative, and using cohesive color schemes and layouts.",
       "Three stood out to me: the storyboard look (5), the silent film once it stepped through cards with the arrow keys (9), and the genre switcher with its home page (15)."
     ]
   },
@@ -28,7 +28,7 @@ const FINAL = {
   n: 25,
   title: "Why I chose design 25",
   text: [
-    "I wanted something warmer and cozier than the brighter, daytime look of most café websites. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
+    "I wanted something warmer and cozier than the brighter, daytime look of most café websites. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a cozy, relaxing atmosphere people would enjoy.",
     "It is also the design I refined the most until it felt like one place instead of three ideas stuck together. It contains the similar café website format with an About us and Visit us section, and I liked the creative menu layout where the drinks are displayed."
   ]
 };
