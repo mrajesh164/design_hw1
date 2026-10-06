@@ -156,8 +156,8 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .tree-hint { position: absolute; top: -.2rem; right: 0; margin: 0; font-size: .85rem; color: var(--muted); }
 .level-label { position: absolute; left: 0; margin: 0; font: 700 .7rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--terracotta); }
 .level-label.l0 { top: .2rem; }
-.level-label.l1 { top: calc(2rem + 190px - 1.5rem); }
-.tree-stage { position: relative; height: 520px; }
+.level-label.l1 { top: calc(2rem + 150px - 1.5rem); }
+.tree-stage { position: relative; height: 430px; }
 .tree-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .tree-lines path { fill: none; stroke: rgba(122, 92, 68, .22); stroke-width: 2; transition: stroke .2s; }
 .tree-lines path.on { stroke: var(--terracotta); stroke-width: 3; }

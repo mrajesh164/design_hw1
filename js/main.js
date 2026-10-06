@@ -72,7 +72,7 @@ function treeHTML() {
   const nodes = Object.keys(treePos).map(Number).map(n => {
     const { x, level } = treePos[n];
     const cls = ["node", level === 0 ? "fav" : "hyb", n === FINAL_N ? "is-final" : ""].join(" ");
-    return `<button type="button" class="${cls}" data-n="${n}" style="left:${(x * 100).toFixed(2)}%;top:${LEVEL_Y[level] * 190}px" aria-pressed="false" aria-label="Design ${pad(n)}, ${byN[n].title}">
+    return `<button type="button" class="${cls}" data-n="${n}" style="left:${(x * 100).toFixed(2)}%;top:${LEVEL_Y[level] * 150}px" aria-pressed="false" aria-label="Design ${pad(n)}, ${byN[n].title}">
       <img src="${thumb(n)}" alt="" width="320" height="180"><span><b>${pad(n)}</b> ${byN[n].title}</span></button>`;
   }).join("");
   const makes = [21, 22, 23, 24, 25].map(n => {
