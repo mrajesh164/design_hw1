@@ -29,7 +29,7 @@ const FINAL = {
   title: "Why I chose design 25",
   text: [
     "I wanted something warmer and cozier than the brighter, daytime look of most café websites. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
-    "It is also the design I refined the most, round after round, until it felt like one place instead of three ideas stuck together. It has the full café information (home, About us, the menu and Visit us), and the menu is easy to read, with details in a pop-up so nothing is repeated."
+    "It is also the design I refined the most until it felt like one place instead of three ideas stuck together. It contains the similar café website format with an About us and Visit us section, and I liked the creative menu layout where the drinks are displayed."
   ]
 };
 
