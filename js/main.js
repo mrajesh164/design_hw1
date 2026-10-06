@@ -3,22 +3,17 @@ const pad = n => String(n).padStart(2, "0");
 
 function entryHTML(e) {
   const href = e.path && e.status !== "planned" ? e.path : null;
-  const tag = href ? "a" : "div";
-  const link = href ? ` href="${href}" target="_blank" rel="noopener"` : "";
+  const label = `Design ${pad(e.n)}: ${e.title}`;
+  const picture = `<img src="thumbs/${pad(e.n)}.jpg" alt="Home page of ${e.title}" width="640" height="360" loading="lazy">`;
+  const frame = href
+    ? `<a class="frame" href="${href}" target="_blank" rel="noopener" aria-label="Open ${label}">${picture}</a>`
+    : `<div class="frame" aria-label="${label}, not built yet">${picture}</div>`;
   return `
-  <article class="entry status-${e.status}" data-phase="${e.phase}" style="--hue:${e.hue}">
-    <${tag} class="frame"${link} aria-label="Design ${pad(e.n)}: ${e.title}">
-      <span class="frame-num">${pad(e.n)}</span>
-      <span class="frame-title">${e.title}</span>
-      <span class="frame-status">${href ? "Open design →" : "Not yet shot"}</span>
-    </${tag}>
+  <article class="entry">
+    ${frame}
     <div class="notes">
-      <p class="meta"><span class="tag">${e.tag}</span><span class="badge">${e.status}</span><span class="date">${e.date || "undated"}</span></p>
       <h3>${pad(e.n)} — ${e.title}</h3>
-      <p class="question"><b>Testing:</b> ${e.question}</p>
-      <p class="idea"><b>Plan:</b> ${e.idea}</p>
-      <p class="result"><b>Result:</b> ${e.result || "<i>to be written after shooting</i>"}</p>
-      ${e.ledTo ? `<p class="ledto"><b>Led to:</b> ${e.ledTo}</p>` : ""}
+      <p class="desc">${e.desc}</p>
     </div>
   </article>`;
 }
