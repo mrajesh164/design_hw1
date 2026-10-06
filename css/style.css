@@ -194,9 +194,6 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .gives { margin: .8rem 0 0; padding-left: 1.1rem; }
 .gives li { margin: .3rem 0; line-height: 1.45; }
 .gives b { color: var(--terracotta); }
-.aside { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr)); gap: 1.2rem 1rem; margin: 0; padding: 0; }
-.aside .mini { opacity: .88; }
-.aside p { margin: .3rem 0 0; font-size: .82rem; line-height: 1.4; color: #5a4332; }
 
 /* decisions */
 .log { list-style: none; display: grid; gap: 1rem; margin: 0; padding: 0; max-width: 62rem; }

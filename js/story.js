@@ -54,9 +54,7 @@ const TREE = {
       3:  "the marquee, the flipping letter board and the ticket buttons",
       19: "the lit glass display case for the menu",
       20: "the backlit panels and the counter with a bell for Visit us" } }
-  },
-  // Designs that were explored and not carried into a hybrid.
-  aside: [1, 4, 6, 7, 8, 12, 13, 14, 16, 18]
+  }
 };
 
 // Feedback log, in the order it happened. Paraphrased from my notes to Claude.

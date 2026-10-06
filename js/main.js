@@ -86,7 +86,6 @@ function treeHTML() {
       <ul class="gives">${h.parents.map(p => `<li><b>${pad(p)}</b> gave it ${h.gives[p]}.</li>`).join("")}</ul>
     </article>`;
   }).join("");
-  const aside = TREE.aside.map(n => `<li><a class="mini" href="${byN[n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(n)}, ${byN[n].title}"><img src="${thumb(n)}" alt="" loading="lazy" width="320" height="180"><span><b>${pad(n)}</b> ${byN[n].title}</span></a></li>`).join("");
   return `
   <div class="tree-wrap" id="tree-wrap">
     <p class="tree-hint">Select a design to light up everything it came from and everything it turned into.</p>
@@ -96,9 +95,7 @@ function treeHTML() {
     <div class="tree-detail" id="tree-detail" aria-live="polite"></div>
   </div>
   <h2 class="sub-h">How each hybrid was made</h2>
-  <div class="makes">${makes}</div>
-  <h2 class="sub-h">Other explored ideas</h2>
-  <ul class="aside">${aside}</ul>`;
+  <div class="makes">${makes}</div>`;
 }
 document.getElementById("tree-body").innerHTML = treeHTML();
 
@@ -158,7 +155,7 @@ addEventListener("resize", drawTree);
 
 // ---------- tab 4: decisions ----------
 document.getElementById("decisions-body").innerHTML = `
-  <p class="intro-story">A running log of some things I asked Claude to change, in the order it happened.</p>
+  <p class="intro-story">A running log of some things I asked Claude to change.</p>
   <ol class="log">${DECISIONS.map(d => `
     <li class="decision">
       <div class="d-pic">${d.n ? `<a href="${byN[d.n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(d.n)}, ${byN[d.n].title}"><img src="${thumb(d.n)}" alt="" loading="lazy" width="320" height="180"></a><span><b>${pad(d.n)}</b> ${byN[d.n].title}</span>` : `<span class="d-all">${d.label === "Plan" ? "The plan" : "Every design"}</span>`}</div>
