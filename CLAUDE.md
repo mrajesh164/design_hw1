@@ -13,7 +13,7 @@ A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose m
 - Each design is self-contained: its own `index.html`, `style.css`, `script.js`, plus a "← Now Showing gallery" link to `../../index.html`.
 - Keep café facts (name, address, hours, menu, prices) consistent across designs.
 - The café: Scene & Sip, 1138 Marquee Lane, Chicago, IL 60615 (never write "Hyde Park, Chicago" as an address; Hyde Park is a neighborhood), open daily 7 a.m. to 10 p.m., phone (555) 019-0420.
-- The eight genres, in order: Horror, Sci-Fi, Noir, Romance, Western, Mystery, Fantasy, Comedy. Each has three drinks (Western has two: True Grit and A Fistful of Espresso). Every menu item is a drink, so nothing food-only. New designs should include all eight.
+- The eight genres, in order: Horror, Sci-Fi, Noir, Romance, Action, Mystery, Fantasy, Comedy. Each has three drinks (Action has two: Full Throttle and Mission: Espresso). Every menu item is a drink, so nothing food-only. New designs should include all eight.
 - Respect `prefers-reduced-motion`; work on mobile.
 
 ## Gallery
