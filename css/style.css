@@ -216,3 +216,26 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .mini img, .node img, .d-pic img, .detail-pic img, .final-pic img { height: auto; }
 .parents .mini { width: 5.3rem; }
 .mini.big { width: 7.4rem; }
+
+/* ---------- La La Land palette: twilight sky behind the page, deep indigo title board with gold bulbs ---------- */
+html { background: #d9a6d0; }
+body {
+  background: linear-gradient(180deg, #a698d9 0, #cfa3dc 28%, #eba9ca 58%, #f6c4ae 82%, #f8d9a4 100%) fixed;
+}
+.masthead {
+  background:
+    radial-gradient(circle at 12% 30%, rgba(255, 255, 255, .9) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 34% 72%, rgba(255, 255, 255, .7) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 63% 24%, rgba(255, 255, 255, .85) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 81% 66%, rgba(255, 255, 255, .7) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 93% 20%, rgba(255, 255, 255, .8) 0 1px, transparent 1.6px),
+    linear-gradient(180deg, #15143f, #2d2468 55%, #5b2f86);
+  border-bottom-color: #e9a84c;
+  box-shadow: 0 10px 24px rgba(40, 24, 90, .35);
+}
+h1 { color: #fff3d2; text-shadow: 0 0 18px rgba(255, 190, 110, .4); }
+h1 .h1-sub { color: #e4d8ff; }
+.tabs { background: rgba(238, 226, 250, .94); border-bottom-color: #bba6dd; }
+.tabs button { color: #2d2468; background: rgba(255, 255, 255, .6); }
+.tabs button:hover { background: #fff; border-color: #8c6fc2; }
+.tabs button[aria-selected="true"] { color: #fff3d2; background: #2d2468; border-color: #2d2468; }
