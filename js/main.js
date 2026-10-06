@@ -86,7 +86,7 @@ function treeHTML() {
       <ul class="gives">${h.parents.map(p => `<li><b>${pad(p)}</b> gave it ${h.gives[p]}.</li>`).join("")}</ul>
     </article>`;
   }).join("");
-  const aside = Object.keys(TREE.aside).map(Number).map(n => `<li><a class="mini" href="${byN[n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(n)}, ${byN[n].title}"><img src="${thumb(n)}" alt="" loading="lazy" width="320" height="180"><span><b>${pad(n)}</b> ${byN[n].title}</span></a>${TREE.aside[n] ? `<p>${TREE.aside[n]}</p>` : ""}</li>`).join("");
+  const aside = TREE.aside.map(n => `<li><a class="mini" href="${byN[n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(n)}, ${byN[n].title}"><img src="${thumb(n)}" alt="" loading="lazy" width="320" height="180"><span><b>${pad(n)}</b> ${byN[n].title}</span></a></li>`).join("");
   return `
   <div class="tree-wrap" id="tree-wrap">
     <p class="tree-hint">Select a design to light up everything it came from and everything it turned into.</p>
@@ -166,7 +166,7 @@ document.getElementById("decisions-body").innerHTML = `
     </li>`).join("")}</ol>`;
 
 // ---------- tabs ----------
-const TAB_IDS = ["all", "journey", "tree", "decisions"];
+const TAB_IDS = ["all", "journey", "decisions", "tree"];
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const tabsBar = document.querySelector(".tabs");
 

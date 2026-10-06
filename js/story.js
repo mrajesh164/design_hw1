@@ -55,19 +55,8 @@ const TREE = {
       19: "the lit glass display case for the menu",
       20: "the backlit panels and the counter with a bell for Visit us" } }
   },
-  // Designs that were explored and not carried into a hybrid, with what I said about them where I did.
-  aside: {
-    1:  "I liked it as a screenplay, but the menu was hard to read.",
-    4:  "It was cinematic, but very confusing to figure out.",
-    6:  "",
-    7:  "I did not love the bright blue.",
-    8:  "Its drink drawings live on in designs 19, 23 and 25.",
-    12: "It felt too blocky and big.",
-    13: "",
-    14: "",
-    16: "",
-    18: ""
-  }
+  // Designs that were explored and not carried into a hybrid.
+  aside: [1, 4, 6, 7, 8, 12, 13, 14, 16, 18]
 };
 
 // Feedback log, in the order it happened. Paraphrased from my notes to Claude.
