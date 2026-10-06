@@ -1,5 +1,5 @@
 // ---- data ----
-const ORDER = ["horror", "scifi", "noir", "romance", "western", "mystery", "fantasy", "comedy"];
+const ORDER = ["horror", "scifi", "noir", "romance", "action", "mystery", "fantasy", "comedy"];
 const GENRES = {
   horror: { name: "Horror", tag: "Rated R for Roast", send: "The lights flicker once. Take the seat nearest the exit.", drinks: [
     ["The Final Girl", "$4.00", "Dark roast, brewed black. Hot enough to wake the dead."],
@@ -17,9 +17,9 @@ const GENRES = {
     ["Meet Cute", "$8.00", "Cappuccino, one croissant, two forks."],
     ["Rainstorm Kiss", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
-  western: { name: "Western", tag: "Strong, simple, no questions asked", send: "The sun sits low and your horse is waiting outside. The coffee is hot.", drinks: [
-    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
-    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
+  action: { name: "Action", tag: "Fast, loud, and fully caffeinated", send: "The getaway car is idling outside and the engine is already roaring. The coffee is hot.", drinks: [
+    ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down."],
+    ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it."] ] },
   mystery: { name: "Mystery", tag: "Every sip is a clue", send: "Every clue points to the counter, and the suspect is waiting there, warm.", drinks: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
@@ -47,7 +47,7 @@ const NODES = {
     { label: "A mystery to solve", to: "trust" },
     { label: "A scare", to: "end:horror" },
     { label: "The far future", to: "end:scifi" },
-    { label: "A dusty showdown", to: "end:western" } ] },
+    { label: "A rooftop chase", to: "end:action" } ] },
   trust: { title: "Who do you trust?", text: "A figure in a long coat waits under the lamp. Someone in this story is lying. Who do you trust?", choices: [
     { label: "Nobody", to: "end:noir" },
     { label: "Everybody, until proven guilty", crumb: "Everybody", to: "end:mystery" } ] }

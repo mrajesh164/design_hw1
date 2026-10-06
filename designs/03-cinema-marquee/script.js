@@ -28,10 +28,10 @@ const GENRES = [
       ["Rainstorm Kiss", "RAINSTORM KISS", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
       ["The Grand Gesture", "GRAND GESTURE", "$6.25", "Honey lavender latte, with a handwritten note."]
     ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", footer: "FASTEST SIP IN TOWN",
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", footer: "BOOM. SIP. REPEAT.",
     items: [
-      ["True Grit", "TRUE GRIT", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
-      ["A Fistful of Espresso", "FISTFUL ESPRESSO", "$4.25", "A triple shot of espresso. Quick on the draw."]
+      ["Full Throttle", "FULL THROTTLE", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down."],
+      ["Mission: Espresso", "MISSION ESPRESSO", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it."]
     ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", footer: "TRUST NO ONE",
     items: [
@@ -85,7 +85,7 @@ const TEASERS = {
   scifi: "NO ONE HEARS YOU SIP",
   noir: "SERVED AFTER DARK",
   romance: "BEST WITH SOMEONE",
-  western: "STRONG AND SIMPLE",
+  action: "FAST AND LOUD",
   mystery: "EVERY SIP IS A CLUE",
   fantasy: "BREWED WITH MAGIC",
   comedy: "GUARANTEED TO LAUGH"

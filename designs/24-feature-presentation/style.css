@@ -132,7 +132,7 @@ h1:focus, h2:focus { outline: none; }
 .scifi   { --bg: #0b2429; --bg2: #19444f; --ink: #daf4f2; --acc: #7fd1cc; --acc-dim: #3b7a78; }
 .noir    { --bg: #0b0b0b; --bg2: #232323; --ink: #ececec; --acc: #c4c4c4; --acc-dim: #5c5c5c; }
 .romance { --bg: #331320; --bg2: #5a2738; --ink: #fbe6ea; --acc: #e8a9b8; --acc-dim: #8a4a5c; }
-.western { --bg: #33200c; --bg2: #60401a; --ink: #f7e6c4; --acc: #e2ab55; --acc-dim: #8a6226; }
+.action  { --bg: #3a1408; --bg2: #6e260f; --ink: #fbe5d2; --acc: #f08a45; --acc-dim: #94461f; }
 .mystery { --bg: #1a122c; --bg2: #33254f; --ink: #eee6fb; --acc: #b99de2; --acc-dim: #67508f; }
 .fantasy { --bg: #0f2a1b; --bg2: #1f4d33; --ink: #e9f5de; --acc: #e6c35d; --acc-dim: #8a7634; }
 .comedy  { --bg: #4f3a07; --bg2: #8a6710; --ink: #fff4cc; --acc: #ffd54a; --acc-dim: #a8861f; }

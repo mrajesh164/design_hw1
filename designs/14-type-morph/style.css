@@ -121,10 +121,10 @@ button:focus-visible, .back:focus-visible { outline: 3px solid var(--ink); outli
 .fx.romance::after { background: radial-gradient(circle at 40% 30%, rgba(255,255,255,.35) 0 2.4vw, transparent 2.6vw), radial-gradient(circle at 70% 62%, rgba(255,200,215,.4) 0 3.4vw, transparent 3.6vw); animation: floaty 12s ease-in-out infinite alternate; }
 @keyframes floaty { from { transform: translateY(14px); } to { transform: translateY(-18px); } }
 
-.fx.western { background:
-  repeating-conic-gradient(from -90deg at 50% 108%, rgba(255,190,90,.22) 0 5deg, transparent 5deg 13deg),
-  linear-gradient(to top, rgba(120,80,40,.3), transparent 32%); }
-.fx.western::after { background: radial-gradient(circle at 50% 108%, rgba(255,230,160,.5), transparent 26%); }
+.fx.action { background:
+  repeating-conic-gradient(from 0deg at 50% 50%, rgba(240,110,50,.2) 0 2deg, transparent 2deg 9deg),
+  linear-gradient(to top, rgba(120,40,20,.28), transparent 34%); }
+.fx.action::after { background: radial-gradient(circle at 50% 50%, rgba(255,214,150,.55), transparent 22%); }
 
 .fx.mystery { background:
   radial-gradient(ellipse 50% 28% at 20% 72%, rgba(255,255,255,.4), transparent),

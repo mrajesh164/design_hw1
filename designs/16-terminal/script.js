@@ -15,9 +15,9 @@ const MENU = [
     ["Meet Cute", 8.00, "Cappuccino, one croissant, two forks."],
     ["Rainstorm Kiss", 5.75, "Rose latte. Soft, floral, a little dramatic."],
     ["The Grand Gesture", 6.25, "Honey lavender latte, with a handwritten note."] ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", drinks: [
-    ["True Grit", 3.75, "Strong black coffee, brewed bold. No sugar, no fuss."],
-    ["A Fistful of Espresso", 4.25, "A triple shot of espresso. Quick on the draw."] ] },
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", drinks: [
+    ["Full Throttle", 3.75, "Strong black coffee, brewed bold. No sugar, no slowing down."],
+    ["Mission: Espresso", 4.25, "A triple shot of espresso. Your mission, should you choose to accept it."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", drinks: [
     ["The Usual Suspect", 4.25, "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", 5.50, "Smoked tea latte with a hint of cinnamon. Not what it seems."],
@@ -40,7 +40,7 @@ const norm = s => s.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, "
 const noThe = s => s.replace(/^the /, "");
 
 const ALL = MENU.flatMap(g => g.drinks.map(d => ({ name: d[0], price: d[1], desc: d[2], genre: g, key: norm(d[0]) })));
-const GENRE_NAMES = { horror: ["horror"], scifi: ["sci-fi", "scifi", "sci fi", "science fiction"], noir: ["noir"], romance: ["romance"], western: ["western"], mystery: ["mystery"], fantasy: ["fantasy"], comedy: ["comedy"] };
+const GENRE_NAMES = { horror: ["horror"], scifi: ["sci-fi", "scifi", "sci fi", "science fiction"], noir: ["noir"], romance: ["romance"], action: ["action"], mystery: ["mystery"], fantasy: ["fantasy"], comedy: ["comedy"] };
 
 // every word that can start a command, with the canonical name it maps to
 const COMMANDS = {
@@ -219,7 +219,7 @@ function addDrink(d) {
 }
 function cmdOrder(arg) {
   if (!arg) {
-    say("Which drink? Type: order true grit. Or click any drink's name after opening a genre.", "dim");
+    say("Which drink? Type: order full throttle. Or click any drink's name after opening a genre.", "dim");
     print(button("Show the menu", "inline-btn", () => runLine("menu")));
     return;
   }

@@ -15,9 +15,9 @@ const MENU = [
     ["Meet Cute", "$8.00", "Cappuccino, one croissant, two forks."],
     ["Rainstorm Kiss", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", items: [
-    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
-    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", items: [
+    ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down."],
+    ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", items: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],
@@ -49,8 +49,8 @@ const STOPS = [
     p: { ls: -0.01, sx: 0.72, sy: 1.25, sk: 0, wave: 0, ws: 0, rot: 0, blur: 0, fade: 0, h: 0, s: 0, l: 13, glow: 0, gh: 0, th: 0, ts: 0, tl: 90 } },
   { label: "Romance", font: { f: 'Georgia, "Palatino Linotype", Palatino, serif', w: 400, i: "italic", c: "none" },
     p: { ls: 0.04, sx: 1, sy: 1, sk: -9, wave: 5, ws: 1.6, rot: 2.5, blur: 0, fade: 0, h: 340, s: 55, l: 40, glow: 8, gh: 340, th: 340, ts: 40, tl: 94 } },
-  { label: "Western", font: { f: 'Rockwell, "Roboto Slab", "Courier New", Georgia, serif', w: 900, i: "normal", c: "uppercase" },
-    p: { ls: 0.02, sx: 1.1, sy: 0.95, sk: 0, wave: 0, ws: 0, rot: 0, blur: 0, fade: 0, h: 28, s: 50, l: 28, glow: 0, gh: 28, th: 36, ts: 38, tl: 90 } },
+  { label: "Action", font: { f: '"Futura", "Avenir Next", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif', w: 800, i: "italic", c: "uppercase" },
+    p: { ls: 0.03, sx: 1.18, sy: 0.92, sk: -12, wave: 0, ws: 0, rot: -2, blur: 0, fade: 0, h: 17, s: 82, l: 42, glow: 6, gh: 30, th: 22, ts: 70, tl: 92 } },
   { label: "Mystery", font: { f: '"Baskerville", "Palatino Linotype", Palatino, Georgia, serif', w: 400, i: "normal", c: "none" },
     p: { ls: 0.06, sx: 1, sy: 1, sk: 0, wave: 2, ws: 0.8, rot: 0, blur: 0.4, fade: 0.8, h: 265, s: 40, l: 34, glow: 0, gh: 265, th: 265, ts: 25, tl: 92 } },
   { label: "Fantasy", font: { f: 'Copperplate, "Copperplate Gothic Light", "Palatino Linotype", Palatino, Georgia, serif', w: 700, i: "normal", c: "uppercase" },

@@ -88,7 +88,7 @@ button:focus-visible, .back:focus-visible { outline: 3px solid #2b6fff; outline-
 .scifi   { --bg: #cbc5ef; }
 .noir    { --bg: #d6d6d6; }
 .romance { --bg: #f6d3da; }
-.western { --bg: #f2d4a6; }
+.action  { --bg: #f4c4a0; }
 .mystery { --bg: #d3cbe4; }
 .fantasy { --bg: #c9e4cf; }
 .comedy { --bg: #fbe8a0; }

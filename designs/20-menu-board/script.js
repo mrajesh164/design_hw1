@@ -3,7 +3,7 @@ const GLYPHS = {
   scifi: '<ellipse cx="12" cy="15.5" rx="10" ry="3.6" fill="currentColor"/><path fill="currentColor" d="M7.2 14.2a5 5 0 0 1 9.6 0z"/><circle cx="7.5" cy="16" r=".9" fill="#15110d"/><circle cx="12" cy="17" r=".9" fill="#15110d"/><circle cx="16.5" cy="16" r=".9" fill="#15110d"/>',
   noir: '<ellipse cx="12" cy="16.5" rx="10" ry="3" fill="currentColor"/><path fill="currentColor" d="M6.5 15.5c0-5 1.8-9 5.5-9s5.5 4 5.5 9z"/><rect x="6.8" y="12.4" width="10.4" height="1.8" fill="#15110d"/>',
   romance: '<path fill="currentColor" d="M12 21s-8-4.9-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.1-8 11-8 11z"/>',
-  western: '<polygon fill="currentColor" points="12,2 14.6,8.6 21.5,9 16.2,13.5 17.9,20.3 12,16.6 6.1,20.3 7.8,13.5 2.5,9 9.4,8.6"/><circle cx="12" cy="11.5" r="2" fill="#15110d"/>',
+  action: '<path fill="currentColor" d="M14 2L5 13.5h5.6L9 22l9.5-12H13z"/>',
   mystery: '<circle cx="10" cy="10" r="6.2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14.7 14.7L21 21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>',
   fantasy: '<path fill="currentColor" d="M3 19L4.6 8l4.6 4.4L12 5l2.8 7.4L19.4 8 21 19z"/><rect x="3" y="19.5" width="18" height="2" fill="currentColor"/>',
   comedy: '<circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="8.6" cy="10" r="1.4" fill="currentColor"/><circle cx="15.4" cy="10" r="1.4" fill="currentColor"/><path d="M7.6 14.2c1 2.6 7.8 2.6 8.8 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>'
@@ -26,9 +26,9 @@ const MENU = [
     ["Meet Cute", "$8.00", "Cappuccino, one croissant, two forks."],
     ["Rainstorm Kiss", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", rgb: "150, 101, 31", drinks: [
-    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
-    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", rgb: "200, 80, 30", drinks: [
+    ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down."],
+    ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", rgb: "111, 74, 150", drinks: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight."],
     ["Red Herring", "$5.50", "Smoked tea latte with a hint of cinnamon. Not what it seems."],

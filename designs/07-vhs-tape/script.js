@@ -23,11 +23,11 @@ const TAPES = [
       ["Meet Cute", "$8.00", "Cappuccino, one croissant, two forks."],
       ["Rainstorm Kiss", "$5.75", "Rose latte. Soft, floral, a little dramatic."],
       ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note."] ] },
-  { id: "western", name: "Western", title: "Western", tag: "Strong, simple, no questions asked", rating: "PG",
-    syn: "Two cups on a rail, ten paces apart. Only one of them is coffee.",
+  { id: "action", name: "Action", title: "Action", tag: "Fast, loud, and fully caffeinated", rating: "PG",
+    syn: "A car chase, a rooftop leap, and two cups that never stop moving.",
     items: [
-      ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss."],
-      ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw."] ] },
+      ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down."],
+      ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it."] ] },
   { id: "mystery", name: "Mystery", title: "Mystery", tag: "Every sip is a clue", rating: "PG-13",
     syn: "Everyone had the tea. Nobody admits it. Someone is lying about the lemon.",
     items: [

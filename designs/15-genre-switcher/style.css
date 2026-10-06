@@ -172,32 +172,32 @@ body[data-genre="romance"] {
 [data-genre="romance"] .dname { font-style: italic; font-weight: 400; font-size: 1.4rem; }
 [data-genre="romance"] .dprice { padding: .1rem .8rem; border-radius: 999px; background: var(--accent); color: #fff; font-size: .95rem; }
 
-/* ============ WESTERN: wanted poster, slab serif, rope border ============ */
-body[data-genre="western"] {
-  --bg: #8f7142; --fg: #33200e; --muted: #50381c; --accent: #9b3a1c;
-  --font-display: "Rockwell", "Clarendon", "Roboto Slab", "Courier New", Georgia, serif; --font-body: "Rockwell", "Clarendon", "Roboto Slab", Georgia, serif;
-  --bar-bg: #33200e; --bar-fg: #f1e2b8; --bar-line: #6d4f2a; --bar-accent: #e0b25a; --on-accent: #2a1a08;
-  --foot-bg: #33200e; --foot-fg: #f1e2b8;
-  background-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, .18) 0 3px, transparent 3px 130px);
+/* ============ ACTION: explosion poster, speed lines, italic sans, hazard stripe border ============ */
+body[data-genre="action"] {
+  --bg: #2a1a14; --fg: #2a1a14; --muted: #4a3226; --accent: #bf3f0e;
+  --font-display: "Futura", "Avenir Next", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif; --font-body: "Avenir Next", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+  --bar-bg: #1a0f0b; --bar-fg: #f6e6d2; --bar-line: #5a3524; --bar-accent: #f07a3a; --on-accent: #1a0f0b;
+  --foot-bg: #1a0f0b; --foot-fg: #f6e6d2;
+  background-image: repeating-conic-gradient(from 0deg at 50% 30%, rgba(240, 110, 50, .16) 0 2deg, transparent 2deg 10deg);
 }
-[data-genre="western"] .skin {
+[data-genre="action"] .skin {
   padding: 2rem; text-align: center;
-  background: radial-gradient(circle at 20% 15%, rgba(160, 120, 60, .15), transparent 50%), #ecdcae;
+  background: radial-gradient(circle at 50% 0%, rgba(240, 122, 58, .25), transparent 55%), #f6e6d2;
   border: 12px solid transparent;
-  border-image: repeating-linear-gradient(45deg, #6d4a24 0 5px, #a8793f 5px 10px) 12;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, .45);
+  border-image: repeating-linear-gradient(-45deg, #1a0f0b 0 8px, #f07a3a 8px 16px) 12;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .5);
 }
-[data-genre="western"] .kicker { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; letter-spacing: .3em; padding-left: .3em; color: var(--accent); }
-[data-genre="western"] h1 { text-transform: uppercase; font-weight: 900; letter-spacing: .05em; }
-[data-genre="western"] .tagline { font-style: italic; font-weight: 700; }
-[data-genre="western"] .tagline::before, [data-genre="western"] .tagline::after { content: "\2605"; margin: 0 .6rem; color: var(--accent); }
-[data-genre="western"] .about { margin-inline: auto; padding: .8rem 0; border-top: 3px double #6d4a24; border-bottom: 3px double #6d4a24; }
-[data-genre="western"] .drink { padding-bottom: 1rem; border-bottom: 2px dashed #6d4a24; text-align: left; }
-[data-genre="western"] .drink:last-child { border-bottom: 0; }
-[data-genre="western"] .dleader { display: block; }
-[data-genre="western"] .dname { text-transform: uppercase; font-weight: 900; letter-spacing: .03em; }
-[data-genre="western"] .dprice::before { content: "REWARD "; font-size: .65em; letter-spacing: .12em; }
-[data-genre="western"] .dprice { font-size: 1.2rem; }
+[data-genre="action"] .kicker { font-size: clamp(1.3rem, 4vw, 2.1rem); font-weight: 800; font-style: italic; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; color: var(--accent); }
+[data-genre="action"] h1 { text-transform: uppercase; font-weight: 800; font-style: italic; letter-spacing: .04em; transform: skewX(-8deg); }
+[data-genre="action"] .tagline { font-style: italic; font-weight: 700; }
+[data-genre="action"] .tagline::before, [data-genre="action"] .tagline::after { content: "\2726"; margin: 0 .6rem; color: var(--accent); }
+[data-genre="action"] .about { margin-inline: auto; padding: .8rem 0; border-top: 3px solid #2a1a14; border-bottom: 3px solid #2a1a14; }
+[data-genre="action"] .drink { padding-bottom: 1rem; border-bottom: 2px dashed #8a4a2a; text-align: left; }
+[data-genre="action"] .drink:last-child { border-bottom: 0; }
+[data-genre="action"] .dleader { display: block; }
+[data-genre="action"] .dname { text-transform: uppercase; font-weight: 800; font-style: italic; letter-spacing: .03em; }
+[data-genre="action"] .dprice::before { content: "BOOM "; font-size: .65em; letter-spacing: .12em; }
+[data-genre="action"] .dprice { font-size: 1.2rem; }
 
 /* ============ MYSTERY: case-file folder, paper clip, stamp ============ */
 body[data-genre="mystery"] {
@@ -286,11 +286,11 @@ body[data-genre="comedy"] {
 /* ============ small screens and motion ============ */
 @media (max-width: 40rem) {
   .switch-hint { display: none; }
-  [data-genre="scifi"] .skin, [data-genre="western"] .skin, [data-genre="fantasy"] .skin { padding: 1.4rem 1rem; }
+  [data-genre="scifi"] .skin, [data-genre="action"] .skin, [data-genre="fantasy"] .skin { padding: 1.4rem 1rem; }
   [data-genre="mystery"] .skin { padding-inline: 1rem; }
   [data-genre="mystery"] .d3 { display: none; }
   [data-genre="noir"] .skin { margin-left: 0; }
-  [data-genre="western"] .dleader { display: none; }
+  [data-genre="action"] .dleader { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .skin { animation: none; }

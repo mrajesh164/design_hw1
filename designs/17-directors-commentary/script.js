@@ -28,11 +28,11 @@ const GENRES = [
       "We used real rose and fake rain. The rain was more expensive, and less romantic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note.",
       "The handwritten note took eleven takes and one pen. The pen has since retired."] ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", drinks: [
-    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss.",
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", drinks: [
+    ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down.",
       "No sugar, no fuss, no stunt double. It's just coffee, and it showed up on time."],
-    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw.",
-      "Triple shot, one take. The saloon doors cost less than the sound mixing."] ] },
+    ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it.",
+      "Triple shot, one take. The explosion cost less than the sound mixing."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", drinks: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight.",
       "Earl Grey with lemon is in every scene and nobody checks it. That is the whole trick."],

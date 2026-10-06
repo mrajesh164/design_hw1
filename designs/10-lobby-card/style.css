@@ -49,7 +49,7 @@ h1 {
 .scifi   { --edge: #4b2fa0; }
 .noir    { --edge: #8b1a1a; }
 .romance { --edge: #c2456f; }
-.western { --edge: #c4571f; }
+.action  { --edge: #c4421f; }
 .mystery { --edge: #5a2d82; }
 .fantasy { --edge: #1f7a5a; }
 .comedy  { --edge: #d9a000; }
@@ -128,9 +128,9 @@ h1 {
 .romance .scene::before { content: "\2665"; left: 50%; top: 44%; font: 44cqw/1 var(--serif); color: #fff; text-shadow: 1cqw 1cqw 0 rgba(180,40,90,.5); transform: translate(-50%, -50%) rotate(-8deg); }
 .romance .scene::after { content: "\2665"; right: 10%; bottom: 26%; font: 12cqw/1 var(--serif); color: #d6336c; }
 
-.western .scene { background: radial-gradient(circle at 70% 52%, #fff3b0 0 10%, #ffd36b 11% 15%, transparent 16%), linear-gradient(180deg, #2b1650, #b83f4a 38%, #f59a4a 62%, #3a1812 62.2%); }
-.western .scene::before { left: 0; right: 0; bottom: 22%; height: 36%; background: #4a1f26; clip-path: polygon(0 100%, 0 62%, 7% 62%, 9% 24%, 22% 24%, 24% 62%, 32% 62%, 34% 100%, 56% 100%, 58% 70%, 62% 70%, 64% 38%, 80% 38%, 82% 70%, 90% 70%, 92% 100%); }
-.western .scene::after { left: 12%; bottom: 8%; width: 10%; height: 44%; background: #130806; clip-path: polygon(38% 100%, 38% 52%, 18% 52%, 18% 28%, 28% 28%, 28% 44%, 38% 44%, 38% 8%, 44% 0, 56% 0, 62% 8%, 62% 36%, 72% 36%, 72% 22%, 84% 22%, 84% 50%, 62% 50%, 62% 100%); }
+.action .scene { background: radial-gradient(circle at 72% 46%, #fff0c0 0 7%, #ffb04a 8% 14%, #ff6a2a 15% 22%, transparent 23%), linear-gradient(180deg, #2a1410, #c4421f 40%, #f08a3a 64%, #1c0e0a 64.2%); }
+.action .scene::before { left: 0; right: 0; bottom: 22%; height: 36%; background: #2a1410; clip-path: polygon(0 100%, 0 62%, 7% 62%, 9% 24%, 22% 24%, 24% 62%, 32% 62%, 34% 100%, 56% 100%, 58% 70%, 62% 70%, 64% 38%, 80% 38%, 82% 70%, 90% 70%, 92% 100%); }
+.action .scene::after { left: 58%; bottom: 28%; width: 28%; height: 56%; background: #ffcf6a; clip-path: polygon(50% 0, 60% 30%, 90% 14%, 74% 42%, 100% 52%, 72% 62%, 86% 90%, 58% 74%, 50% 100%, 42% 74%, 14% 90%, 28% 62%, 0 52%, 26% 42%, 10% 14%, 40% 30%); opacity: .9; }
 
 .mystery .scene { background: radial-gradient(ellipse at 28% 28%, rgba(255,214,120,.7) 0 8%, rgba(255,214,120,.18) 9% 28%, transparent 30%), linear-gradient(180deg, #1e1038, #4a2f7a 60%, #7a5aa8); }
 .mystery .scene::before { left: 20%; bottom: 0; width: 12%; height: 70%; background: #0b0618; clip-path: polygon(40% 100%, 40% 22%, 10% 22%, 22% 8%, 38% 0, 62% 0, 78% 8%, 90% 22%, 60% 22%, 60% 100%); }

@@ -146,7 +146,7 @@ section, header { scroll-margin-top: calc(var(--nav-h) - 1px); }
 .scifi   { --c1: #1fc8b4; --c2: #ffc933; --on: #14091f; }
 .noir    { --c1: #3a3a4a; --c2: #ffc933; --on: #fff3d6; }
 .romance { --c1: #ff2e93; --c2: #ffd9ec; --on: #14091f; }
-.western { --c1: #ff7a33; --c2: #ffc933; --on: #14091f; }
+.action  { --c1: #ff7a33; --c2: #ffc933; --on: #14091f; }
 .mystery { --c1: #7b44c9; --c2: #ff8ac2; --on: #fff3d6; }
 .fantasy { --c1: #2fae6b; --c2: #ffc933; --on: #14091f; }
 .comedy  { --c1: #ffc933; --c2: #ef4136; --on: #14091f; }

@@ -28,11 +28,11 @@ const GENRES = [
       "We used real rose and fake rain. The rain was more expensive, and less romantic."],
     ["The Grand Gesture", "$6.25", "Honey lavender latte, with a handwritten note.",
       "The handwritten note took eleven takes and one pen. The pen has since retired."] ] },
-  { id: "western", name: "Western", tag: "Strong, simple, no questions asked", drinks: [
-    ["True Grit", "$3.75", "Strong black coffee, brewed bold. No sugar, no fuss.",
-      "No sugar, no fuss, no stunt double. It's just coffee, and it showed up on time."],
-    ["A Fistful of Espresso", "$4.25", "A triple shot of espresso. Quick on the draw.",
-      "Triple shot, one take. The saloon doors cost less than the sound mixing."] ] },
+  { id: "action", name: "Action", tag: "Fast, loud, and fully caffeinated", drinks: [
+    ["Full Throttle", "$3.75", "Strong black coffee, brewed bold. No sugar, no slowing down.",
+      "No sugar, no slowing down, and the stunt double asked for a raise. It's just coffee, and it showed up on time."],
+    ["Mission: Espresso", "$4.25", "A triple shot of espresso. Your mission, should you choose to accept it.",
+      "Triple shot, one take. The explosion cost less than the sound mixing."] ] },
   { id: "mystery", name: "Mystery", tag: "Every sip is a clue", drinks: [
     ["The Usual Suspect", "$4.25", "Earl Grey with a lemon twist. Hiding in plain sight.",
       "Earl Grey with lemon is in every scene and nobody checks it. That is the whole trick."],
@@ -65,7 +65,7 @@ const bg = document.querySelector(".bg");
 const perfs = document.querySelectorAll(".perfs");
 const pad = n => String(n).padStart(2, "0");
 const WORDS = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"];
-const HUE = { horror: [0, 45], scifi: [200, 40], noir: [215, 8], romance: [338, 45], western: [32, 55], mystery: [270, 35], fantasy: [150, 40], comedy: [45, 70] };
+const HUE = { horror: [0, 45], scifi: [200, 40], noir: [215, 8], romance: [338, 45], action: [18, 60], mystery: [270, 35], fantasy: [150, 40], comedy: [45, 70] };
 const NOTE = '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" fill="currentColor"/></svg>';
 const INTRO = "Pick a movie genre, find your favorite drink. Our coffees, teas and seasonal specials are sorted into eight genres, from horror to romance to comedy, so ordering feels like choosing tonight&rsquo;s movie.";
 

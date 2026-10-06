@@ -131,7 +131,7 @@ button:focus-visible, .back:focus-visible { outline: 3px solid var(--brass-hi); 
 
 /* tints: muted velvets, one per genre */
 .horror { --tint: #6b2a2e; } .scifi { --tint: #285a60; } .noir { --tint: #4a4a52; } .romance { --tint: #86405a; }
-.western { --tint: #8a5c2c; } .mystery { --tint: #4b3873; } .fantasy { --tint: #2f5d3f; } .comedy { --tint: #8a6a24; }
+.action { --tint: #b4421c; } .mystery { --tint: #4b3873; } .fantasy { --tint: #2f5d3f; } .comedy { --tint: #8a6a24; }
 
 /* glare and a soft light that follows the pointer */
 .glare { position: absolute; inset: 0; z-index: 5; pointer-events: none; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .07) 38%, transparent 47%, transparent 62%, rgba(255, 255, 255, .05) 68%, transparent 75%); transform: translateX(calc(var(--px) * 18px)); transition: transform .25s ease-out; }
