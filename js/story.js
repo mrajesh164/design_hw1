@@ -2,35 +2,23 @@
 
 const PHASES = [
   {
-    id: 1, title: "Broad strokes", range: [1, 8],
+    id: 1, title: "Exploring", range: [1, 20],
     text: [
-      "I started by trying eight very different formats, just to see what a café menu could be: a screenplay, end credits, a cinema marquee, a widescreen film, a storyboard, a seating chart, a VHS tape and a film negative.",
-      "The goal here was breadth, not polish. I wanted to find out which ideas had life before I picked a direction."
+      "I worked on a couple of ideas at a time, refining each one until it felt presentable before moving on to the next. That gave me twenty different directions, from a screenplay and a cinema marquee to a VHS tape, a terminal and a glass display case.",
+      "Partway through I added three more genres (mystery, fantasy and comedy), so every design had to grow from five genres to eight."
     ],
     learned: [
-      "Some ideas were beautiful but hard to use. The widescreen film (4) left me confused about how it worked, and the menu in the screenplay (1) was hard to understand.",
-      "I really liked the storyboard look (5), and I kept coming back to it."
+      "My feedback kept repeating: make it clear how to use the page, show the menu only once and put details in a pop-up, use calmer colors, and keep the type from getting too big.",
+      "Three stood out to me: the storyboard look (5), the silent film once it stepped through cards with the arrow keys (9), and the genre switcher with its home page (15)."
     ]
   },
   {
-    id: 2, title: "Pushing ideas", range: [9, 20],
+    id: 2, title: "Combining", range: [21, 25],
     text: [
-      "Next I pushed in twelve more directions: silent-film cards, lobby cards, a 1987 channel guide, brutalist type, a film title sequence, a word that changes shape, a genre switcher, a terminal, a DVD menu, a choose-your-own-adventure, a glass display case and a backlit menu board.",
-      "Partway through I added three more genres (mystery, fantasy and comedy), so the menu grew from five genres to eight and every design had to be updated."
+      "Around design 20 I stopped starting new ideas and combined my ten favorites (2, 3, 5, 9, 10, 11, 15, 17, 19 and 20) into hybrids: a colored storyboard, a full café site, a pop art version, a film-DVD version and a cinema-café front."
     ],
     learned: [
-      "My feedback kept repeating: make it clear how to use the page, show the menu only once and put details in a pop-up, use calmer colors, and keep the type from getting too big and blocky.",
-      "The silent film (9) became a favorite once it stepped card by card with the arrow keys, and I liked the genre switcher (15) and its home page."
-    ]
-  },
-  {
-    id: 3, title: "Converging", range: [21, 25],
-    text: [
-      "By this point I knew which ideas I kept returning to, so I stopped starting from scratch. I picked the ten designs I liked best (2, 3, 5, 9, 10, 11, 15, 17, 19 and 20), grouped them by feel, and combined them into hybrids.",
-      "Each hybrid took the best part of its parents: the storyboard look with genre colors, a full café site around the menu, a pop art version, a film-DVD version and a cinema-café front."
-    ],
-    learned: [
-      "The first hybrid (21) still felt like a storyboard first and a café second, so 22 added a home page, About us, the menu and Visit us. After that every hybrid was a full café website."
+      "The first hybrid (21) still felt like a storyboard before it felt like a café, so 22 added a home page, About us, the menu and Visit us. After that every hybrid was a full café website."
     ]
   }
 ];
@@ -41,14 +29,13 @@ const FINAL = {
   title: "Why I chose design 25",
   text: [
     "I wanted something warmer and cozier than the bright, daytime look of most cafés. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
-    "It is also the design I refined the most. I changed its fonts, colors and lights, the drawn drinks, the frames around each section and even the ending line, and every round made it feel more like one place instead of three ideas stuck together.",
-    "It has the full café information (home, About us, the menu and Visit us), a menu that is easy to read, and details that appear in a pop-up so nothing is repeated."
+    "It is also the design I refined the most, round after round, until it felt like one place instead of three ideas stuck together. It has the full café information (home, About us, the menu and Visit us), and the menu is easy to read, with details in a pop-up so nothing is repeated."
   ]
 };
 
 // The family tree. Row 0 holds the ten favorites; every hybrid lists its parents and what it took from each.
 const TREE = {
-  favorites: [5, 15, 9, 2, 17, 3, 19, 20, 10, 11],
+  favorites: [10, 11, 5, 15, 9, 2, 17, 3, 19, 20],
   hybrids: {
     21: { parents: [5, 9, 15], gives: {
       5:  "the pencil and paper storyboard look",
@@ -56,8 +43,7 @@ const TREE = {
       15: "a color and pattern for each genre" } },
     22: { parents: [21], gives: {
       21: "the colored storyboard panels, now inside a full café site: a home section, About us, the menu and Visit us" } },
-    23: { parents: [22, 10, 11], gives: {
-      22: "the full café site structure",
+    23: { parents: [10, 11], gives: {
       10: "lobby-card style genre cards and chunky lettering",
       11: "the bright 1980s palette and the pop-up description card" } },
     24: { parents: [2, 9, 17], gives: {
@@ -110,16 +96,12 @@ const DECISIONS = [
     changed: "Switched to a calmer vermilion, thinner lines and smaller type, with color used as a highlight instead of big blocks." },
   { n: 15, said: "I like this one. Add a home page when it first opens.",
     changed: "It now opens on a home page with a preview tile for each of the eight looks." },
-  { n: 0,  label: "All", said: "Everything on the menu is a drink except the oatmeal, so make it consistent. I also do not like the name High Noon, or the tin cup.",
-    changed: "Replaced the oatmeal with a drink in every design, renamed High Noon to True Grit and dropped the tin cup wording." },
   { n: 17, said: "Designs 9 and 17 look kind of similar, so change one.",
     changed: "I tried a glossy restyle of 17, then decided I liked it better before and reverted it. Later I saw that 9 and 17 were different enough." },
   { n: 0,  label: "Plan", said: "I will pick the designs I like most, group them by feel, make two or three hybrids, then refine the best one.",
     changed: "Designs 21 to 25 became hybrids of my ten favorites." },
   { n: 22, said: "The storyboard makes it unclear that this is a café. I want a home page, an about section, and a way to scroll to the menu and contact info.",
     changed: "Built a full café site with a home section, About us, the menu and Visit us, with a sticky bar to jump between them." },
-  { n: 0,  label: "All", said: "Hyde Park, Chicago is not a correct address format, because Hyde Park is a neighborhood.",
-    changed: "Every design now shows 1138 Marquee Lane, Chicago, IL 60615." },
   { n: 23, said: "Keep the full café site, but go in a different direction inspired by 10 and 11, with bright pop art colors.",
     changed: "The same structure in pop art: halftone dots, thick outlines, starbursts and lobby-card genre cards." },
   { n: 25, said: "The red and yellow box at the top is too bold and not cozy. The title font is hard to read, and the lights blink too much. I liked the moving lights, just slower.",

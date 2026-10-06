@@ -158,7 +158,7 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .level-label { position: absolute; left: 0; margin: 0; font: 700 .7rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--terracotta); }
 .level-label.l0 { top: .2rem; }
 .level-label.l1 { top: calc(2rem + 190px - 1.5rem); }
-.tree-stage { position: relative; height: 690px; }
+.tree-stage { position: relative; height: 520px; }
 .tree-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .tree-lines path { fill: none; stroke: rgba(122, 92, 68, .22); stroke-width: 2; transition: stroke .2s; }
 .tree-lines path.on { stroke: var(--terracotta); stroke-width: 3; }
@@ -170,7 +170,7 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .node.hyb img { border-color: var(--wood); }
 .node span { display: block; margin-top: .25rem; font-size: .68rem; line-height: 1.2; }
 .node b { color: var(--terracotta); }
-.node.final img { box-shadow: 0 0 0 3px #e3b04b, 0 0 18px rgba(227, 176, 75, .85); }
+.node.is-final img { box-shadow: 0 0 0 3px #e3b04b, 0 0 18px rgba(227, 176, 75, .85); }
 .node.dim { opacity: .28; }
 .node[aria-pressed="true"] img { outline: 3px solid var(--terracotta); outline-offset: 2px; }
 .node:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 4px; }
