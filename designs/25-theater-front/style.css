@@ -94,15 +94,15 @@ section, header.home { scroll-margin-top: 4.2rem; }
   white-space: nowrap;
   font: 400 clamp(1.7rem, 7.2vw, 4.6rem)/1.1 var(--serif);
   letter-spacing: .16em; padding-left: .16em; text-transform: uppercase;
-  background: linear-gradient(180deg, #f6e6bd, #d6b672 55%, #a8803a);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 0 10px rgba(255, 200, 130, .3));
+  color: #ffe9c4;
+  -webkit-text-stroke: .8px #ffe9c4;
+  text-shadow: 0 0 14px rgba(255, 200, 120, .5);
 }
 .mq-sub { margin: 1rem 0 0; font-size: clamp(.58rem, 1.4vw, .8rem); letter-spacing: .3em; color: #dcc49f; opacity: .85; }
 
 .mq-edge { position: absolute; pointer-events: none; }
-.mq-edge::before, .mq-edge::after { content: ""; position: absolute; inset: 0; animation: chase 1s steps(1) infinite; }
-.mq-edge::after { animation-delay: -.5s; }
+.mq-edge::before, .mq-edge::after { content: ""; position: absolute; inset: 0; animation: chase 5s ease-in-out infinite; }
+.mq-edge::after { animation-delay: -2.5s; }
 .mq-edge.t, .mq-edge.b { left: 8px; right: 8px; height: 22px; }
 .mq-edge.t { top: 4px; } .mq-edge.b { bottom: 4px; }
 .mq-edge.l, .mq-edge.r { top: 8px; bottom: 8px; width: 22px; }
@@ -111,7 +111,7 @@ section, header.home { scroll-margin-top: 4.2rem; }
 .mq-edge.t::after, .mq-edge.b::after { background: radial-gradient(circle, var(--bulb) 0 4px, transparent 5px) 14px 50% / 28px 22px repeat-x; filter: drop-shadow(0 0 3px rgba(255, 200, 120, .55)); }
 .mq-edge.l::before, .mq-edge.r::before { background: radial-gradient(circle, var(--bulb) 0 4px, transparent 5px) 50% 0 / 22px 28px repeat-y; filter: drop-shadow(0 0 3px rgba(255, 200, 120, .55)); }
 .mq-edge.l::after, .mq-edge.r::after { background: radial-gradient(circle, var(--bulb) 0 4px, transparent 5px) 50% 14px / 22px 28px repeat-y; filter: drop-shadow(0 0 3px rgba(255, 200, 120, .55)); }
-@keyframes chase { 0% { opacity: 1; } 50% { opacity: .15; } 100% { opacity: 1; } }
+@keyframes chase { 0%, 100% { opacity: 1; } 50% { opacity: .62; } }
 
 /* the letter board */
 .lb {
@@ -127,7 +127,7 @@ section, header.home { scroll-margin-top: 4.2rem; }
 .lb-row.head .lb-tile { color: var(--tile-red); }
 .lb-tile.spin { color: #777; }
 
-.intro { max-width: 42rem; margin: 1.6rem auto 0; text-align: center; font-size: 1.12rem; line-height: 1.55; color: var(--cream); }
+.intro { max-width: 42rem; margin: 1.6rem auto 0; text-align: center; font-size: 1.12rem; line-height: 1.55; color: var(--cream); text-wrap: balance; }
 
 /* the box office: three tickets that double as the page navigation */
 .booth {
@@ -206,13 +206,13 @@ section, header.home { scroll-margin-top: 4.2rem; }
 .plaque, .stage { position: relative; z-index: 2; }
 .plaque {
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .1rem .9rem;
-  margin: -1rem -.9rem 1rem; padding: .6rem .9rem .65rem; color: var(--ink);
-  background: linear-gradient(180deg, var(--brass-hi), var(--brass) 55%, #9a7430);
-  border-bottom: 2px solid #6f5420; box-shadow: 0 3px 8px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .4);
+  margin: -1rem -.9rem 1rem; padding: .6rem .9rem .65rem; color: #ffe9c4;
+  background: linear-gradient(180deg, #1b0c0b, #2b1410);
+  border-bottom: 2px solid var(--brass); box-shadow: 0 3px 8px rgba(0, 0, 0, .5), inset 0 0 18px rgba(0, 0, 0, .6);
   transform: translate(calc(var(--px) * -3px), calc(var(--py) * -2px)); transition: transform .25s ease-out;
 }
-.plaque b { display: block; font: 700 1.1rem/1.1 var(--serif); letter-spacing: .2em; text-transform: uppercase; }
-.plaque small { display: block; margin-top: .1rem; font: italic .82rem var(--serif); }
+.plaque b { display: block; font: 400 1.2rem/1.1 var(--serif); letter-spacing: .2em; text-transform: uppercase; color: #ffe9c4; -webkit-text-stroke: .35px #ffe9c4; text-shadow: 0 0 10px rgba(255, 200, 120, .45); }
+.plaque small { display: block; margin-top: .1rem; font: italic .86rem var(--serif); color: var(--brass-hi); }
 .stage { display: flex; justify-content: center; align-items: flex-start; }
 .drink { flex: 0 0 33.3333%; display: flex; flex-direction: column; align-items: stretch; min-width: 0; padding: 0; color: inherit; background: none; border: 0; text-align: center; }
 .filler { flex: 0 0 16.6667%; min-width: 0; }
