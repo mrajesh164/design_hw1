@@ -221,3 +221,11 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 
 /* a little breathing room under the last row on every tab */
 main { padding-bottom: 5rem; }
+
+/* masthead title: a big 25, then the sentence in smaller type, with a small steaming cup */
+h1.title { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
+h1.title .num { font-size: clamp(3.4rem, 8vw, 5.6rem); line-height: .9; font-weight: 700; letter-spacing: -.02em; }
+h1.title .h1-sub { display: block; margin: 0; max-width: 24rem; font-size: 1.15rem; }
+.cup { flex: none; width: clamp(2.6rem, 5vw, 3.6rem); height: auto; fill: none; stroke: #f1cd7c; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(255, 200, 120, .4)); }
+.cup .mug { fill: rgba(241, 205, 124, .12); }
+.cup .steam { stroke: #e2c9a6; stroke-width: 2.2; opacity: .85; }
