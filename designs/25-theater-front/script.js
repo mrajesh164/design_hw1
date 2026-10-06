@@ -116,8 +116,27 @@
   var glassEl = document.getElementById("glass");
   var cardEl = document.getElementById("card");
 
+  // Give the flat drink drawings a pencil outline, like the hand-drawn pictures in design 22:
+  // every filled shape gets a dark ink edge, and thick strokes (handles) get an ink border underneath.
+  var INK = "#2a1a12";
+  function inkOutline(markup) {
+    return markup.replace(/<(path|ellipse|rect|circle|polygon)\b([^>]*?)(\/?)>/g, function (all, tag, attrs, close) {
+      var fill = (attrs.match(/\sfill="([^"]*)"/) || [])[1];
+      var stroke = (attrs.match(/\sstroke="([^"]*)"/) || [])[1];
+      var sw = parseFloat((attrs.match(/stroke-width="([\d.]+)"/) || [])[1]);
+      if (fill && fill !== "none" && !stroke && fill.indexOf("rgba(0, 0, 0") !== 0 && fill.indexOf("rgba(0,0,0") !== 0) {
+        return "<" + tag + attrs + ' stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="round"' + close + ">";
+      }
+      if ((!fill || fill === "none") && stroke && sw >= 4) {
+        var under = attrs.replace(/stroke="[^"]*"/, 'stroke="' + INK + '"').replace(/stroke-width="[\d.]+"/, 'stroke-width="' + (sw + 3.4) + '"');
+        return "<" + tag + under + close + "><" + tag + attrs + close + ">";
+      }
+      return all;
+    });
+  }
+
   function svgFor(name, n) {
-    return '<svg viewBox="0 0 220 110" aria-hidden="true" focusable="false">' + ART[name](n) + "</svg>";
+    return '<svg viewBox="0 0 220 110" aria-hidden="true" focusable="false">' + inkOutline(ART[name](n)) + "</svg>";
   }
 
   var count = 0;
