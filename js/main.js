@@ -34,7 +34,7 @@ function journeyHTML() {
       <div class="phase-head"><span class="phase-no" aria-hidden="true">${p.id}</span>
         <div><h2 id="ph${p.id}">${p.title}</h2><p class="phase-range">Designs ${p.range[0]} to ${p.range[1]}</p></div></div>
       ${p.text.map(t => `<p class="lead">${t}</p>`).join("")}
-      <ul class="strip">${nums.map(mini).join("")}</ul>
+      ${p.thumbs === false ? "" : `<ul class="strip">${nums.map(mini).join("")}</ul>`}
       <div class="learned"><h3>What I noticed</h3><ul>${p.learned.map(l => `<li>${l}</li>`).join("")}</ul></div>
     </section>`;
   }).join("");

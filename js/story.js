@@ -2,7 +2,7 @@
 
 const PHASES = [
   {
-    id: 1, title: "Exploring", range: [1, 20],
+    id: 1, title: "Exploring", range: [1, 20], thumbs: false,
     text: [
       "I worked on around 3 to 5 designs at a time, refining each one until it felt presentable before moving on to the next. That gave me twenty different directions, from a screenplay and a cinema marquee to a VHS tape, a terminal and a glass display case."
     ],
