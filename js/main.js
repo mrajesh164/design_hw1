@@ -158,7 +158,7 @@ addEventListener("resize", drawTree);
 
 // ---------- tab 4: decisions ----------
 document.getElementById("decisions-body").innerHTML = `
-  <p class="intro-story">A running log of what I asked Claude to change, in the order it happened, and what changed because of it. I shaped most of these designs by reacting to them.</p>
+  <p class="intro-story">A running log of some things I asked Claude to change, in the order it happened.</p>
   <ol class="log">${DECISIONS.map(d => `
     <li class="decision">
       <div class="d-pic">${d.n ? `<a href="${byN[d.n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(d.n)}, ${byN[d.n].title}"><img src="${thumb(d.n)}" alt="" loading="lazy" width="320" height="180"></a><span><b>${pad(d.n)}</b> ${byN[d.n].title}</span>` : `<span class="d-all">${d.label === "Plan" ? "The plan" : "Every design"}</span>`}</div>

@@ -63,7 +63,7 @@ const TREE = {
 const DECISIONS = [
   { n: 1,  said: "I like the screenplay idea, but the menu is very hard to understand.",
     changed: "Each drink now has its name and price on one bold line, the ingredients are plain text, and a key on the title page explains how to read the menu." },
-  { n: 2,  said: "The plain black background is not doing it for me. I want more detail, and the opening is too slow.",
+  { n: 2,  said: "I do not love the plain black background and want more detail. The animation is also too slow.",
     changed: "Added a colored wash for each genre, film grain, a projector beam, moving film-strip edges and a timecode, and the title appears right away." },
   { n: 3,  said: "I do not like the menu being repeated in the flashing sign and again below it.",
     changed: "The sign now only teases each genre. Names, prices and descriptions appear once, underneath." },
