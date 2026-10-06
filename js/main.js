@@ -88,7 +88,6 @@ function treeHTML() {
   }).join("");
   const aside = Object.keys(TREE.aside).map(Number).map(n => `<li><a class="mini" href="${byN[n].path}" target="_blank" rel="noopener" aria-label="Open design ${pad(n)}, ${byN[n].title}"><img src="${thumb(n)}" alt="" loading="lazy" width="320" height="180"><span><b>${pad(n)}</b> ${byN[n].title}</span></a>${TREE.aside[n] ? `<p>${TREE.aside[n]}</p>` : ""}</li>`).join("");
   return `
-  <p class="intro-story">Ten of the first twenty designs kept pulling me back, and the hybrids were built from them.</p>
   <div class="tree-wrap" id="tree-wrap">
     <p class="tree-hint">Select a design to light up everything it came from and everything it turned into.</p>
     <p class="level-label l0">My ten favorites</p>
@@ -98,7 +97,7 @@ function treeHTML() {
   </div>
   <h2 class="sub-h">How each hybrid was made</h2>
   <div class="makes">${makes}</div>
-  <h2 class="sub-h">Just explored</h2>
+  <h2 class="sub-h">Other explored ideas</h2>
   <ul class="aside">${aside}</ul>`;
 }
 document.getElementById("tree-body").innerHTML = treeHTML();
