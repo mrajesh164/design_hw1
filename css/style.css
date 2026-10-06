@@ -18,11 +18,11 @@ body {
   color: var(--ink);
   font-family: var(--serif);
   line-height: 1.5;
-  /* a warm linen tablecloth: soft terracotta checks over cream, with a glow near the top */
+  /* soft plaster wall: a warm glow near the top, a tiny scattering of dots like old wallpaper, darker corners */
   background:
-    radial-gradient(ellipse 90% 40% at 50% 0, rgba(255, 214, 140, .45), transparent 70%),
-    repeating-linear-gradient(0deg, rgba(179, 83, 47, .075) 0 26px, transparent 26px 52px),
-    repeating-linear-gradient(90deg, rgba(179, 83, 47, .075) 0 26px, transparent 26px 52px),
+    radial-gradient(ellipse 90% 40% at 50% 0, rgba(255, 214, 140, .5), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(138, 90, 52, .13) 0 1.4px, transparent 1.8px) 0 0 / 22px 22px,
+    radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, rgba(138, 90, 52, .16)),
     var(--linen);
 }
 
@@ -79,8 +79,6 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .notes h3 { margin: 0 0 .3rem; font-size: 1.1rem; line-height: 1.25; color: var(--espresso); }
 .desc { margin: 0; font-size: .93rem; line-height: 1.5; color: #5a4332; }
 
-.colophon { margin-top: 4.5rem; padding: 2rem 6vw 3rem; font-family: var(--mono); font-size: .8rem; color: #d9c0a0; background: linear-gradient(180deg, var(--espresso), var(--roast)); border-top: 4px solid var(--wood); }
-.colophon p { margin: .2rem 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
