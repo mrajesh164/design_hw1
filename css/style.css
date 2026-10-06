@@ -45,9 +45,9 @@ body {
 h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.1; font-weight: 700; letter-spacing: -.01em; color: #fff1d6; text-shadow: 0 0 18px rgba(255, 200, 120, .35); }
 h1 .h1-sub { display: block; max-width: 44rem; margin-top: .7rem; font-size: 1.1rem; font-weight: 400; letter-spacing: 0; line-height: 1.45; color: #e2c9a6; text-shadow: none; }
 
-.journal { padding: 3.4rem 5vw 0; }
+.journal { padding: 3.4rem 3vw 0; }
 
-.entries { display: grid; gap: 2.2rem 1.8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); }
+.entries { display: grid; gap: 2.2rem 1.2rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); }
 
 /* each design is a little cream card: the film frame above, the name and a line about it below */
 .entry {
