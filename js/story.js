@@ -4,8 +4,7 @@ const PHASES = [
   {
     id: 1, title: "Exploring", range: [1, 20],
     text: [
-      "I worked on around 3 to 5 designs at a time, refining each one until it felt presentable before moving on to the next. That gave me twenty different directions, from a screenplay and a cinema marquee to a VHS tape, a terminal and a glass display case.",
-      "Partway through, I added three more genres to the café menu (mystery, fantasy and comedy), so I updated all of the designs to reflect that."
+      "I worked on around 3 to 5 designs at a time, refining each one until it felt presentable before moving on to the next. That gave me twenty different directions, from a screenplay and a cinema marquee to a VHS tape, a terminal and a glass display case."
     ],
     learned: [
       "My feedback mainly involved making it clear how to use the page, having a menu that is easy to read and understand but also creative, and using cohesive color schemes and layouts.",
