@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Now Showing — 25 Landing Pages for a Genre Café</title>
-  <meta name="description" content="A running log exploring 25 landing page designs for a fictional café whose menu is built around film and TV genres.">
+  <meta name="description" content="Twenty-five landing pages for a fictional café whose menu is built around film and TV genres, and the story of how they were explored, combined and refined.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,13 +12,34 @@
     <h1>Now Showing:<span class="h1-sub">Twenty-five landing pages for a café whose menu is organized by film and TV genre.</span></h1>
   </header>
 
-  <main id="journal" class="journal"></main>
+  <nav class="tabs" role="tablist" aria-label="Gallery sections">
+    <button type="button" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="true" data-tab="all">All 25</button>
+    <button type="button" role="tab" id="tab-journey" aria-controls="panel-journey" aria-selected="false" tabindex="-1" data-tab="journey">Journey</button>
+    <button type="button" role="tab" id="tab-tree" aria-controls="panel-tree" aria-selected="false" tabindex="-1" data-tab="tree">Family tree</button>
+    <button type="button" role="tab" id="tab-decisions" aria-controls="panel-decisions" aria-selected="false" tabindex="-1" data-tab="decisions">Decisions</button>
+  </nav>
+
+  <main>
+    <section id="panel-all" class="panel" role="tabpanel" aria-labelledby="tab-all">
+      <div id="journal" class="journal"></div>
+    </section>
+    <section id="panel-journey" class="panel" role="tabpanel" aria-labelledby="tab-journey" hidden>
+      <div id="journey-body" class="story"></div>
+    </section>
+    <section id="panel-tree" class="panel" role="tabpanel" aria-labelledby="tab-tree" hidden>
+      <div id="tree-body" class="story"></div>
+    </section>
+    <section id="panel-decisions" class="panel" role="tabpanel" aria-labelledby="tab-decisions" hidden>
+      <div id="decisions-body" class="story"></div>
+    </section>
+  </main>
 
   <footer class="colophon">
     <p>Plain HTML, CSS and JS. No frameworks, no build step, no stored data.</p>
   </footer>
 
   <script src="js/entries.js"></script>
+  <script src="js/story.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,127 @@
+// The process story behind the gallery. Written in the first person so it can be edited in your own voice.
+
+const PHASES = [
+  {
+    id: 1, title: "Broad strokes", range: [1, 8],
+    text: [
+      "I started by trying eight very different formats, just to see what a café menu could be: a screenplay, end credits, a cinema marquee, a widescreen film, a storyboard, a seating chart, a VHS tape and a film negative.",
+      "The goal here was breadth, not polish. I wanted to find out which ideas had life before I picked a direction."
+    ],
+    learned: [
+      "Some ideas were beautiful but hard to use. The widescreen film (4) left me confused about how it worked, and the menu in the screenplay (1) was hard to understand.",
+      "I really liked the storyboard look (5), and I kept coming back to it."
+    ]
+  },
+  {
+    id: 2, title: "Pushing ideas", range: [9, 20],
+    text: [
+      "Next I pushed in twelve more directions: silent-film cards, lobby cards, a 1987 channel guide, brutalist type, a film title sequence, a word that changes shape, a genre switcher, a terminal, a DVD menu, a choose-your-own-adventure, a glass display case and a backlit menu board.",
+      "Partway through I added three more genres (mystery, fantasy and comedy), so the menu grew from five genres to eight and every design had to be updated."
+    ],
+    learned: [
+      "My feedback kept repeating: make it clear how to use the page, show the menu only once and put details in a pop-up, use calmer colors, and keep the type from getting too big and blocky.",
+      "The silent film (9) became a favorite once it stepped card by card with the arrow keys, and I liked the genre switcher (15) and its home page."
+    ]
+  },
+  {
+    id: 3, title: "Converging", range: [21, 25],
+    text: [
+      "By this point I knew which ideas I kept returning to, so I stopped starting from scratch. I picked the ten designs I liked best (2, 3, 5, 9, 10, 11, 15, 17, 19 and 20), grouped them by feel, and combined them into hybrids.",
+      "Each hybrid took the best part of its parents: the storyboard look with genre colors, a full café site around the menu, a pop art version, a film-DVD version and a cinema-café front."
+    ],
+    learned: [
+      "The first hybrid (21) still felt like a storyboard first and a café second, so 22 added a home page, About us, the menu and Visit us. After that every hybrid was a full café website."
+    ]
+  }
+];
+
+// Why 25: the part that is mostly your own thinking.
+const FINAL = {
+  n: 25,
+  title: "Why I chose design 25",
+  text: [
+    "I wanted something warmer and cozier than the bright, daytime look of most cafés. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
+    "It is also the design I refined the most. I changed its fonts, colors and lights, the drawn drinks, the frames around each section and even the ending line, and every round made it feel more like one place instead of three ideas stuck together.",
+    "It has the full café information (home, About us, the menu and Visit us), a menu that is easy to read, and details that appear in a pop-up so nothing is repeated."
+  ]
+};
+
+// The family tree. Row 0 holds the ten favorites; every hybrid lists its parents and what it took from each.
+const TREE = {
+  favorites: [5, 15, 9, 2, 17, 3, 19, 20, 10, 11],
+  hybrids: {
+    21: { parents: [5, 9, 15], gives: {
+      5:  "the pencil and paper storyboard look",
+      9:  "a line of story on every panel",
+      15: "a color and pattern for each genre" } },
+    22: { parents: [21], gives: {
+      21: "the colored storyboard panels, now inside a full café site: a home section, About us, the menu and Visit us" } },
+    23: { parents: [22, 10, 11], gives: {
+      22: "the full café site structure",
+      10: "lobby-card style genre cards and chunky lettering",
+      11: "the bright 1980s palette and the pop-up description card" } },
+    24: { parents: [2, 9, 17], gives: {
+      2:  "the end-credits roll, used for Visit us",
+      9:  "stepping card by card with the arrow keys",
+      17: "the DVD main menu and the director's notes" } },
+    25: { parents: [3, 19, 20], gives: {
+      3:  "the marquee, the flipping letter board and the ticket buttons",
+      19: "the lit glass display case for the menu",
+      20: "the backlit panels and the counter with a bell for Visit us" } }
+  },
+  // Designs that were explored and not carried into a hybrid, with what I said about them where I did.
+  aside: {
+    1:  "I liked it as a screenplay, but the menu was hard to read.",
+    4:  "It was cinematic, but very confusing to figure out.",
+    6:  "",
+    7:  "I did not love the bright blue.",
+    8:  "Its drink drawings live on in designs 19, 23 and 25.",
+    12: "It felt too blocky and big.",
+    13: "",
+    14: "",
+    16: "",
+    18: ""
+  }
+};
+
+// Feedback log, in the order it happened. Paraphrased from my notes to Claude.
+const DECISIONS = [
+  { n: 1,  said: "I like the screenplay idea, but the menu is very hard to understand.",
+    changed: "Each drink now has its name and price on one bold line, the ingredients are plain text, and a key on the title page explains how to read the menu." },
+  { n: 2,  said: "The plain black background is not doing it for me. I want more detail, and the opening is too slow.",
+    changed: "Added a colored wash for each genre, film grain, a projector beam, moving film-strip edges and a timecode, and the title appears right away." },
+  { n: 3,  said: "I do not like the menu being repeated in the flashing sign and again below it.",
+    changed: "The sign now only teases each genre. Names, prices and descriptions appear once, underneath." },
+  { n: 4,  said: "This one is very confusing. I cannot tell how it works.",
+    changed: "Added a big play button, video-style controls, a counter and a pop-up menu for each genre." },
+  { n: 5,  said: "I really like the storyboard style, but the animation makes it hard to get around.",
+    changed: "Removed the scroll animation and the auto-playing tour, and added jump links to each genre." },
+  { n: 7,  said: "I do not love the bright blue, the be-kind-rewind line does not make sense, and the blinking clock is not nice. Make the play button do something.",
+    changed: "Moved to a dim teal-black screen, dropped the slogan, swapped the blinking clock for the real time, and made Play run a tour of the tapes." },
+  { n: 8,  said: "I do not like the patterns on the frames. Make each menu item a picture of the drink itself.",
+    changed: "Drew a small illustration for every drink." },
+  { n: 0,  label: "All", said: "Add three more genres: mystery, fantasy and comedy.",
+    changed: "Every design was updated to eight genres, each with three new drinks." },
+  { n: 9,  said: "I do not like this one. Add something more. I do not know how to get to the menu, and I want to click through the story with the arrow keys.",
+    changed: "Turned it into a card-by-card show with a Start button, arrow keys, a reel index along the bottom, a walking silhouette and optional live piano. I liked it much better after." },
+  { n: 11, said: "When I click a menu item, do not scroll back up. Let a description card pop up.",
+    changed: "Descriptions open in a pop-up card over the guide, and a See program button scrolls down to it." },
+  { n: 12, said: "I do not like the neon yellow, and everything is too blocky and big.",
+    changed: "Switched to a calmer vermilion, thinner lines and smaller type, with color used as a highlight instead of big blocks." },
+  { n: 15, said: "I like this one. Add a home page when it first opens.",
+    changed: "It now opens on a home page with a preview tile for each of the eight looks." },
+  { n: 0,  label: "All", said: "Everything on the menu is a drink except the oatmeal, so make it consistent. I also do not like the name High Noon, or the tin cup.",
+    changed: "Replaced the oatmeal with a drink in every design, renamed High Noon to True Grit and dropped the tin cup wording." },
+  { n: 17, said: "Designs 9 and 17 look kind of similar, so change one.",
+    changed: "I tried a glossy restyle of 17, then decided I liked it better before and reverted it. Later I saw that 9 and 17 were different enough." },
+  { n: 0,  label: "Plan", said: "I will pick the designs I like most, group them by feel, make two or three hybrids, then refine the best one.",
+    changed: "Designs 21 to 25 became hybrids of my ten favorites." },
+  { n: 22, said: "The storyboard makes it unclear that this is a café. I want a home page, an about section, and a way to scroll to the menu and contact info.",
+    changed: "Built a full café site with a home section, About us, the menu and Visit us, with a sticky bar to jump between them." },
+  { n: 0,  label: "All", said: "Hyde Park, Chicago is not a correct address format, because Hyde Park is a neighborhood.",
+    changed: "Every design now shows 1138 Marquee Lane, Chicago, IL 60615." },
+  { n: 23, said: "Keep the full café site, but go in a different direction inspired by 10 and 11, with bright pop art colors.",
+    changed: "The same structure in pop art: halftone dots, thick outlines, starbursts and lobby-card genre cards." },
+  { n: 25, said: "The red and yellow box at the top is too bold and not cozy. The title font is hard to read, and the lights blink too much. I liked the moving lights, just slower.",
+    changed: "Softened the sign to a dusty burgundy with cream lettering, matched the fonts to the section titles, drew the drinks by hand like in 22, and slowed the bulbs." }
+];

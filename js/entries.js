@@ -1,11 +1,5 @@
 // status: "planned" | "shot" | "cut" | "final"
 // When a design is built, set status, date, path, and fill in `result` and `ledTo`.
-const PHASES = {
-  1: { title: "Broad strokes", blurb: "Wildly different territories. What even works for a café?" },
-  2: { title: "Going deeper", blurb: "Push the most interesting directions further, then combine what worked. Some die here." },
-  3: { title: "Final three", blurb: "The best three, refined, with reasons." }
-};
-
 const ENTRIES = [
   { n: 1, desc: "The whole café written as a screenplay: a title page, scene headings for each genre, and drinks set like characters.", status: "shot", date: "2026-10-04", path: "designs/01-film-script/index.html",  phase: 1, title: "Film Script", tag: "Structure", hue: 40,
     question: "Can a whole landing page read as a screenplay without becoming unreadable?",
