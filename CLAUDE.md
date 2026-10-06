@@ -1,4 +1,4 @@
-# Scene & Sip
+# Film Genre Inspired Café Website
 
 A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose menu is built around film and TV genres. The root `index.html` is the gallery; each design lives in `designs/NN-slug/`.
 
