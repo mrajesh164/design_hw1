@@ -94,7 +94,7 @@ function treeHTML() {
     <div class="tree-stage" id="tree-stage"><svg class="tree-lines" id="tree-lines" aria-hidden="true"></svg>${nodes}</div>
     <div class="tree-detail" id="tree-detail" aria-live="polite"></div>
   </div>
-  <h2 class="sub-h">How each hybrid was made</h2>
+  <h2 class="sub-h">How combinations were made</h2>
   <div class="makes">${makes}</div>`;
 }
 document.getElementById("tree-body").innerHTML = treeHTML();
