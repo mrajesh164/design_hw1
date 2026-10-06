@@ -18,7 +18,7 @@ const PHASES = [
       "Around design 20 I stopped starting new ideas and combined my ten favorites (2, 3, 5, 9, 10, 11, 15, 17, 19 and 20) into hybrids: a colored storyboard, a full café site, a pop art version, a film-DVD version and a cinema-café front."
     ],
     learned: [
-      "The first hybrid (21) still felt like a storyboard before it felt like a café, so 22 added a home page, About us, the menu and Visit us. After that every hybrid was a full café website."
+      "The first storyboard-inspired design felt slightly incomplete for a café website, so I added a home page, About us, the menu and Visit us sections to make it feel more complete. For the rest of my combined versions I used this similar format."
     ]
   }
 ];
@@ -28,7 +28,7 @@ const FINAL = {
   n: 25,
   title: "Why I chose design 25",
   text: [
-    "I wanted something warmer and cozier than the bright, daytime look of most cafés. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
+    "I wanted something warmer and cozier than the brighter, daytime look of most café websites. A café that glows after dark, with a marquee, a lit display case and a counter with a bell, felt like a place you would actually want to sit in.",
     "It is also the design I refined the most, round after round, until it felt like one place instead of three ideas stuck together. It has the full café information (home, About us, the menu and Visit us), and the menu is easy to read, with details in a pop-up so nothing is repeated."
   ]
 };

@@ -40,7 +40,6 @@ function journeyHTML() {
   }).join("");
   const f = byN[FINAL.n];
   return `
-  <p class="intro-story">I explored a couple of ideas at a time, refining each until it was presentable. Around design 20 I started combining my favorites until one felt right.</p>
   ${phases}
   <section class="final" aria-labelledby="final-h">
     <a class="final-pic" href="${f.path}" target="_blank" rel="noopener" aria-label="Open design ${FINAL.n}, ${f.title}">
