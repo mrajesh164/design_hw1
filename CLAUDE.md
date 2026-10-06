@@ -1,6 +1,12 @@
-# Now Showing
+# Scene & Sip
 
-A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose menu is built around film and TV genres. The gallery is called Now Showing; the root `index.html` is the gallery; each design lives in `designs/NN-slug/`.
+A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose menu is built around film and TV genres. The root `index.html` is the gallery; each design lives in `designs/NN-slug/`.
+
+## The page
+Scene & Sip is a neighborhood café whose menu is organized by film and TV genre, so ordering feels like choosing tonight's movie.
+- **Who it's for:** people nearby (students, locals, movie lovers) deciding where to get a drink, and first-time visitors who want to know what the café is like.
+- **What a visitor should understand:** it's a cozy café where each genre is a mood and every drink fits one; what the drinks are and what they cost.
+- **What a visitor should do:** pick a genre, find a drink that fits their mood, and know where and when to come (address and hours).
 
 ## Goals
 - Explore a wide variety of directions with few constraints.
@@ -12,13 +18,12 @@ A gallery of 25 landing page designs for a fictional café (Scene & Sip) whose m
 - Must work as static files on Vercel and when opened from disk. Relative paths only.
 - Each design is self-contained: its own `index.html`, `style.css`, `script.js`, plus a "← Now Showing gallery" link to `../../index.html`.
 - Keep café facts (name, address, hours, menu, prices) consistent across designs.
-- The café: Scene & Sip, 1138 Marquee Lane, Chicago, IL 60615 (never write "Hyde Park, Chicago" as an address; Hyde Park is a neighborhood), open daily 7 a.m. to 10 p.m., phone (555) 019-0420.
-- The eight genres, in order: Horror, Sci-Fi, Noir, Romance, Action, Mystery, Fantasy, Comedy. Each has three drinks (Action has two: Full Throttle and Mission: Espresso). Every menu item is a drink, so nothing food-only. New designs should include all eight.
+- The café: Scene & Sip, 1138 Marquee Lane, Chicago, IL 60615, open daily 7 a.m. to 10 p.m., phone (555) 019-0420.
+- The eight genres, in order: Horror, Sci-Fi, Noir, Romance, Action, Mystery, Fantasy, Comedy. Every menu item is a drink. New designs should include all eight.
 - Respect `prefers-reduced-motion`; work on mobile.
 
 ## Gallery
 - Entries live in `js/entries.js`. When a design is built, set its `status`, `date` and `path`.
-- Never write the `result` or `ledTo` fields. Those are my own reflections.
 - Every time a design is built or iterated, update its entry in `js/entries.js` in the same step, and check that the gallery link points to a file that exists. Do this without being asked.
 
 ## Working style
