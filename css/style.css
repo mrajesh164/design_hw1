@@ -29,7 +29,7 @@ body {
 /* the title sits on a dark roast board, with a string of warm bulbs along its lower edge */
 .masthead {
   position: relative;
-  padding: 2.4rem 6vw 2.1rem;
+  padding: 2.4rem 4vw 2.1rem;
   color: var(--cream);
   background:
     repeating-linear-gradient(90deg, rgba(0, 0, 0, .16) 0 2px, transparent 2px 9px),
@@ -45,9 +45,10 @@ body {
 h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.1; font-weight: 700; letter-spacing: -.01em; color: #fff1d6; text-shadow: 0 0 18px rgba(255, 200, 120, .35); }
 h1 .h1-sub { display: block; max-width: 44rem; margin-top: .7rem; font-size: 1.1rem; font-weight: 400; letter-spacing: 0; line-height: 1.45; color: #e2c9a6; text-shadow: none; }
 
-.journal { padding: 3.4rem 3vw 0; }
+.journal { padding: 3.4rem 4vw 0; }
 
 .entries { display: grid; gap: 2.2rem 1.2rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); }
+@media (min-width: 70rem) { .entries { grid-template-columns: repeat(5, 1fr); } }
 
 /* each design is a little cream card: the film frame above, the name and a line about it below */
 .entry {
@@ -88,7 +89,7 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 /* ---------- tabs ---------- */
 .tabs {
   position: sticky; top: 0; z-index: 30; display: flex; flex-wrap: wrap; gap: .5rem;
-  margin-top: 24px; padding: .75rem 5vw;
+  margin-top: 24px; padding: .75rem 4vw;
   background: rgba(246, 233, 208, .95); backdrop-filter: blur(4px);
   border-bottom: 1px solid #dcc59a;
 }
@@ -112,7 +113,7 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 }
 
 /* ---------- story tabs ---------- */
-.story { max-width: 82rem; margin: 0 auto; padding: 2.6rem 5vw 0; }
+.story { max-width: 82rem; margin: 0 auto; padding: 2.6rem 4vw 0; }
 .intro-story { max-width: 46rem; margin: 0 0 2rem; font-size: 1.15rem; line-height: 1.55; color: #5a4332; }
 .sub-h { margin: 3.4rem 0 .5rem; font-size: 1.5rem; color: var(--espresso); }
 .sub-p { margin: 0 0 1.2rem; color: #5a4332; }
