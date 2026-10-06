@@ -218,3 +218,6 @@ a.frame:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(58,
 .mini img, .node img, .d-pic img, .detail-pic img, .final-pic img { height: auto; }
 .parents .mini { width: 5.3rem; }
 .mini.big { width: 7.4rem; }
+
+/* a little breathing room under the last row on every tab */
+main { padding-bottom: 5rem; }
